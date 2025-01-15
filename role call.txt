@@ -1,4 +1,5 @@
-Put a * next to your name on your branch and then push it.
+Put a * next to your name and then push it to github via github desktop it should show all your changes.
+For good practice (yes this is not a lot) make a title of what you are pushing. And a breif discription
 
 Landon
 Elijah
