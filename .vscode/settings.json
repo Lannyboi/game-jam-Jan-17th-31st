@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Game Jam Jan 17th - 31st.sln"
+    "dotnet.defaultSolution": "game-jam-Jan-17th-31st.sln"
 }
