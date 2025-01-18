@@ -1,7 +1,7 @@
 Put a * next to your name and then push it to the beta-test branch via github desktop it should show all your changes.
 For good practice (yes this is not a lot) make a title of what you are pushing. And a breif discription.
 
-Landon * !
+Landon * ! #
 Elijah * ! #
 Caden * !
 Aspen * !
