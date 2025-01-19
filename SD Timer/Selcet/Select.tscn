@@ -1,0 +1,198 @@
+[gd_scene load_steps=13 format=3 uid="uid://bojie0b552tof"]
+
+[ext_resource type="Script" path="res://SDTimer/enemy.gd" id="1_4iuqb"]
+[ext_resource type="Texture2D" uid="uid://b6qd6ki4cl4oo" path="res://Selcet/Enemypicked.png" id="2_jtan0"]
+[ext_resource type="Script" path="res://SDTimer/progress_bar.gd" id="3_5shqv"]
+[ext_resource type="Script" path="res://SDTimer/player.gd" id="4_88s0d"]
+[ext_resource type="Texture2D" uid="uid://caqaephv4uvqk" path="res://SDTimer/player.png" id="5_3g543"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l4y2m"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ep7t1"]
+size = Vector2(32, 32)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q4cjf"]
+bg_color = Color(0.517647, 0, 0.0431373, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+expand_margin_left = 1.0
+expand_margin_right = 1.0
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rnxhs"]
+bg_color = Color(0, 0.760784, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+expand_margin_left = 1.0
+anti_aliasing = false
+
+[sub_resource type="Theme" id="Theme_t6lob"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_q4cjf")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_rnxhs")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k1hyt"]
+size = Vector2(64, 64)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fy3q6"]
+radius = 96.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 328)
+zoom = Vector2(1.5, 1.5)
+
+[node name="Enemy" type="RigidBody2D" parent="."]
+position = Vector2(576, 192)
+collision_layer = 2
+collision_mask = 2
+input_pickable = true
+gravity_scale = 0.0
+script = ExtResource("1_4iuqb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
+shape = SubResource("RectangleShape2D_l4y2m")
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
+texture = ExtResource("2_jtan0")
+vframes = 2
+
+[node name="Area2D" type="Area2D" parent="Enemy"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/Area2D"]
+shape = SubResource("RectangleShape2D_ep7t1")
+
+[node name="ProgressBar" type="ProgressBar" parent="Enemy"]
+visible = false
+offset_left = -27.0
+offset_top = -32.0
+offset_right = 27.0
+offset_bottom = -24.0
+theme = SubResource("Theme_t6lob")
+max_value = 10.0
+value = 10.0
+show_percentage = false
+script = ExtResource("3_5shqv")
+
+[node name="Timer" type="Timer" parent="Enemy"]
+wait_time = 10.0
+one_shot = true
+
+[node name="Enemy2" type="RigidBody2D" parent="."]
+position = Vector2(488, 208)
+collision_layer = 2
+collision_mask = 2
+input_pickable = true
+gravity_scale = 0.0
+script = ExtResource("1_4iuqb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy2"]
+shape = SubResource("RectangleShape2D_l4y2m")
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy2"]
+texture = ExtResource("2_jtan0")
+vframes = 2
+
+[node name="Area2D" type="Area2D" parent="Enemy2"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy2/Area2D"]
+shape = SubResource("RectangleShape2D_ep7t1")
+
+[node name="ProgressBar" type="ProgressBar" parent="Enemy2"]
+visible = false
+offset_left = -27.0
+offset_top = -32.0
+offset_right = 27.0
+offset_bottom = -24.0
+theme = SubResource("Theme_t6lob")
+max_value = 10.0
+value = 10.0
+show_percentage = false
+script = ExtResource("3_5shqv")
+
+[node name="Timer" type="Timer" parent="Enemy2"]
+wait_time = 10.0
+one_shot = true
+
+[node name="Enemy3" type="RigidBody2D" parent="."]
+position = Vector2(664, 208)
+collision_layer = 2
+collision_mask = 2
+input_pickable = true
+gravity_scale = 0.0
+script = ExtResource("1_4iuqb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy3"]
+shape = SubResource("RectangleShape2D_l4y2m")
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy3"]
+texture = ExtResource("2_jtan0")
+vframes = 2
+
+[node name="Area2D" type="Area2D" parent="Enemy3"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy3/Area2D"]
+shape = SubResource("RectangleShape2D_ep7t1")
+
+[node name="ProgressBar" type="ProgressBar" parent="Enemy3"]
+visible = false
+offset_left = -27.0
+offset_top = -32.0
+offset_right = 27.0
+offset_bottom = -24.0
+theme = SubResource("Theme_t6lob")
+max_value = 10.0
+value = 10.0
+show_percentage = false
+script = ExtResource("3_5shqv")
+
+[node name="Timer" type="Timer" parent="Enemy3"]
+wait_time = 10.0
+one_shot = true
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(576, 320)
+script = ExtResource("4_88s0d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("RectangleShape2D_k1hyt")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture = ExtResource("5_3g543")
+
+[node name="Area2D" type="Area2D" parent="Player"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
+shape = SubResource("CircleShape2D_fy3q6")
+
+[connection signal="area_entered" from="Enemy/Area2D" to="Enemy" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Enemy/Area2D" to="Enemy" method="_on_area_2d_area_exited"]
+[connection signal="timeout" from="Enemy/Timer" to="Enemy" method="_on_timer_timeout"]
+[connection signal="area_entered" from="Enemy2/Area2D" to="Enemy2" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Enemy2/Area2D" to="Enemy2" method="_on_area_2d_area_exited"]
+[connection signal="timeout" from="Enemy2/Timer" to="Enemy2" method="_on_timer_timeout"]
+[connection signal="area_entered" from="Enemy3/Area2D" to="Enemy3" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Enemy3/Area2D" to="Enemy3" method="_on_area_2d_area_exited"]
+[connection signal="timeout" from="Enemy3/Timer" to="Enemy3" method="_on_timer_timeout"]
