@@ -56,28 +56,28 @@ radius = 96.0
 position = Vector2(576, 328)
 zoom = Vector2(1.5, 1.5)
 
-[node name="Enemy4" type="CharacterBody2D" parent="."]
+[node name="Enemy" type="CharacterBody2D" parent="."]
 position = Vector2(432, 352)
 collision_layer = 2
 collision_mask = 2
 input_pickable = true
 script = ExtResource("4_t6ae5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
 shape = SubResource("RectangleShape2D_l4y2m")
 
-[node name="Sprite2D" type="Sprite2D" parent="Enemy4"]
+[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
 texture = ExtResource("2_ip0gw")
 vframes = 2
 
-[node name="Area2D" type="Area2D" parent="Enemy4"]
+[node name="Area2D" type="Area2D" parent="Enemy"]
 collision_layer = 4
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy4/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/Area2D"]
 shape = SubResource("RectangleShape2D_ep7t1")
 
-[node name="ProgressBar" type="ProgressBar" parent="Enemy4"]
+[node name="ProgressBar" type="ProgressBar" parent="Enemy"]
 visible = false
 offset_left = -27.0
 offset_top = -32.0
@@ -89,7 +89,7 @@ value = 10.0
 show_percentage = false
 script = ExtResource("3_ph0cv")
 
-[node name="Timer" type="Timer" parent="Enemy4"]
+[node name="Timer" type="Timer" parent="Enemy"]
 wait_time = 10.0
 one_shot = true
 
@@ -110,6 +110,6 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
 shape = SubResource("CircleShape2D_fy3q6")
 
-[connection signal="area_entered" from="Enemy4/Area2D" to="Enemy4" method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Enemy4/Area2D" to="Enemy4" method="_on_area_2d_area_exited"]
-[connection signal="timeout" from="Enemy4/Timer" to="Enemy4" method="_on_timer_timeout"]
+[connection signal="area_entered" from="Enemy/Area2D" to="Enemy" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Enemy/Area2D" to="Enemy" method="_on_area_2d_area_exited"]
+[connection signal="timeout" from="Enemy/Timer" to="Enemy" method="_on_timer_timeout"]
