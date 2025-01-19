@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://bojie0b552tof"]
 
-[ext_resource type="Script" path="res://SDTimer/enemy.gd" id="1_4iuqb"]
+[ext_resource type="Script" path="res://Selcet/enemy.gd" id="1_4iuqb"]
 [ext_resource type="Texture2D" uid="uid://b6qd6ki4cl4oo" path="res://Selcet/Enemypicked.png" id="2_jtan0"]
 [ext_resource type="Script" path="res://SDTimer/progress_bar.gd" id="3_5shqv"]
 [ext_resource type="Script" path="res://SDTimer/player.gd" id="4_88s0d"]

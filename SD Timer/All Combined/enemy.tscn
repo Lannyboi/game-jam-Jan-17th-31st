@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cq8qhlj2xu0k3"]
+[gd_scene load_steps=9 format=3 uid="uid://cq8qhlj2xu0k3"]
 
-[ext_resource type="Script" path="res://SDTimer/enemy.gd" id="1_v0ag1"]
+[ext_resource type="Script" path="res://Selcet/enemy.gd" id="1_v0ag1"]
+[ext_resource type="Texture2D" uid="uid://b6qd6ki4cl4oo" path="res://Selcet/Enemypicked.png" id="2_pg8ev"]
 [ext_resource type="Script" path="res://SDTimer/progress_bar.gd" id="3_lknne"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l4y2m"]
-size = Vector2(32, 32)
+size = Vector2(48, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ep7t1"]
 size = Vector2(32, 32)
@@ -44,13 +45,17 @@ ProgressBar/styles/fill = SubResource("StyleBoxFlat_rnxhs")
 [node name="Enemy" type="RigidBody2D"]
 collision_layer = 2
 collision_mask = 2
+input_pickable = true
 gravity_scale = 0.0
+lock_rotation = true
 script = ExtResource("1_v0ag1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_l4y2m")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_pg8ev")
+vframes = 2
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4
@@ -60,7 +65,7 @@ collision_mask = 4
 shape = SubResource("RectangleShape2D_ep7t1")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
-visible = false
+z_index = 7
 offset_left = -27.0
 offset_top = -32.0
 offset_right = 27.0

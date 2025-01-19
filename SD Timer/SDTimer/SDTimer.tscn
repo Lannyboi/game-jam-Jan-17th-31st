@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://cyfu3n2jveaib"]
 
-[ext_resource type="Script" path="res://SDTimer/enemy.gd" id="1_dw70a"]
+[ext_resource type="Script" path="res://SDTimer/enemyOld.gd" id="1_sq8mm"]
 [ext_resource type="Script" path="res://SDTimer/progress_bar.gd" id="3_un072"]
 [ext_resource type="Script" path="res://SDTimer/player.gd" id="4_ef04e"]
 [ext_resource type="Texture2D" uid="uid://caqaephv4uvqk" path="res://SDTimer/player.png" id="5_qkyge"]
@@ -60,7 +60,7 @@ position = Vector2(576, 192)
 collision_layer = 2
 collision_mask = 2
 gravity_scale = 0.0
-script = ExtResource("1_dw70a")
+script = ExtResource("1_sq8mm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
 shape = SubResource("RectangleShape2D_l4y2m")
@@ -95,7 +95,7 @@ position = Vector2(320, 256)
 collision_layer = 2
 collision_mask = 2
 gravity_scale = 0.0
-script = ExtResource("1_dw70a")
+script = ExtResource("1_sq8mm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy2"]
 shape = SubResource("RectangleShape2D_l4y2m")
@@ -130,8 +130,7 @@ position = Vector2(832, 256)
 collision_layer = 2
 collision_mask = 2
 gravity_scale = 0.0
-script = ExtResource("1_dw70a")
-hackTime = 8
+script = ExtResource("1_sq8mm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy3"]
 shape = SubResource("RectangleShape2D_l4y2m")

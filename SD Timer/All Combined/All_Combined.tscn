@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://camera/camera_2d.gd" id="1_luij6"]
 [ext_resource type="Texture2D" uid="uid://xapq6e6d6egy" path="res://camera/BG2.png" id="2_5i6ad"]
 [ext_resource type="Script" path="res://SDTimer/player.gd" id="4_bmmj8"]
-[ext_resource type="PackedScene" uid="uid://cq8qhlj2xu0k3" path="res://SDTimer/enemy.tscn" id="4_f2gbn"]
+[ext_resource type="PackedScene" uid="uid://cq8qhlj2xu0k3" path="res://All Combined/enemy.tscn" id="4_f2gbn"]
 [ext_resource type="Texture2D" uid="uid://caqaephv4uvqk" path="res://SDTimer/player.png" id="5_q7f72"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rh1st"]
@@ -100,3 +100,36 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/StaticBody2D"]
 shape = SubResource("RectangleShape2D_tkb8j")
+
+[node name="Enemy2" parent="." instance=ExtResource("4_f2gbn")]
+position = Vector2(360, 312)
+
+[node name="Enemy3" parent="." instance=ExtResource("4_f2gbn")]
+position = Vector2(376, 392)
+
+[node name="Enemy4" parent="." instance=ExtResource("4_f2gbn")]
+position = Vector2(480, 456)
+
+[node name="Enemy5" parent="." instance=ExtResource("4_f2gbn")]
+position = Vector2(576, 456)
+
+[node name="Enemy6" parent="." instance=ExtResource("4_f2gbn")]
+position = Vector2(680, 448)
+
+[node name="Enemy7" parent="." instance=ExtResource("4_f2gbn")]
+position = Vector2(160, 552)
+
+[node name="Enemy8" parent="." instance=ExtResource("4_f2gbn")]
+position = Vector2(376, 744)
+
+[node name="Enemy9" parent="." instance=ExtResource("4_f2gbn")]
+position = Vector2(184, 712)
+
+[node name="Enemy10" parent="." instance=ExtResource("4_f2gbn")]
+position = Vector2(840, 560)
+
+[node name="Enemy11" parent="." instance=ExtResource("4_f2gbn")]
+position = Vector2(640, 664)
+
+[node name="Enemy12" parent="." instance=ExtResource("4_f2gbn")]
+position = Vector2(496, 576)

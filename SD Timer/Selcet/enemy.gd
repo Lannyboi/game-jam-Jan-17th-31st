@@ -1,7 +1,5 @@
 extends RigidBody2D
 
-var speed = 5.0
-
 @export var hackTime = 5
 @export var isHackable = false
 @export var inRobot = false
