@@ -65,6 +65,7 @@ collision_mask = 4
 shape = SubResource("RectangleShape2D_ep7t1")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
 z_index = 7
 offset_left = -27.0
 offset_top = -32.0

@@ -1,19 +1,19 @@
-[gd_scene load_steps=14 format=4 uid="uid://d2r0xgcfyrulj"]
+[gd_scene load_steps=14 format=4 uid="uid://bfxpdphrmbyug"]
 
-[ext_resource type="Texture2D" uid="uid://dgs4p3y1gtp7d" path="res://camera/BG1.png" id="1_4lv03"]
-[ext_resource type="Script" path="res://camera/camera_2d.gd" id="1_luij6"]
-[ext_resource type="Texture2D" uid="uid://xapq6e6d6egy" path="res://camera/BG2.png" id="2_5i6ad"]
-[ext_resource type="Script" path="res://SDTimer/player.gd" id="4_bmmj8"]
-[ext_resource type="PackedScene" uid="uid://cq8qhlj2xu0k3" path="res://All Combined/enemy.tscn" id="4_f2gbn"]
-[ext_resource type="Texture2D" uid="uid://caqaephv4uvqk" path="res://SDTimer/player.png" id="5_q7f72"]
+[ext_resource type="Texture2D" uid="uid://dgs4p3y1gtp7d" path="res://camera/BG1.png" id="1_gymux"]
+[ext_resource type="Texture2D" uid="uid://xapq6e6d6egy" path="res://camera/BG2.png" id="2_alhao"]
+[ext_resource type="PackedScene" uid="uid://cq8qhlj2xu0k3" path="res://All Combined/enemy.tscn" id="3_bgy16"]
+[ext_resource type="Script" path="res://camera/camera_2d.gd" id="4_psr7m"]
+[ext_resource type="Script" path="res://SDTimer/player.gd" id="5_p7d2b"]
+[ext_resource type="Texture2D" uid="uid://caqaephv4uvqk" path="res://SDTimer/player.png" id="6_t5xng"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rh1st"]
-texture = ExtResource("1_4lv03")
+texture = ExtResource("1_gymux")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r7gr0"]
-texture = ExtResource("2_5i6ad")
+texture = ExtResource("2_alhao")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
 
@@ -66,23 +66,20 @@ rotation = 1.5708
 scale = Vector2(104.24, 1)
 shape = SubResource("RectangleShape2D_yagjs")
 
-[node name="Enemy" parent="." instance=ExtResource("4_f2gbn")]
-position = Vector2(576, 152)
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 328)
 zoom = Vector2(1.5, 1.5)
-script = ExtResource("1_luij6")
+script = ExtResource("4_psr7m")
 
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(576, 320)
-script = ExtResource("4_bmmj8")
+script = ExtResource("5_p7d2b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource("RectangleShape2D_u30iv")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
-texture = ExtResource("5_q7f72")
+texture = ExtResource("6_t5xng")
 
 [node name="Area2D" type="Area2D" parent="Player"]
 collision_layer = 4
@@ -91,19 +88,22 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
 shape = SubResource("CircleShape2D_fy3q6")
 
-[node name="Enemy2" parent="." instance=ExtResource("4_f2gbn")]
-position = Vector2(360, 312)
+[node name="Enemy" parent="." instance=ExtResource("3_bgy16")]
+position = Vector2(920, 88)
 
-[node name="Enemy3" parent="." instance=ExtResource("4_f2gbn")]
-position = Vector2(376, 392)
+[node name="Enemy2" parent="." instance=ExtResource("3_bgy16")]
+position = Vector2(208, 216)
 
-[node name="Enemy4" parent="." instance=ExtResource("4_f2gbn")]
-position = Vector2(480, 456)
+[node name="Enemy3" parent="." instance=ExtResource("3_bgy16")]
+position = Vector2(224, 424)
 
-[node name="Enemy5" parent="." instance=ExtResource("4_f2gbn")]
-position = Vector2(576, 456)
+[node name="Enemy4" parent="." instance=ExtResource("3_bgy16")]
+position = Vector2(312, 496)
 
-[node name="Enemy6" parent="." instance=ExtResource("4_f2gbn")]
-position = Vector2(680, 448)
+[node name="Enemy5" parent="." instance=ExtResource("3_bgy16")]
+position = Vector2(520, 544)
+
+[node name="Enemy6" parent="." instance=ExtResource("3_bgy16")]
+position = Vector2(784, 520)
 
 [node name="Node" type="Node" parent="."]
