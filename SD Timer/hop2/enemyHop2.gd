@@ -1,6 +1,6 @@
-extends RigidBody2D
+extends CharacterBody2D
 
-
+@export var inRobotSpeed = 300.0
 
 @export var hackTime = 5
 @export var isHackable = false
@@ -47,7 +47,6 @@ func _process(delta: float) -> void:
 		$"../Player".inEnemy = true
 		print("Space bar pressed and robot has been hacked!")
 		$"../Player".position = position
-		$"../Player/Area2D/CollisionShape2D".disabled = true
 		$"ProgressBar".visible = true
 		$"ProgressBar".max_value = (hackTime - 1)
 		$Timer.start(hackTime - 1)
@@ -55,12 +54,32 @@ func _process(delta: float) -> void:
 		print("Space bar pressed and robot cannot be hacked!")
 
 	if inRobot == true:
-		$"../Player".visible = false
-		position = Vector2($"../Player".position)
+		$"../Player/CollisionShape2D".disabled = true
+		$"../Player/Sprite2D".visible = false
+		$"../Player".position = position
 
 
 func _on_timer_timeout() -> void:
 	$"../Player".inEnemy = false
-	$"../Player".visible = true
-	$"../Player/Area2D/CollisionShape2D".disabled = false
+	$"../Player/CollisionShape2D".disabled = false
+	$"../Player/Sprite2D".visible = true
 	queue_free()
+
+
+func _physics_process(_delta: float) -> void:
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	if inRobot == true:
+		var directionx := Input.get_axis("ui_left", "ui_right")
+		var directiony := Input.get_axis("ui_up", "ui_down")
+		if directionx:
+			velocity.x = directionx * inRobotSpeed
+		else:
+			velocity.x = move_toward(velocity.x, 0, inRobotSpeed)
+		
+		if directiony:
+			velocity.y = directiony * inRobotSpeed
+		else:
+			velocity.y = move_toward(velocity.y, 0, inRobotSpeed)
+
+		move_and_slide()
