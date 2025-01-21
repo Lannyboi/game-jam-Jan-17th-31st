@@ -1,7 +1,6 @@
 extends RigidBody2D
 
 
-
 @export var hackTime = 5
 @export var isHackable = false
 @export var inRobot = false
@@ -56,7 +55,7 @@ func _process(delta: float) -> void:
 
 	if inRobot == true:
 		$"../Player".visible = false
-		position = Vector2($"../Player".position)
+		position = $"../Player".position
 
 
 func _on_timer_timeout() -> void:
