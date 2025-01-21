@@ -1,11 +1,15 @@
 extends RigidBody2D
 
+@export var rotateSpeed = 1.0
 
 @export var hackTime = 5
 @export var isHackable = false
 @export var inRobot = false
 @export var isPicked = false
 
+
+func _ready() -> void:
+	rotateSpeed = randf_range(-0.3, 0.3)
 
 func _on_area_2d_area_entered(_area: Area2D) -> void:
 	$"../Player".enemysSelected += 1
@@ -54,9 +58,12 @@ func _process(delta: float) -> void:
 		print("Space bar pressed and robot cannot be hacked!")
 
 	if inRobot == true:
+		rotation = 0
 		$"../Player".visible = false
 		position = $"../Player".position
 
+	if inRobot == false:
+		rotation += rotateSpeed
 
 func _on_timer_timeout() -> void:
 	$"../Player".inEnemy = false
