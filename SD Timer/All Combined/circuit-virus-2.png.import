@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dll4wupf6uasm"
-path="res://.godot/imported/circuit_virus-spritesheet.png-2bcc84f885d2abf5ffef96e43f941c4e.ctex"
+uid="uid://dmqfxevnmpd7k"
+path="res://.godot/imported/circuit-virus-2.png-7a19d4c6abe935bb7cd9dbd5f07ffde2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://All Combined/circuit_virus-spritesheet.png"
-dest_files=["res://.godot/imported/circuit_virus-spritesheet.png-2bcc84f885d2abf5ffef96e43f941c4e.ctex"]
+source_file="res://All Combined/circuit-virus-2.png"
+dest_files=["res://.godot/imported/circuit-virus-2.png-7a19d4c6abe935bb7cd9dbd5f07ffde2.ctex"]
 
 [params]
 

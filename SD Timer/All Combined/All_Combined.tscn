@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://xapq6e6d6egy" path="res://camera/BG2.png" id="2_5i6ad"]
 [ext_resource type="Script" path="res://SDTimer/player.gd" id="4_bmmj8"]
 [ext_resource type="PackedScene" uid="uid://cq8qhlj2xu0k3" path="res://All Combined/enemy.tscn" id="4_f2gbn"]
-[ext_resource type="Texture2D" uid="uid://dll4wupf6uasm" path="res://All Combined/circuit_virus-spritesheet.png" id="6_20cd0"]
+[ext_resource type="Texture2D" uid="uid://dmqfxevnmpd7k" path="res://All Combined/circuit-virus-2.png" id="6_ygfj4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rh1st"]
 texture = ExtResource("1_4lv03")
@@ -83,9 +83,8 @@ script = ExtResource("4_bmmj8")
 shape = SubResource("RectangleShape2D_u30iv")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
-scale = Vector2(1.00564, 1)
-texture = ExtResource("6_20cd0")
-hframes = 2
+scale = Vector2(2, 1.988)
+texture = ExtResource("6_ygfj4")
 
 [node name="Area2D" type="Area2D" parent="Player"]
 collision_layer = 4
