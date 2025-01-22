@@ -97,7 +97,7 @@ scale = Vector2(104.24, 1)
 shape = SubResource("RectangleShape2D_yagjs")
 
 [node name="Enemy" parent="." instance=ExtResource("4_f2gbn")]
-position = Vector2(576, 152)
+position = Vector2(-136, -152)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 328)
@@ -130,18 +130,39 @@ collision_mask = 8
 shape = SubResource("RectangleShape2D_2fdum")
 
 [node name="Enemy2" parent="." instance=ExtResource("4_f2gbn")]
-position = Vector2(360, 312)
+position = Vector2(-784, 440)
 
 [node name="Enemy3" parent="." instance=ExtResource("4_f2gbn")]
-position = Vector2(376, 392)
+position = Vector2(856, -648)
 
 [node name="Enemy4" parent="." instance=ExtResource("4_f2gbn")]
-position = Vector2(480, 456)
+position = Vector2(-904, -648)
 
 [node name="Enemy5" parent="." instance=ExtResource("4_f2gbn")]
-position = Vector2(576, 456)
+position = Vector2(152, 720)
 
 [node name="Enemy6" parent="." instance=ExtResource("4_f2gbn")]
-position = Vector2(680, 448)
+position = Vector2(888, -200)
+
+[node name="Enemy7" parent="." instance=ExtResource("4_f2gbn")]
+position = Vector2(224, -624)
+
+[node name="Enemy8" parent="." instance=ExtResource("4_f2gbn")]
+position = Vector2(-104, 320)
+
+[node name="Enemy9" parent="." instance=ExtResource("4_f2gbn")]
+position = Vector2(-984, 32)
+
+[node name="Enemy10" parent="." instance=ExtResource("4_f2gbn")]
+position = Vector2(-544, -504)
+
+[node name="Enemy11" parent="." instance=ExtResource("4_f2gbn")]
+position = Vector2(-632, 736)
+
+[node name="Enemy12" parent="." instance=ExtResource("4_f2gbn")]
+position = Vector2(-1120, 504)
+
+[node name="Enemy13" parent="." instance=ExtResource("4_f2gbn")]
+position = Vector2(520, -376)
 
 [node name="Node" type="Node" parent="."]
