@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://d2r0xgcfyrulj"]
+[gd_scene load_steps=15 format=4 uid="uid://d2r0xgcfyrulj"]
 
 [ext_resource type="Texture2D" uid="uid://dgs4p3y1gtp7d" path="res://camera/BG1.png" id="1_4lv03"]
 [ext_resource type="Script" path="res://camera/camera_2d.gd" id="1_luij6"]
@@ -34,6 +34,9 @@ size = Vector2(64, 64)
 [sub_resource type="CircleShape2D" id="CircleShape2D_fy3q6"]
 radius = 96.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2fdum"]
+size = Vector2(48, 48)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -44,6 +47,32 @@ tile_set = SubResource("TileSet_puuo5")
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 3
 collision_mask = 3
+
+[node name="Area2D" type="Area2D" parent="StaticBody2D"]
+collision_layer = 8
+collision_mask = 8
+
+[node name="Top_Wall" type="CollisionShape2D" parent="StaticBody2D/Area2D"]
+position = Vector2(0, -1024)
+scale = Vector2(153.28, 1)
+shape = SubResource("RectangleShape2D_t6fxn")
+
+[node name="Bottom_Wall" type="CollisionShape2D" parent="StaticBody2D/Area2D"]
+position = Vector2(0, 1024)
+scale = Vector2(153.28, 1)
+shape = SubResource("RectangleShape2D_t6fxn")
+
+[node name="Left_Wall" type="CollisionShape2D" parent="StaticBody2D/Area2D"]
+position = Vector2(-1536, -1.09139e-10)
+rotation = 1.5708
+scale = Vector2(104.24, 1)
+shape = SubResource("RectangleShape2D_yagjs")
+
+[node name="Right_Wall" type="CollisionShape2D" parent="StaticBody2D/Area2D"]
+position = Vector2(1536, 1.09139e-10)
+rotation = 1.5708
+scale = Vector2(104.24, 1)
+shape = SubResource("RectangleShape2D_yagjs")
 
 [node name="Top_Wall" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0, -1024)
@@ -92,6 +121,13 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
 shape = SubResource("CircleShape2D_fy3q6")
+
+[node name="Box" type="Area2D" parent="Player"]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Box"]
+shape = SubResource("RectangleShape2D_2fdum")
 
 [node name="Enemy2" parent="." instance=ExtResource("4_f2gbn")]
 position = Vector2(360, 312)

@@ -7,9 +7,18 @@ extends RigidBody2D
 @export var inRobot = false
 @export var isPicked = false
 
+@export var bullet : PackedScene
+@export var bulletRotation : float
 
 func _ready() -> void:
-	rotateSpeed = randf_range(-0.3, 0.3)
+	rotateSpeed = randf_range(-0.2, 0.2)
+
+func _on_bullet_timeout() -> void:
+	if inRobot == false:
+		var b = bullet.instantiate()
+		owner.add_child(b)
+		b.transform = $Shot.global_transform
+		print("shot: ", bulletRotation)
 
 func _on_area_2d_area_entered(_area: Area2D) -> void:
 	$"../Player".enemysSelected += 1
@@ -32,7 +41,7 @@ func _mouse_exit() -> void:
 	print("Picked: ", isPicked)
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	# Sets frame to add a white outline
 	if isPicked == false or inRobot == true:
 		$Sprite2D.frame = 0
