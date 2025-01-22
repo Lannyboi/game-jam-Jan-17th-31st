@@ -6,10 +6,12 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_i4d8t"]
 radius = 8.0
 
-[node name="Bullet" type="Area2D"]
+[node name="Bullet" type="Area2D" groups=["bullet"]]
+z_index = -1
 scale = Vector2(0.25, 0.25)
 collision_layer = 8
 collision_mask = 8
+input_pickable = false
 script = ExtResource("1_2y20j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

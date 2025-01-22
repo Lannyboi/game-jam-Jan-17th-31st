@@ -15,6 +15,10 @@ run/main_scene="res://All Combined/All_Combined.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[global_group]
+
+bullet=""
+
 [input]
 
 ui_left={

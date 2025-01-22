@@ -14,7 +14,7 @@ func _ready() -> void:
 	rotateSpeed = randf_range(-0.2, 0.2)
 
 func _on_bullet_timeout() -> void:
-	if inRobot == false:
+	#if inRobot == false:
 		var b = bullet.instantiate()
 		owner.add_child(b)
 		b.transform = $Shot.global_transform
@@ -70,6 +70,9 @@ func _process(_delta: float) -> void:
 		rotation = 0
 		$"../Player".visible = false
 		position = $"../Player".position
+		$Area2D.monitorable = false
+		$Shot.position.x = 0
+
 
 	if inRobot == false:
 		rotation += rotateSpeed

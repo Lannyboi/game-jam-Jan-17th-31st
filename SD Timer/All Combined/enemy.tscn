@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://cq8qhlj2xu0k3"]
+[gd_scene load_steps=11 format=3 uid="uid://cq8qhlj2xu0k3"]
 
 [ext_resource type="Script" path="res://Selcet/enemy.gd" id="1_v0ag1"]
 [ext_resource type="PackedScene" uid="uid://k50q0g3v0n7g" path="res://Bullet/bullet.tscn" id="2_hhhp3"]
 [ext_resource type="Texture2D" uid="uid://b6qd6ki4cl4oo" path="res://Selcet/Enemypicked.png" id="2_pg8ev"]
 [ext_resource type="Script" path="res://SDTimer/progress_bar.gd" id="3_lknne"]
+[ext_resource type="Script" path="res://All Combined/shot.gd" id="5_xla7q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l4y2m"]
 size = Vector2(48, 48)
@@ -84,13 +85,14 @@ wait_time = 10.0
 one_shot = true
 
 [node name="Bullet" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.07
 autostart = true
 
 [node name="Shot" type="Marker2D" parent="."]
 position = Vector2(16, 0)
 scale = Vector2(0.7, 0.7)
 gizmo_extents = 100.0
+script = ExtResource("5_xla7q")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

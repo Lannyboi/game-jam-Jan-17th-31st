@@ -13,3 +13,8 @@ func get_input():
 func _physics_process(_delta):
 	get_input()
 	move_and_slide()
+	
+	if inEnemy == true:
+		$Box.monitorable = false
+	elif inEnemy == false:
+		$Box.monitorable = true
