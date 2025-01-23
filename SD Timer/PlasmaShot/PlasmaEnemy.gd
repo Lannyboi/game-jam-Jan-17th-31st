@@ -36,7 +36,10 @@ func _on_area_2d_area_entered(_area: Area2D) -> void:
 
 @warning_ignore("unused_parameter")
 func _on_hurt_box_area_entered(area: Area2D) -> void:
-	heath -= 1
+	if area.is_in_group("Plasma"):
+		heath -= Globalvars.PlasmaDmg
+	elif area.is_in_group("Rocket"):
+		heath -= Globalvars.RocketDmg
 
 
 
