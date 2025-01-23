@@ -91,7 +91,7 @@ wait_time = 0.5
 autostart = true
 
 [node name="Shot" type="Marker2D" parent="."]
-position = Vector2(26, -20)
+position = Vector2(30, -20)
 scale = Vector2(2, 2)
 gizmo_extents = 100.0
 script = ExtResource("7_spdne")

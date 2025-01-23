@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = 300.0
+@export var speed = 450.0
 @export var inEnemy = false
 @export var enemysSelected = 0
 

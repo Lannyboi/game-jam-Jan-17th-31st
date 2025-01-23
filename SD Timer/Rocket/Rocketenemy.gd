@@ -12,7 +12,7 @@ extends RigidBody2D
 @export var bulletRotation : float
 
 func _ready() -> void:
-	rotateSpeed = randf_range(-0.2, 0.2)
+	rotateSpeed = randf_range(-0.1, 0.1)
 	$HeathBar.max_value = heath
 	$HeathBar.visible = true
 
@@ -50,6 +50,7 @@ func _process(_delta: float) -> void:
 		$Area2D/CollisionShape2D.disabled = true
 
 	if inRobot == false:
+		# this is what we want when enemy virus hacks robot "look_at($"../Player".position)"
 		rotation += rotateSpeed
 
 	if heath == 0:
