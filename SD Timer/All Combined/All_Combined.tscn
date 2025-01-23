@@ -1,11 +1,10 @@
-[gd_scene load_steps=15 format=4 uid="uid://d2r0xgcfyrulj"]
+[gd_scene load_steps=11 format=4 uid="uid://d2r0xgcfyrulj"]
 
 [ext_resource type="Texture2D" uid="uid://dgs4p3y1gtp7d" path="res://camera/BG1.png" id="1_4lv03"]
 [ext_resource type="Script" path="res://camera/camera_2d.gd" id="1_luij6"]
 [ext_resource type="Texture2D" uid="uid://xapq6e6d6egy" path="res://camera/BG2.png" id="2_5i6ad"]
-[ext_resource type="Script" path="res://SDTimer/player.gd" id="4_bmmj8"]
 [ext_resource type="PackedScene" uid="uid://cq8qhlj2xu0k3" path="res://All Combined/enemy.tscn" id="4_f2gbn"]
-[ext_resource type="Texture2D" uid="uid://dmqfxevnmpd7k" path="res://All Combined/circuit-virus-2.png" id="6_ygfj4"]
+[ext_resource type="PackedScene" uid="uid://co5fidgmf2ycl" path="res://All Combined/player.tscn" id="5_hdupc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rh1st"]
 texture = ExtResource("1_4lv03")
@@ -27,15 +26,6 @@ size = Vector2(20.0418, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yagjs"]
 size = Vector2(19.977, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u30iv"]
-size = Vector2(64, 64)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_fy3q6"]
-radius = 96.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2fdum"]
-size = Vector2(48, 48)
 
 [node name="Node2D" type="Node2D"]
 
@@ -106,30 +96,7 @@ position = Vector2(576, 328)
 zoom = Vector2(1.5, 1.5)
 script = ExtResource("1_luij6")
 
-[node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(576, 320)
-script = ExtResource("4_bmmj8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource("RectangleShape2D_u30iv")
-
-[node name="Sprite2D" type="Sprite2D" parent="Player"]
-scale = Vector2(2, 1.988)
-texture = ExtResource("6_ygfj4")
-
-[node name="Area2D" type="Area2D" parent="Player"]
-collision_layer = 4
-collision_mask = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
-shape = SubResource("CircleShape2D_fy3q6")
-
-[node name="HurtBox" type="Area2D" parent="Player"]
-collision_layer = 8
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/HurtBox"]
-shape = SubResource("RectangleShape2D_2fdum")
+[node name="Player" parent="." instance=ExtResource("5_hdupc")]
 
 [node name="Enemy2" parent="." instance=ExtResource("4_f2gbn")]
 position = Vector2(-784, 440)

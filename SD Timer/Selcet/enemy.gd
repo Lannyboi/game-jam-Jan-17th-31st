@@ -15,7 +15,7 @@ extends RigidBody2D
 func _ready() -> void:
 	rotateSpeed = randf_range(-0.2, 0.2)
 	$HeathBar.max_value = heath
-	
+
 
 func _on_bullet_timeout() -> void:
 	if inRobot == false:
@@ -93,6 +93,7 @@ func _process(_delta: float) -> void:
 		queue_free()
 
 	$HeathBar.value = heath
+	$HeathBar.position = (position + Vector2(-48, -56))
 
 func _on_timer_timeout() -> void:
 	$"../Player".inEnemy = false

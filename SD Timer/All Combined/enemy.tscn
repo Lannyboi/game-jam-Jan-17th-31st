@@ -42,8 +42,8 @@ collision_mask = 12
 shape = SubResource("RectangleShape2D_ep7t1")
 
 [node name="HurtBox" type="Area2D" parent="."]
-collision_layer = 24
-collision_mask = 24
+collision_layer = 16
+collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 shape = SubResource("RectangleShape2D_gkga8")
@@ -62,10 +62,18 @@ show_percentage = false
 script = ExtResource("3_lknne")
 
 [node name="HeathBar" type="ProgressBar" parent="."]
-offset_left = -48.0
-offset_top = -56.0
-offset_right = 48.0
-offset_bottom = -40.0
+top_level = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -624.0
+offset_top = -380.0
+offset_right = -528.0
+offset_bottom = -364.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("5_dxnyy")
 show_percentage = false
 

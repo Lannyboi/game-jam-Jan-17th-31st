@@ -9,8 +9,8 @@ radius = 8.0
 [node name="Bullet" type="Area2D" groups=["bullet"]]
 z_index = -1
 scale = Vector2(0.25, 0.25)
-collision_layer = 8
-collision_mask = 8
+collision_layer = 24
+collision_mask = 24
 input_pickable = false
 script = ExtResource("1_2y20j")
 
