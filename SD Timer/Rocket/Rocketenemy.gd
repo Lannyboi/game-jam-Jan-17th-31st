@@ -19,6 +19,7 @@ func _ready() -> void:
 	$HeathBar.visible = true
 
 
+
 func _on_rocket_sprite_timeout() -> void:
 	$Sprite2D.frame = 0
 	$Bullet.start(cooldown / 2)
@@ -30,6 +31,18 @@ func _on_bullet_timeout() -> void:
 		owner.add_child(b)
 		b.transform = $Shot.global_transform
 		$RocketSprite.start(cooldown / 2)
+		
+		#$Sprite2D.frame = 1
+		#var b2 = bullet.instantiate()
+		#owner.add_child(b2)
+		#b2.transform = $Shot2.global_transform
+		#$RocketSprite.start(cooldown / 2)
+		
+		#$Sprite2D.frame = 1
+		#var b3 = bullet.instantiate()
+		#owner.add_child(b3)
+		#b3.transform = $Shot3.global_transform
+		#$RocketSprite.start(cooldown / 2)
 
 
 func _on_area_2d_area_entered(_area: Area2D) -> void:
