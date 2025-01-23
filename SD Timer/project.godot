@@ -23,6 +23,8 @@ window/size/viewport_height=1080
 [global_group]
 
 bullet=""
+Rocket=""
+Plasma=""
 
 [input]
 

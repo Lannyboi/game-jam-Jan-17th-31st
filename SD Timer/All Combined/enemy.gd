@@ -3,6 +3,7 @@ extends RigidBody2D
 @export var rotateSpeed = 1.0
 @export var heath = 20
 
+
 @export var hackTime = 5
 @export var isHackable = false
 @export var inRobot = false
@@ -74,6 +75,7 @@ func _process(_delta: float) -> void:
 
 	$HeathBar.value = heath
 	$HeathBar.position = (position + Vector2(-48, -56))
+	
 
 func _on_timer_timeout() -> void:
 	$"../Player".inEnemy = false

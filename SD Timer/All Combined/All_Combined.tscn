@@ -109,44 +109,32 @@ texture_scale = 2.0
 
 [node name="Player" parent="." instance=ExtResource("5_hdupc")]
 
-[node name="Enemy14" parent="." instance=ExtResource("6_vdv58")]
-position = Vector2(552, -307)
+[node name="Rocketenemy" parent="." instance=ExtResource("6_vdv58")]
+position = Vector2(306, 259)
 
-[node name="Enemy" parent="." instance=ExtResource("6_vdv58")]
-position = Vector2(288, 384)
+[node name="Rocketenemy2" parent="." instance=ExtResource("6_vdv58")]
+position = Vector2(174, 689)
 
-[node name="Enemy2" parent="." instance=ExtResource("6_vdv58")]
-position = Vector2(688, 192)
+[node name="Rocketenemy3" parent="." instance=ExtResource("6_vdv58")]
+position = Vector2(518, -327)
 
-[node name="Enemy3" parent="." instance=ExtResource("6_vdv58")]
-position = Vector2(712, 384)
+[node name="Rocketenemy4" parent="." instance=ExtResource("6_vdv58")]
+position = Vector2(1039, -25)
 
-[node name="Enemy4" parent="." instance=ExtResource("6_vdv58")]
-position = Vector2(-910, 529)
+[node name="Rocketenemy5" parent="." instance=ExtResource("6_vdv58")]
+position = Vector2(873, 572)
 
-[node name="Enemy5" parent="." instance=ExtResource("6_vdv58")]
-position = Vector2(-584, -251)
+[node name="Rocketenemy6" parent="." instance=ExtResource("6_vdv58")]
+position = Vector2(-683, 629)
 
-[node name="Enemy6" parent="." instance=ExtResource("6_vdv58")]
-position = Vector2(-873, 15)
+[node name="Rocketenemy7" parent="." instance=ExtResource("6_vdv58")]
+position = Vector2(-1291, -145)
 
-[node name="Enemy7" parent="." instance=ExtResource("6_vdv58")]
-position = Vector2(-927, -857)
+[node name="Rocketenemy8" parent="." instance=ExtResource("6_vdv58")]
+position = Vector2(-498, -629)
 
-[node name="Enemy8" parent="." instance=ExtResource("6_vdv58")]
-position = Vector2(893, -830)
+[node name="Rocketenemy9" parent="." instance=ExtResource("6_vdv58")]
+position = Vector2(-1053, -689)
 
-[node name="Enemy9" parent="." instance=ExtResource("6_vdv58")]
-position = Vector2(-365, 768)
-
-[node name="Enemy10" parent="." instance=ExtResource("6_vdv58")]
-position = Vector2(1051, 677)
-
-[node name="Enemy11" parent="." instance=ExtResource("6_vdv58")]
-position = Vector2(95, -628)
-
-[node name="Enemy12" parent="." instance=ExtResource("6_vdv58")]
-position = Vector2(1094, -184)
-
-[node name="Enemy13" parent="." instance=ExtResource("6_vdv58")]
-position = Vector2(-308, -931)
+[node name="Rocketenemy10" parent="." instance=ExtResource("6_vdv58")]
+position = Vector2(-585, 138)

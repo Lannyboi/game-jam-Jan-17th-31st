@@ -1,42 +1,41 @@
-[gd_scene load_steps=14 format=3 uid="uid://k50q0g3v0n7g"]
+[gd_scene load_steps=13 format=3 uid="uid://bacut82uitrqv"]
 
-[ext_resource type="Script" path="res://Bullet/bullet.gd" id="1_2y20j"]
-[ext_resource type="Texture2D" uid="uid://bdfqpjupvld8n" path="res://Bullet/Bullet.png" id="1_y747p"]
-[ext_resource type="Texture2D" uid="uid://bf5x5i15waujb" path="res://Bullet/plasma-spritesheet.png" id="3_elumy"]
+[ext_resource type="Script" path="res://PlasmaShot/PlasmaShot.gd" id="1_6fpyb"]
+[ext_resource type="Texture2D" uid="uid://bf5x5i15waujb" path="res://Bullet/plasma-spritesheet.png" id="3_y5gib"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i4d8t"]
-radius = 8.0
+radius = 6.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6dsce"]
-atlas = ExtResource("3_elumy")
+atlas = ExtResource("3_y5gib")
 region = Rect2(0, 0, 15, 14)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oc2co"]
-atlas = ExtResource("3_elumy")
+atlas = ExtResource("3_y5gib")
 region = Rect2(15, 0, 15, 14)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yu84t"]
-atlas = ExtResource("3_elumy")
+atlas = ExtResource("3_y5gib")
 region = Rect2(30, 0, 15, 14)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d7jcn"]
-atlas = ExtResource("3_elumy")
+atlas = ExtResource("3_y5gib")
 region = Rect2(45, 0, 15, 14)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pg788"]
-atlas = ExtResource("3_elumy")
+atlas = ExtResource("3_y5gib")
 region = Rect2(60, 0, 15, 14)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ftq1e"]
-atlas = ExtResource("3_elumy")
+atlas = ExtResource("3_y5gib")
 region = Rect2(75, 0, 15, 14)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1um42"]
-atlas = ExtResource("3_elumy")
+atlas = ExtResource("3_y5gib")
 region = Rect2(90, 0, 15, 14)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gdwq8"]
-atlas = ExtResource("3_elumy")
+atlas = ExtResource("3_y5gib")
 region = Rect2(105, 0, 15, 14)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t8pvv"]
@@ -71,24 +70,19 @@ animations = [{
 "speed": 25.0
 }]
 
-[node name="Bullet" type="Area2D" groups=["bullet"]]
+[node name="PlasmaShot" type="Area2D" groups=["Plasma"]]
 z_index = -1
 scale = Vector2(0.25, 0.25)
 collision_layer = 24
 collision_mask = 24
 input_pickable = false
-script = ExtResource("1_2y20j")
+script = ExtResource("1_6fpyb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_i4d8t")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_y747p")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-32, 0)
 sprite_frames = SubResource("SpriteFrames_t8pvv")
 animation = &"Main"
-frame_progress = 0.459171
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

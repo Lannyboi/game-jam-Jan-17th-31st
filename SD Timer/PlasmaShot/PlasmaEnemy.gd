@@ -8,10 +8,9 @@ extends RigidBody2D
 @export var isHackable = false
 @export var inRobot = false
 @export var isPicked = false
-@export var cooldown = 0.5
 
-@export var bullet : PackedScene
-@export var bulletRotation : float
+@export var PlasmaShot : PackedScene
+@export var PlasmaShotRotation : float
 
 func _ready() -> void:
 	rotateSpeed = randf_range(-0.1, 0.1)
@@ -19,17 +18,10 @@ func _ready() -> void:
 	$HeathBar.visible = true
 
 
-func _on_rocket_sprite_timeout() -> void:
-	$Sprite2D.frame = 0
-	$Bullet.start(cooldown / 2)
-
-
-func _on_bullet_timeout() -> void:
-		$Sprite2D.frame = 1
-		var b = bullet.instantiate()
-		owner.add_child(b)
-		b.transform = $Shot.global_transform
-		$RocketSprite.start(cooldown / 2)
+func _on_plasma_shot_timeout() -> void:
+	var b = PlasmaShot.instantiate()
+	owner.add_child(b)
+	b.transform = $Shot.global_transform
 
 
 func _on_area_2d_area_entered(_area: Area2D) -> void:
@@ -44,10 +36,7 @@ func _on_area_2d_area_entered(_area: Area2D) -> void:
 
 @warning_ignore("unused_parameter")
 func _on_hurt_box_area_entered(area: Area2D) -> void:
-	if area.is_in_group("Plasma"):
-		heath -= 1
-	elif area.is_in_group("Rocket"):
-		heath -= 1.5
+	heath -= 1
 
 
 
@@ -65,10 +54,10 @@ func _process(_delta: float) -> void:
 		# this is what we want when enemy virus hacks robot "look_at($"../Player".position)"
 		rotation += rotateSpeed
 
-	if heath <= 0:
+	if heath == 0:
 		queue_free()
 
-	if heath <= 0 and inRobot == true:
+	if heath == 0 and inRobot == true:
 		$"../Player".inEnemy = false
 		$"../Player".visible = true
 		$"../Player/Area2D/CollisionShape2D".disabled = false
