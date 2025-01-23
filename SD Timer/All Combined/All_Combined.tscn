@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dgs4p3y1gtp7d" path="res://camera/BG1.png" id="1_4lv03"]
 [ext_resource type="Script" path="res://camera/camera_2d.gd" id="1_luij6"]
 [ext_resource type="Texture2D" uid="uid://xapq6e6d6egy" path="res://camera/BG2.png" id="2_5i6ad"]
-[ext_resource type="PackedScene" path="res://All Combined/player.tscn" id="5_hdupc"]
+[ext_resource type="PackedScene" uid="uid://co5fidgmf2ycl" path="res://All Combined/player.tscn" id="5_hdupc"]
 [ext_resource type="PackedScene" uid="uid://b0xkgs8hc58c2" path="res://Rocket/Rocketenemy.tscn" id="6_vdv58"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rh1st"]
@@ -97,3 +97,12 @@ script = ExtResource("1_luij6")
 
 [node name="Enemy14" parent="." instance=ExtResource("6_vdv58")]
 position = Vector2(256, 184)
+
+[node name="Enemy" parent="." instance=ExtResource("6_vdv58")]
+position = Vector2(288, 384)
+
+[node name="Enemy2" parent="." instance=ExtResource("6_vdv58")]
+position = Vector2(688, 192)
+
+[node name="Enemy3" parent="." instance=ExtResource("6_vdv58")]
+position = Vector2(712, 384)

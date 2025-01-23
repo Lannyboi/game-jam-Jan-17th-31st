@@ -38,23 +38,19 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 	heath -= 1
 
 
+
 func _process(_delta: float) -> void:
-	# Sets frame to add a white outline
-	if isPicked == false or inRobot == true:
-		$Sprite2D.frame = 0
-	elif isPicked == true:
-		$Sprite2D.frame = 1
 
 	if inRobot == true:
+		look_at(get_global_mouse_position())
 		$HurtBox.set_collision_layer_value(5, false)
 		$HurtBox.set_collision_mask_value(5, false)
-		rotation = 0
 		$"../Player".visible = false
 		position = $"../Player".position
 		$Area2D/CollisionShape2D.disabled = true
 
-	#if inRobot == false:
-		#rotation += rotateSpeed
+	if inRobot == false:
+		rotation += rotateSpeed
 
 	if heath == 0:
 		queue_free()
@@ -67,7 +63,7 @@ func _process(_delta: float) -> void:
 
 
 	$HeathBar.value = heath
-	$HeathBar.position = (position + Vector2(-16, -26))
+	$HeathBar.position = (position + Vector2(-48, -71))
 
 func _on_timer_timeout() -> void:
 	$"../Player".inEnemy = false
