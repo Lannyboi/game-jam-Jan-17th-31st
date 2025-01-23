@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://cq8qhlj2xu0k3"]
 
-[ext_resource type="Script" path="res://Selcet/enemy.gd" id="1_v0ag1"]
+[ext_resource type="Script" path="res://All Combined/enemy.gd" id="1_v0ag1"]
 [ext_resource type="PackedScene" uid="uid://k50q0g3v0n7g" path="res://Bullet/bullet.tscn" id="2_hhhp3"]
-[ext_resource type="Texture2D" uid="uid://b6qd6ki4cl4oo" path="res://Selcet/Enemypicked.png" id="2_pg8ev"]
+[ext_resource type="Texture2D" uid="uid://b6qd6ki4cl4oo" path="res://All Combined/Enemypicked.png" id="2_pg8ev"]
 [ext_resource type="PackedScene" uid="uid://dd8qm3oxx4ame" path="res://Bullet/playerbullet.tscn" id="3_8g4kr"]
 [ext_resource type="Script" path="res://SDTimer/progress_bar.gd" id="3_lknne"]
 [ext_resource type="Theme" uid="uid://ce0sleknwgwcy" path="res://SDTimer/enemy.tres" id="5_dxnyy"]

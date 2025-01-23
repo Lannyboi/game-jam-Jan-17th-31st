@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rob3wdkdnixk"
-path="res://.godot/imported/Rocket robot.png-63b9697499194cf104d6a9175dfacd85.ctex"
+uid="uid://b6qd6ki4cl4oo"
+path="res://.godot/imported/Enemypicked.png-6e839a4be3054ca3f7383ba12db45ca1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://All Combined/Rocket robot.png"
-dest_files=["res://.godot/imported/Rocket robot.png-63b9697499194cf104d6a9175dfacd85.ctex"]
+source_file="res://All Combined/Enemypicked.png"
+dest_files=["res://.godot/imported/Enemypicked.png-6e839a4be3054ca3f7383ba12db45ca1.ctex"]
 
 [params]
 
