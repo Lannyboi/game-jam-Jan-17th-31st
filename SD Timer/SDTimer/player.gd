@@ -16,5 +16,7 @@ func _physics_process(_delta):
 	
 	if inEnemy == true:
 		$HurtBox.monitorable = false
+		$Area2D/CollisionShape2D.disabled = true
 	elif inEnemy == false:
 		$HurtBox.monitorable = true
+		$Area2D/CollisionShape2D.disabled = false

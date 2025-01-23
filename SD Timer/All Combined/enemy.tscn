@@ -20,10 +20,11 @@ size = Vector2(32, 32)
 [node name="Enemy" type="RigidBody2D"]
 collision_layer = 2
 collision_mask = 2
-input_pickable = true
 gravity_scale = 0.0
 lock_rotation = true
 script = ExtResource("1_v0ag1")
+heath = 15
+hackTime = 7
 bullet = ExtResource("2_hhhp3")
 PlayerBullet = ExtResource("3_8g4kr")
 
@@ -35,15 +36,15 @@ texture = ExtResource("2_pg8ev")
 vframes = 2
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_layer = 12
-collision_mask = 12
+collision_layer = 4
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_ep7t1")
 
 [node name="HurtBox" type="Area2D" parent="."]
-collision_layer = 16
-collision_mask = 16
+collision_layer = 24
+collision_mask = 24
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 shape = SubResource("RectangleShape2D_gkga8")
@@ -62,6 +63,7 @@ show_percentage = false
 script = ExtResource("3_lknne")
 
 [node name="HeathBar" type="ProgressBar" parent="."]
+visible = false
 top_level = true
 anchors_preset = 8
 anchor_left = 0.5
@@ -91,7 +93,6 @@ gizmo_extents = 100.0
 script = ExtResource("5_xla7q")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Bullet" to="." method="_on_bullet_timeout"]
