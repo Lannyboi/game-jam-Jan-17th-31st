@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=4 uid="uid://d2r0xgcfyrulj"]
+[gd_scene load_steps=12 format=4 uid="uid://d2r0xgcfyrulj"]
 
 [ext_resource type="Texture2D" uid="uid://dgs4p3y1gtp7d" path="res://camera/BG1.png" id="1_4lv03"]
 [ext_resource type="Script" path="res://camera/camera_2d.gd" id="1_luij6"]
 [ext_resource type="Texture2D" uid="uid://xapq6e6d6egy" path="res://camera/BG2.png" id="2_5i6ad"]
-[ext_resource type="PackedScene" path="res://All Combined/player.tscn" id="5_hdupc"]
+[ext_resource type="PackedScene" uid="uid://co5fidgmf2ycl" path="res://All Combined/player.tscn" id="5_hdupc"]
+[ext_resource type="Texture2D" uid="uid://4apvb8ecg33n" path="res://Lighting/yx9tqpap.png" id="5_n5a4m"]
 [ext_resource type="PackedScene" uid="uid://b0xkgs8hc58c2" path="res://Rocket/Rocketenemy.tscn" id="6_vdv58"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rh1st"]
@@ -99,10 +100,17 @@ drag_right_margin = 0.1
 drag_bottom_margin = 0.1
 script = ExtResource("1_luij6")
 
+[node name="PointLight2D" type="PointLight2D" parent="Camera2D"]
+visible = false
+position = Vector2(0, -8)
+energy = 0.5
+texture = ExtResource("5_n5a4m")
+texture_scale = 2.0
+
 [node name="Player" parent="." instance=ExtResource("5_hdupc")]
 
 [node name="Enemy14" parent="." instance=ExtResource("6_vdv58")]
-position = Vector2(256, 184)
+position = Vector2(552, -307)
 
 [node name="Enemy" parent="." instance=ExtResource("6_vdv58")]
 position = Vector2(288, 384)
@@ -112,3 +120,33 @@ position = Vector2(688, 192)
 
 [node name="Enemy3" parent="." instance=ExtResource("6_vdv58")]
 position = Vector2(712, 384)
+
+[node name="Enemy4" parent="." instance=ExtResource("6_vdv58")]
+position = Vector2(-910, 529)
+
+[node name="Enemy5" parent="." instance=ExtResource("6_vdv58")]
+position = Vector2(-584, -251)
+
+[node name="Enemy6" parent="." instance=ExtResource("6_vdv58")]
+position = Vector2(-873, 15)
+
+[node name="Enemy7" parent="." instance=ExtResource("6_vdv58")]
+position = Vector2(-927, -857)
+
+[node name="Enemy8" parent="." instance=ExtResource("6_vdv58")]
+position = Vector2(893, -830)
+
+[node name="Enemy9" parent="." instance=ExtResource("6_vdv58")]
+position = Vector2(-365, 768)
+
+[node name="Enemy10" parent="." instance=ExtResource("6_vdv58")]
+position = Vector2(1051, 677)
+
+[node name="Enemy11" parent="." instance=ExtResource("6_vdv58")]
+position = Vector2(95, -628)
+
+[node name="Enemy12" parent="." instance=ExtResource("6_vdv58")]
+position = Vector2(1094, -184)
+
+[node name="Enemy13" parent="." instance=ExtResource("6_vdv58")]
+position = Vector2(-308, -931)
