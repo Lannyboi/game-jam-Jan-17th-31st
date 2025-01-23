@@ -84,6 +84,11 @@ down={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_4="EnemyAtt"
+2d_physics/layer_5="PlayerAtt"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

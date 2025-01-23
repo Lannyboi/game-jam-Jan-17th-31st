@@ -15,6 +15,6 @@ func _physics_process(_delta):
 	move_and_slide()
 	
 	if inEnemy == true:
-		$Box.monitorable = false
+		$HurtBox.monitorable = false
 	elif inEnemy == false:
-		$Box.monitorable = true
+		$HurtBox.monitorable = true

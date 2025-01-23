@@ -1,6 +1,7 @@
 extends RigidBody2D
 
 @export var rotateSpeed = 1.0
+@export var heath = 20
 
 @export var hackTime = 5
 @export var isHackable = false
@@ -8,17 +9,25 @@ extends RigidBody2D
 @export var isPicked = false
 
 @export var bullet : PackedScene
+@export var PlayerBullet : PackedScene
 @export var bulletRotation : float
 
 func _ready() -> void:
 	rotateSpeed = randf_range(-0.2, 0.2)
+	$HeathBar.max_value = heath
+	
 
 func _on_bullet_timeout() -> void:
-	#if inRobot == false:
+	if inRobot == false:
 		var b = bullet.instantiate()
 		owner.add_child(b)
 		b.transform = $Shot.global_transform
-		print("shot: ", bulletRotation)
+	elif inRobot == true:
+		$HurtBox/CollisionShape2D.disabled = true
+		var b = PlayerBullet.instantiate()
+		owner.add_child(b)
+		b.transform = $Shot.global_transform
+		$Shot.position.x = 0
 
 func _on_area_2d_area_entered(_area: Area2D) -> void:
 	$"../Player".enemysSelected += 1
@@ -29,6 +38,10 @@ func _on_area_2d_area_entered(_area: Area2D) -> void:
 func _on_area_2d_area_exited(_area: Area2D) -> void:
 	$"../Player".enemysSelected -= 1
 	isHackable = false
+
+
+func _on_hurt_box_area_entered(area: Area2D) -> void:
+	heath -= 1
 
 
 func _mouse_enter() -> void:
@@ -59,7 +72,6 @@ func _process(_delta: float) -> void:
 		$"../Player".inEnemy = true
 		print("Space bar pressed and robot has been hacked!")
 		$"../Player".position = position
-		$"../Player/Area2D/CollisionShape2D".disabled = true
 		$"ProgressBar".visible = true
 		$"ProgressBar".max_value = (hackTime - 1)
 		$Timer.start(hackTime - 1)
@@ -70,12 +82,17 @@ func _process(_delta: float) -> void:
 		rotation = 0
 		$"../Player".visible = false
 		position = $"../Player".position
-		$Area2D.monitorable = false
-		$Shot.position.x = 0
-
+		#$Area2D.monitorable = false
 
 	if inRobot == false:
 		rotation += rotateSpeed
+
+	if heath == 0:
+		$"../Player".visible = true
+		$"../Player/Area2D/CollisionShape2D".disabled = false
+		queue_free()
+
+	$HeathBar.value = heath
 
 func _on_timer_timeout() -> void:
 	$"../Player".inEnemy = false

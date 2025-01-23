@@ -3,7 +3,9 @@
 [ext_resource type="Script" path="res://Selcet/enemy.gd" id="1_v0ag1"]
 [ext_resource type="PackedScene" uid="uid://k50q0g3v0n7g" path="res://Bullet/bullet.tscn" id="2_hhhp3"]
 [ext_resource type="Texture2D" uid="uid://b6qd6ki4cl4oo" path="res://Selcet/Enemypicked.png" id="2_pg8ev"]
+[ext_resource type="PackedScene" uid="uid://dd8qm3oxx4ame" path="res://Bullet/playerbullet.tscn" id="3_8g4kr"]
 [ext_resource type="Script" path="res://SDTimer/progress_bar.gd" id="3_lknne"]
+[ext_resource type="Theme" uid="uid://ce0sleknwgwcy" path="res://SDTimer/enemy.tres" id="5_dxnyy"]
 [ext_resource type="Script" path="res://All Combined/shot.gd" id="5_xla7q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l4y2m"]
@@ -12,37 +14,8 @@ size = Vector2(48, 48)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ep7t1"]
 size = Vector2(32, 32)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q4cjf"]
-bg_color = Color(0.517647, 0, 0.0431373, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 1
-corner_radius_top_right = 1
-corner_radius_bottom_right = 1
-corner_radius_bottom_left = 1
-expand_margin_left = 1.0
-expand_margin_right = 1.0
-anti_aliasing = false
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rnxhs"]
-bg_color = Color(0, 0.760784, 0, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_bottom = 1
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 1
-corner_radius_top_right = 1
-corner_radius_bottom_right = 1
-corner_radius_bottom_left = 1
-expand_margin_left = 1.0
-anti_aliasing = false
-
-[sub_resource type="Theme" id="Theme_t6lob"]
-ProgressBar/styles/background = SubResource("StyleBoxFlat_q4cjf")
-ProgressBar/styles/fill = SubResource("StyleBoxFlat_rnxhs")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gkga8"]
+size = Vector2(32, 32)
 
 [node name="Enemy" type="RigidBody2D"]
 collision_layer = 2
@@ -52,6 +25,7 @@ gravity_scale = 0.0
 lock_rotation = true
 script = ExtResource("1_v0ag1")
 bullet = ExtResource("2_hhhp3")
+PlayerBullet = ExtResource("3_8g4kr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_l4y2m")
@@ -67,6 +41,13 @@ collision_mask = 12
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_ep7t1")
 
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 24
+collision_mask = 24
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("RectangleShape2D_gkga8")
+
 [node name="ProgressBar" type="ProgressBar" parent="."]
 visible = false
 z_index = 7
@@ -74,27 +55,35 @@ offset_left = -27.0
 offset_top = -32.0
 offset_right = 27.0
 offset_bottom = -24.0
-theme = SubResource("Theme_t6lob")
+theme = ExtResource("5_dxnyy")
 max_value = 10.0
 value = 10.0
 show_percentage = false
 script = ExtResource("3_lknne")
+
+[node name="HeathBar" type="ProgressBar" parent="."]
+offset_left = -48.0
+offset_top = -56.0
+offset_right = 48.0
+offset_bottom = -40.0
+theme = ExtResource("5_dxnyy")
+show_percentage = false
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0
 one_shot = true
 
 [node name="Bullet" type="Timer" parent="."]
-wait_time = 0.07
+wait_time = 0.15
 autostart = true
 
 [node name="Shot" type="Marker2D" parent="."]
 position = Vector2(16, 0)
-scale = Vector2(0.7, 0.7)
 gizmo_extents = 100.0
 script = ExtResource("5_xla7q")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Bullet" to="." method="_on_bullet_timeout"]
