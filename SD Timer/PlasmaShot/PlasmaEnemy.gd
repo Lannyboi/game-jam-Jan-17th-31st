@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+signal dead
+
 @export var rotateSpeed = 1.0
 @export var heath = 20
 @export var heathPer : float
@@ -8,20 +10,35 @@ extends RigidBody2D
 @export var isHackable = false
 @export var inRobot = false
 @export var isPicked = false
+@export var cooldown = 0.5
 
-@export var PlasmaShot : PackedScene
-@export var PlasmaShotRotation : float
+@export var bullet : PackedScene
+@export var bulletRotation : float
 
 func _ready() -> void:
+	$HeathBar.position = (position + Vector2(-48, -71))
 	rotateSpeed = randf_range(-0.1, 0.1)
 	$HeathBar.max_value = heath
 	$HeathBar.visible = true
 
 
 func _on_plasma_shot_timeout() -> void:
-	var b = PlasmaShot.instantiate()
-	owner.add_child(b)
+	var b = bullet.instantiate()
+	get_tree().root.add_child(b)
 	b.transform = $Shot.global_transform
+
+
+	#$Sprite2D.frame = 1
+	#var b2 = bullet.instantiate()
+	#owner.add_child(b2)
+	#b2.transform = $Shot2.global_transform
+	#$RocketSprite.start(cooldown / 2)
+
+	#$Sprite2D.frame = 1
+	#var b3 = bullet.instantiate()
+	#owner.add_child(b3)
+	#b3.transform = $Shot3.global_transform
+	#$RocketSprite.start(cooldown / 2)
 
 
 func _on_area_2d_area_entered(_area: Area2D) -> void:
@@ -42,8 +59,7 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 		heath -= Globalvars.RocketDmg
 
 
-
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 
 	if inRobot == true:
 		$HeathBar.visible = false
@@ -65,7 +81,7 @@ func _process(delta: float) -> void:
 		$"../Player".inEnemy = false
 		$"../Player".visible = true
 		$"../Player/Area2D/CollisionShape2D".disabled = false
-		queue_free()
+		die()
 
 
 	$HeathBar.value = heath
@@ -76,4 +92,8 @@ func _on_timer_timeout() -> void:
 	$"../Player".inEnemy = false
 	$"../Player".visible = true
 	$"../Player/Area2D/CollisionShape2D".disabled = false
+	die()
+
+func die():
+	emit_signal("dead")
 	queue_free()

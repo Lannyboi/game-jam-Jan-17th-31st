@@ -1,5 +1,8 @@
 extends RigidBody2D
 
+@warning_ignore("unused_signal")
+signal dead
+
 @export var rotateSpeed = 1.0
 @export var heath = 20
 @export var heathPer : float
@@ -14,7 +17,7 @@ extends RigidBody2D
 @export var bulletRotation : float
 
 func _ready() -> void:
-	Globalvars.enemys += 1
+	$HeathBar.position = (position + Vector2(-48, -71))
 	rotateSpeed = randf_range(-0.1, 0.1)
 	$HeathBar.max_value = heath
 	$HeathBar.visible = true
@@ -63,7 +66,7 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 		heath -= Globalvars.RocketDmg
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 
 	if inRobot == true:
 		$HeathBar.visible = false
@@ -85,7 +88,7 @@ func _process(delta: float) -> void:
 		$"../Player".inEnemy = false
 		$"../Player".visible = true
 		$"../Player/Area2D/CollisionShape2D".disabled = false
-		queue_free()
+		die()
 
 
 	$HeathBar.value = heath
@@ -96,4 +99,8 @@ func _on_timer_timeout() -> void:
 	$"../Player".inEnemy = false
 	$"../Player".visible = true
 	$"../Player/Area2D/CollisionShape2D".disabled = false
+	die()
+
+func die():
+	emit_signal("dead")
 	queue_free()

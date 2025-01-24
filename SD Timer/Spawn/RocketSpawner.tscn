@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cl57oklnlvktx"]
+
+[ext_resource type="Script" path="res://Spawn/spawner.gd" id="1_h78tg"]
+[ext_resource type="PackedScene" uid="uid://b0xkgs8hc58c2" path="res://Rocket/Rocketenemy.tscn" id="2_056rd"]
+
+[node name="RocketSpawner" type="Node2D"]
+script = ExtResource("1_h78tg")
+spawn = ExtResource("2_056rd")
+
+[node name="Cooldown" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]

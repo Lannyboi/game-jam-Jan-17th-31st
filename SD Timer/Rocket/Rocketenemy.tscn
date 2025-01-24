@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b0xkgs8hc58c2"]
+[gd_scene load_steps=10 format=3 uid="uid://b0xkgs8hc58c2"]
 
 [ext_resource type="Script" path="res://Rocket/Rocketenemy.gd" id="1_is6q8"]
 [ext_resource type="PackedScene" uid="uid://cjnrntg8htv0g" path="res://Rocket/Rocket.tscn" id="2_1ky62"]
@@ -10,9 +10,6 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5188p"]
 radius = 11.0
 height = 37.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_2gc7t"]
-radius = 13.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_unccl"]
 radius = 7.0
@@ -41,13 +38,6 @@ scale = Vector2(2, 2)
 texture = ExtResource("4_v5xlr")
 hframes = 2
 frame = 1
-
-[node name="link" type="Area2D" parent="."]
-collision_layer = 64
-collision_mask = 64
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="link"]
-shape = SubResource("CircleShape2D_2gc7t")
 
 [node name="Area2D" type="Area2D" parent="."]
 scale = Vector2(2, 2)
@@ -79,6 +69,7 @@ show_percentage = false
 script = ExtResource("6_ri8me")
 
 [node name="HeathBar" type="ProgressBar" parent="."]
+visible = false
 top_level = true
 anchors_preset = 8
 anchor_left = 0.5

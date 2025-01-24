@@ -5,4 +5,4 @@ extends Node
 @export var PlasmaDmg = 1
 
 @export var enemys = 0
-@export var maxEnemys = 10
+@export var enemycap = 8
