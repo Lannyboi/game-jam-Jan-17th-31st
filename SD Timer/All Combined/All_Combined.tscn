@@ -1,11 +1,10 @@
-[gd_scene load_steps=14 format=4 uid="uid://d2r0xgcfyrulj"]
+[gd_scene load_steps=13 format=4 uid="uid://d2r0xgcfyrulj"]
 
 [ext_resource type="Texture2D" uid="uid://b32kwratljdii" path="res://All Combined/cloud-tilesheet.png" id="1_3ddn8"]
 [ext_resource type="Script" path="res://camera/camera_2d.gd" id="1_luij6"]
+[ext_resource type="PackedScene" uid="uid://bwkg8n4iyh26a" path="res://Spawn/RocketSpawn.tscn" id="2_3xi3d"]
 [ext_resource type="PackedScene" uid="uid://co5fidgmf2ycl" path="res://All Combined/player.tscn" id="5_hdupc"]
 [ext_resource type="Texture2D" uid="uid://4apvb8ecg33n" path="res://Lighting/yx9tqpap.png" id="5_n5a4m"]
-[ext_resource type="PackedScene" uid="uid://b0xkgs8hc58c2" path="res://Rocket/Rocketenemy.tscn" id="6_vdv58"]
-[ext_resource type="PackedScene" uid="uid://bx6kh80nhuu3l" path="res://PlasmaShot/PlasmaEnemy.tscn" id="7_5rpvk"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_yc66h"]
 tile_data = PackedInt32Array(0, 0, 0, 65536, 65536, 1610612736, 131072, 196608, 1610612736, 196608, 131072, 1610612736, 262144, 65536, 1610612736, 327680, 262144, 805306368, 1, 65536, 0, 65537, 589824, 0, 131073, 524288, 0, 196609, 458752, 0, 262145, 589824, 0, 327681, 65536, 805306368, 2, 131072, 0, 65538, 393216, 0, 131074, 327680, 0, 196610, 327680, 0, 262146, 524288, 0, 327682, 196608, 805306368, 3, 196608, 0, 65539, 458752, 0, 131075, 589824, 0, 196611, 393216, 0, 262147, 589824, 0, 327683, 131072, 805306368, 4, 65536, 0, 65540, 589824, 0, 131076, 393216, 0, 196612, 327680, 0, 262148, 393216, 0, 327684, 65536, 805306368, 5, 262144, 0, 65541, 65536, 1342177280, 131077, 131072, 1342177280, 196613, 196608, 1342177280, 262149, 65536, 1342177280, 327685, 262144, 1342177280)
@@ -111,6 +110,9 @@ rotation = 1.5708
 scale = Vector2(104.24, 1)
 shape = SubResource("RectangleShape2D_yagjs")
 
+[node name="Marker2D" parent="StaticBody2D" instance=ExtResource("2_3xi3d")]
+position = Vector2(371, 51)
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 328)
 zoom = Vector2(1.2, 1.2)
@@ -129,48 +131,3 @@ texture = ExtResource("5_n5a4m")
 texture_scale = 2.0
 
 [node name="Player" parent="." instance=ExtResource("5_hdupc")]
-
-[node name="Rocketenemy" parent="." instance=ExtResource("6_vdv58")]
-position = Vector2(306, 259)
-
-[node name="Rocketenemy2" parent="." instance=ExtResource("6_vdv58")]
-position = Vector2(174, 689)
-
-[node name="Rocketenemy3" parent="." instance=ExtResource("6_vdv58")]
-position = Vector2(518, -327)
-
-[node name="Rocketenemy4" parent="." instance=ExtResource("6_vdv58")]
-position = Vector2(1039, -25)
-
-[node name="Rocketenemy5" parent="." instance=ExtResource("6_vdv58")]
-position = Vector2(873, 572)
-
-[node name="Rocketenemy6" parent="." instance=ExtResource("6_vdv58")]
-position = Vector2(-683, 629)
-
-[node name="Rocketenemy7" parent="." instance=ExtResource("6_vdv58")]
-position = Vector2(-1291, -145)
-
-[node name="Rocketenemy8" parent="." instance=ExtResource("6_vdv58")]
-position = Vector2(-498, -629)
-
-[node name="Rocketenemy9" parent="." instance=ExtResource("6_vdv58")]
-position = Vector2(-1053, -689)
-
-[node name="Rocketenemy10" parent="." instance=ExtResource("6_vdv58")]
-position = Vector2(-585, 138)
-
-[node name="PlasmaEnemy" parent="." instance=ExtResource("7_5rpvk")]
-position = Vector2(-770, -349)
-
-[node name="PlasmaEnemy2" parent="." instance=ExtResource("7_5rpvk")]
-position = Vector2(-242, 657)
-
-[node name="PlasmaEnemy3" parent="." instance=ExtResource("7_5rpvk")]
-position = Vector2(-1162, 403)
-
-[node name="PlasmaEnemy4" parent="." instance=ExtResource("7_5rpvk")]
-position = Vector2(1079, -721)
-
-[node name="PlasmaEnemy5" parent="." instance=ExtResource("7_5rpvk")]
-position = Vector2(267, -688)

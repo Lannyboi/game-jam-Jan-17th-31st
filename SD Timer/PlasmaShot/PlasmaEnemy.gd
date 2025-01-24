@@ -43,7 +43,7 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 
 
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 
 	if inRobot == true:
 		$HeathBar.visible = false

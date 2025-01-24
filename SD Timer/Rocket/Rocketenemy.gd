@@ -27,7 +27,7 @@ func _on_rocket_sprite_timeout() -> void:
 func _on_bullet_timeout() -> void:
 	$Sprite2D.frame = 1
 	var b = bullet.instantiate()
-	owner.add_child(b)
+	get_tree().root.add_child(b)
 	b.transform = $Shot.global_transform
 	$RocketSprite.start(cooldown / 2)
 
@@ -62,7 +62,7 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 		heath -= Globalvars.RocketDmg
 
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 
 	if inRobot == true:
 		$HeathBar.visible = false
