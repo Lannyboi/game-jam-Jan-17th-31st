@@ -46,6 +46,7 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 func _process(_delta: float) -> void:
 
 	if inRobot == true:
+		$HeathBar.visible = false
 		look_at(get_global_mouse_position())
 		$HurtBox.set_collision_layer_value(5, false)
 		$HurtBox.set_collision_mask_value(5, false)
@@ -57,10 +58,10 @@ func _process(_delta: float) -> void:
 		# this is what we want when enemy virus hacks robot "look_at($"../Player".position)"
 		rotation += rotateSpeed
 
-	if heath == 0:
+	if heath <= 0:
 		queue_free()
 
-	if heath == 0 and inRobot == true:
+	if heath <= 0 and inRobot == true:
 		$"../Player".inEnemy = false
 		$"../Player".visible = true
 		$"../Player/Area2D/CollisionShape2D".disabled = false

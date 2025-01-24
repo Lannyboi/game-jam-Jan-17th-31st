@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://bacut82uitrqv"]
+[gd_scene load_steps=14 format=3 uid="uid://bacut82uitrqv"]
 
 [ext_resource type="Script" path="res://PlasmaShot/PlasmaShot.gd" id="1_6fpyb"]
+[ext_resource type="Texture2D" uid="uid://4apvb8ecg33n" path="res://Lighting/yx9tqpap.png" id="3_vqe68"]
 [ext_resource type="Texture2D" uid="uid://bf5x5i15waujb" path="res://Bullet/plasma-spritesheet.png" id="3_y5gib"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i4d8t"]
@@ -85,5 +86,11 @@ shape = SubResource("CircleShape2D_i4d8t")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_t8pvv")
 animation = &"Main"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0, 0.868458, 0.265065, 1)
+energy = 0.5
+texture = ExtResource("3_vqe68")
+texture_scale = 0.3
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
