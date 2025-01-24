@@ -1,0 +1,59 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1lo848513wq6"]
+
+[ext_resource type="Script" path="res://main_menu_settings.gd" id="1_xsqgq"]
+
+[node name="Main Menu Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xsqgq")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Back" type="Button" parent="MarginContainer"]
+layout_mode = 2
+text = "Back"
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 30.0
+offset_right = 89.0
+offset_bottom = 70.0
+
+[node name="Vsync" type="CheckButton" parent="MarginContainer2"]
+layout_mode = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 56.0
+offset_right = 125.0
+offset_bottom = 96.0
+
+[node name="Fullscreen" type="CheckButton" parent="MarginContainer3"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_top = 36.0
+offset_right = 49.0
+offset_bottom = 59.0
+text = "Vsync:"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_top = 63.0
+offset_right = 84.0
+offset_bottom = 86.0
+text = "Fullscreen:"
+
+[connection signal="pressed" from="MarginContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="toggled" from="MarginContainer2/Vsync" to="." method="_on_vsync_toggled"]
+[connection signal="toggled" from="MarginContainer3/Fullscreen" to="." method="_on_fullscreen_toggled"]

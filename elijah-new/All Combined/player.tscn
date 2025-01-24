@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://co5fidgmf2ycl"]
+
+[ext_resource type="Script" path="res://SDTimer/player.gd" id="1_m0ceh"]
+[ext_resource type="Texture2D" uid="uid://dmqfxevnmpd7k" path="res://All Combined/circuit-virus-2.png" id="2_kfpsa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u30iv"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r386i"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2fdum"]
+size = Vector2(48, 48)
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(576, 320)
+script = ExtResource("1_m0ceh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_u30iv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 1.988)
+texture = ExtResource("2_kfpsa")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_r386i")
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("RectangleShape2D_2fdum")
