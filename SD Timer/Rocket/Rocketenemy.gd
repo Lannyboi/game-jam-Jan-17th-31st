@@ -14,6 +14,7 @@ extends RigidBody2D
 @export var bulletRotation : float
 
 func _ready() -> void:
+	Globalvars.enemys += 1
 	rotateSpeed = randf_range(-0.1, 0.1)
 	$HeathBar.max_value = heath
 	$HeathBar.visible = true
