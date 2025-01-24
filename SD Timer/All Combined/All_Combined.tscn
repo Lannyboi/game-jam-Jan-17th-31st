@@ -92,7 +92,7 @@ shape = SubResource("RectangleShape2D_yagjs")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 328)
-zoom = Vector2(1.5, 1.5)
+zoom = Vector2(1.2, 1.2)
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 drag_left_margin = 0.1
