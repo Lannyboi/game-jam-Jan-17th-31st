@@ -18,10 +18,10 @@ func _physics_process(_delta):
 	move_and_slide()
 
 	if inEnemy == true:
-		$HurtBox.monitorable = false
+		$"HurtBox/CollisionShape2D".disabled = true
 		$Area2D/CollisionShape2D.disabled = true
 	elif inEnemy == false:
-		$HurtBox.monitorable = true
+		$"HurtBox/CollisionShape2D".disabled = false
 		$Area2D/CollisionShape2D.disabled = false
 
 	$"UI/HeathBar".value = PlayerHeath

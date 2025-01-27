@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=4 uid="uid://d2r0xgcfyrulj"]
+[gd_scene load_steps=15 format=4 uid="uid://d2r0xgcfyrulj"]
 
 [ext_resource type="Texture2D" uid="uid://b32kwratljdii" path="res://All Combined/cloud-tilesheet.png" id="1_3ddn8"]
 [ext_resource type="Script" path="res://camera/camera_2d.gd" id="1_luij6"]
 [ext_resource type="PackedScene" uid="uid://cl57oklnlvktx" path="res://Spawn/RocketSpawner.tscn" id="5_dxgrm"]
 [ext_resource type="PackedScene" uid="uid://co5fidgmf2ycl" path="res://All Combined/player.tscn" id="5_hdupc"]
 [ext_resource type="Texture2D" uid="uid://4apvb8ecg33n" path="res://Lighting/yx9tqpap.png" id="5_n5a4m"]
+[ext_resource type="PackedScene" uid="uid://qtw35dmq8s0r" path="res://Spawn/TankSpawner.tscn" id="5_sksbv"]
 [ext_resource type="PackedScene" uid="uid://cj5t8hv1jkffe" path="res://Spawn/PlasmaSpawner.tscn" id="6_6qcdx"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_yc66h"]
@@ -159,3 +160,18 @@ position = Vector2(1138, -710)
 
 [node name="RocketSpawner5" parent="." instance=ExtResource("5_dxgrm")]
 position = Vector2(-20, -889)
+
+[node name="RocketSpawner6" parent="." instance=ExtResource("5_dxgrm")]
+position = Vector2(-339, -337)
+
+[node name="RocketSpawner7" parent="." instance=ExtResource("5_dxgrm")]
+position = Vector2(1121, -49)
+
+[node name="TankSpawner" parent="." instance=ExtResource("5_sksbv")]
+position = Vector2(-26, 395)
+
+[node name="TankSpawner2" parent="." instance=ExtResource("5_sksbv")]
+position = Vector2(779, -318)
+
+[node name="TankSpawner3" parent="." instance=ExtResource("5_sksbv")]
+position = Vector2(-810, 252)

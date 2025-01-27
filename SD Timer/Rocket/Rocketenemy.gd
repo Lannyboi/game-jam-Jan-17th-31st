@@ -48,8 +48,8 @@ func _on_bullet_timeout() -> void:
 	#$RocketSprite.start(cooldown / 2)
 
 
-func _on_area_2d_area_entered(_area: Area2D) -> void:
-	if $"../Player".inEnemy == false:
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if $"../Player".inEnemy == false and area.is_in_group("Player"):
 		inRobot = true
 		$"../Player".inEnemy = true
 		$"../Player".position = position
@@ -60,11 +60,24 @@ func _on_area_2d_area_entered(_area: Area2D) -> void:
 
 @warning_ignore("unused_parameter")
 func _on_hurt_box_area_entered(area: Area2D) -> void:
-	if area.is_in_group("Plasma"):
-		heath -= Globalvars.PlasmaDmg
-	elif area.is_in_group("Rocket"):
-		heath -= Globalvars.RocketDmg
-
+	if inRobot == true:
+		if area.is_in_group("Plasma"):
+			if $Timer.time_left > 0.6:
+				$Timer.start($Timer.time_left - 0.5)
+			elif $Timer.time_left <= 0.6:
+				$Timer.start(0.1)
+		elif area.is_in_group("Rocket"):
+			if $Timer.time_left > 1.0:
+				$Timer.start($Timer.time_left - 1)
+			elif $Timer.time_left <= 1:
+				$Timer.start(0.1)
+	elif inRobot == false:
+		if area.is_in_group("Plasma"):
+			heath -= Globalvars.PlasmaDmg
+		elif area.is_in_group("Rocket"):
+			heath -= Globalvars.RocketDmg
+		elif area.is_in_group("Explode"):
+			heath -= Globalvars.ExploadeDmg
 
 func _process(_delta: float) -> void:
 

@@ -1,5 +1,6 @@
 extends RigidBody2D
 
+@warning_ignore("unused_signal")
 signal dead
 
 @export var rotateSpeed = 1.0
@@ -10,35 +11,14 @@ signal dead
 @export var isHackable = false
 @export var inRobot = false
 @export var isPicked = false
-@export var cooldown = 0.5
 
-@export var bullet : PackedScene
-@export var bulletRotation : float
+
 
 func _ready() -> void:
 	$HeathBar.position = (position + Vector2(-48, -71))
 	rotateSpeed = randf_range(-0.1, 0.1)
 	$HeathBar.max_value = heath
 	$HeathBar.visible = true
-
-
-func _on_plasma_shot_timeout() -> void:
-	var b = bullet.instantiate()
-	get_tree().root.add_child(b)
-	b.transform = $Shot.global_transform
-
-
-	#$Sprite2D.frame = 1
-	#var b2 = bullet.instantiate()
-	#owner.add_child(b2)
-	#b2.transform = $Shot2.global_transform
-	#$RocketSprite.start(cooldown / 2)
-
-	#$Sprite2D.frame = 1
-	#var b3 = bullet.instantiate()
-	#owner.add_child(b3)
-	#b3.transform = $Shot3.global_transform
-	#$RocketSprite.start(cooldown / 2)
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
@@ -69,7 +49,7 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 			heath -= Globalvars.PlasmaDmg
 		elif area.is_in_group("Rocket"):
 			heath -= Globalvars.RocketDmg
-		elif area.is_in_group("Explode"):
+		elif area.is_in_group("Expload"):
 			heath -= Globalvars.ExploadeDmg
 
 
@@ -92,9 +72,6 @@ func _process(_delta: float) -> void:
 		queue_free()
 
 	if heath <= 0 and inRobot == true:
-		$"../Player".inEnemy = false
-		$"../Player".visible = true
-		$"../Player/Area2D/CollisionShape2D".disabled = false
 		die()
 
 
@@ -103,12 +80,16 @@ func _process(_delta: float) -> void:
 	heathPer = ($HeathBar.value / $HeathBar.max_value)
 
 func _on_timer_timeout() -> void:
+	die()
+
+func die():
+	$Explode/CollisionShape2D.disabled = false
+	$Die.start(0.1)
+
+
+func _on_die_timeout() -> void:
 	$"../Player".inEnemy = false
 	$"../Player".visible = true
 	$"../Player/Area2D/CollisionShape2D".disabled = false
-	die()
-
-
-func die():
 	emit_signal("dead")
 	queue_free()

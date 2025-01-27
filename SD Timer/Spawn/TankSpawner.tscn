@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://qtw35dmq8s0r"]
+
+[ext_resource type="Script" path="res://Spawn/spawner.gd" id="1_ybol7"]
+[ext_resource type="PackedScene" uid="uid://dxubvfwj1wtgk" path="res://Tank/Tank.tscn" id="2_iy8ij"]
+
+[node name="TankSpawner" type="Node2D"]
+script = ExtResource("1_ybol7")
+spawn = ExtResource("2_iy8ij")
+
+[node name="Cooldown" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]

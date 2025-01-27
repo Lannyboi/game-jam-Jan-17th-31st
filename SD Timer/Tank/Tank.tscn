@@ -1,11 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://b0xkgs8hc58c2"]
+[gd_scene load_steps=9 format=3 uid="uid://dxubvfwj1wtgk"]
 
-[ext_resource type="Script" path="res://Rocket/Rocketenemy.gd" id="1_is6q8"]
-[ext_resource type="PackedScene" uid="uid://cjnrntg8htv0g" path="res://Rocket/Rocket.tscn" id="2_1ky62"]
-[ext_resource type="Texture2D" uid="uid://rob3wdkdnixk" path="res://Rocket/Rocket robot.png" id="4_v5xlr"]
-[ext_resource type="Theme" uid="uid://ce0sleknwgwcy" path="res://SDTimer/enemy.tres" id="5_3xco8"]
-[ext_resource type="Script" path="res://SDTimer/progress_bar.gd" id="6_ri8me"]
-[ext_resource type="Script" path="res://All Combined/shot.gd" id="7_spdne"]
+[ext_resource type="Script" path="res://Tank/Tank.gd" id="1_uvxyu"]
+[ext_resource type="Texture2D" uid="uid://rob3wdkdnixk" path="res://Rocket/Rocket robot.png" id="3_nn7r1"]
+[ext_resource type="Theme" uid="uid://ce0sleknwgwcy" path="res://SDTimer/enemy.tres" id="4_5yhfp"]
+[ext_resource type="Script" path="res://SDTimer/progress_bar.gd" id="5_w4k0a"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5188p"]
 radius = 11.0
@@ -17,15 +15,16 @@ radius = 7.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_03era"]
 radius = 7.0
 
-[node name="Rocketenemy" type="RigidBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_0yelv"]
+radius = 128.0
+
+[node name="Tank" type="RigidBody2D"]
 collision_layer = 2
 collision_mask = 2
 gravity_scale = 0.0
 lock_rotation = true
-script = ExtResource("1_is6q8")
-heath = 25
-hackTime = 7
-bullet = ExtResource("2_1ky62")
+script = ExtResource("1_uvxyu")
+heath = 100
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(2, 2)
@@ -35,7 +34,7 @@ shape = SubResource("CapsuleShape2D_5188p")
 position = Vector2(7, -1)
 rotation = 1.5708
 scale = Vector2(2, 2)
-texture = ExtResource("4_v5xlr")
+texture = ExtResource("3_nn7r1")
 hframes = 2
 frame = 1
 
@@ -55,6 +54,16 @@ collision_mask = 24
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 shape = SubResource("CapsuleShape2D_03era")
 
+[node name="Explode" type="Area2D" parent="." groups=["Explode"]]
+collision_layer = 16
+collision_mask = 16
+input_pickable = false
+priority = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Explode"]
+shape = SubResource("CircleShape2D_0yelv")
+disabled = true
+
 [node name="ProgressBar" type="ProgressBar" parent="."]
 visible = false
 z_index = 7
@@ -62,11 +71,11 @@ offset_left = -32.0
 offset_top = -49.0
 offset_right = 32.0
 offset_bottom = -39.0
-theme = ExtResource("5_3xco8")
+theme = ExtResource("4_5yhfp")
 max_value = 10.0
 value = 10.0
 show_percentage = false
-script = ExtResource("6_ri8me")
+script = ExtResource("5_w4k0a")
 
 [node name="HeathBar" type="ProgressBar" parent="."]
 visible = false
@@ -82,30 +91,16 @@ offset_right = -910.0
 offset_bottom = -599.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("5_3xco8")
+theme = ExtResource("4_5yhfp")
 show_percentage = false
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0
 one_shot = true
 
-[node name="RocketSprite" type="Timer" parent="."]
-wait_time = 0.25
-one_shot = true
-autostart = true
-
-[node name="Bullet" type="Timer" parent="."]
-wait_time = 0.25
-one_shot = true
-
-[node name="Shot" type="Marker2D" parent="."]
-position = Vector2(30, -20)
-scale = Vector2(2, 2)
-gizmo_extents = 100.0
-script = ExtResource("7_spdne")
+[node name="Die" type="Timer" parent="."]
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="RocketSprite" to="." method="_on_rocket_sprite_timeout"]
-[connection signal="timeout" from="Bullet" to="." method="_on_bullet_timeout"]
+[connection signal="timeout" from="Die" to="." method="_on_die_timeout"]
