@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cj5t8hv1jkffe"]
+
+[ext_resource type="Script" path="res://Spawn/spawner.gd" id="1_5siry"]
+[ext_resource type="PackedScene" uid="uid://bx6kh80nhuu3l" path="res://PlasmaShot/PlasmaEnemy.tscn" id="2_vr745"]
+
+[node name="PlasmaSpawner" type="Node2D"]
+script = ExtResource("1_5siry")
+spawn = ExtResource("2_vr745")
+
+[node name="Cooldown" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]

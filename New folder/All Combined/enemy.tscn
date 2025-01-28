@@ -1,0 +1,98 @@
+[gd_scene load_steps=11 format=3 uid="uid://cq8qhlj2xu0k3"]
+
+[ext_resource type="Script" path="res://All Combined/enemy.gd" id="1_v0ag1"]
+[ext_resource type="PackedScene" uid="uid://k50q0g3v0n7g" path="res://Bullet/bullet.tscn" id="2_hhhp3"]
+[ext_resource type="Texture2D" uid="uid://b6qd6ki4cl4oo" path="res://All Combined/Enemypicked.png" id="2_pg8ev"]
+[ext_resource type="PackedScene" uid="uid://dd8qm3oxx4ame" path="res://Bullet/playerbullet.tscn" id="3_8g4kr"]
+[ext_resource type="Script" path="res://SDTimer/progress_bar.gd" id="3_lknne"]
+[ext_resource type="Theme" uid="uid://ce0sleknwgwcy" path="res://SDTimer/enemy.tres" id="5_dxnyy"]
+[ext_resource type="Script" path="res://All Combined/shot.gd" id="5_xla7q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l4y2m"]
+size = Vector2(48, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ep7t1"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gkga8"]
+size = Vector2(32, 32)
+
+[node name="Enemy" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 2
+gravity_scale = 0.0
+lock_rotation = true
+script = ExtResource("1_v0ag1")
+heath = 15
+hackTime = 7
+bullet = ExtResource("2_hhhp3")
+PlayerBullet = ExtResource("3_8g4kr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_l4y2m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_pg8ev")
+vframes = 2
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_ep7t1")
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 24
+collision_mask = 24
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("RectangleShape2D_gkga8")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
+z_index = 7
+offset_left = -27.0
+offset_top = -32.0
+offset_right = 27.0
+offset_bottom = -24.0
+theme = ExtResource("5_dxnyy")
+max_value = 10.0
+value = 10.0
+show_percentage = false
+script = ExtResource("3_lknne")
+
+[node name="HeathBar" type="ProgressBar" parent="."]
+visible = false
+top_level = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -624.0
+offset_top = -380.0
+offset_right = -528.0
+offset_bottom = -364.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_dxnyy")
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="Bullet" type="Timer" parent="."]
+wait_time = 0.15
+autostart = true
+
+[node name="Shot" type="Marker2D" parent="."]
+position = Vector2(16, 0)
+gizmo_extents = 100.0
+script = ExtResource("5_xla7q")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Bullet" to="." method="_on_bullet_timeout"]

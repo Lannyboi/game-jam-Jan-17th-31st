@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://co5fidgmf2ycl"]
+
+[ext_resource type="Script" path="res://SDTimer/player.gd" id="1_m0ceh"]
+[ext_resource type="Texture2D" uid="uid://dmqfxevnmpd7k" path="res://All Combined/circuit-virus-2.png" id="2_kfpsa"]
+[ext_resource type="Theme" uid="uid://ce0sleknwgwcy" path="res://SDTimer/enemy.tres" id="3_elsih"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u30iv"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r386i"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2fdum"]
+size = Vector2(48, 48)
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(576, 320)
+script = ExtResource("1_m0ceh")
+speed = 350.0
+
+[node name="UI" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="HeathBar" type="ProgressBar" parent="UI"]
+z_index = 5
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -896.0
+offset_top = -476.0
+offset_right = -749.0
+offset_bottom = -458.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_elsih")
+show_percentage = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_u30iv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 1.988)
+texture = ExtResource("2_kfpsa")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_r386i")
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("RectangleShape2D_2fdum")
+
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
