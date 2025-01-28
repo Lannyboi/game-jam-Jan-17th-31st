@@ -3,7 +3,8 @@ extends CharacterBody2D
 @export var speed = 450.0
 @export var inEnemy = false
 @export var enemysSelected = 0
-@export var PlayerHeath = 10
+@export var PlayerHeath = 12
+
 
 func _ready() -> void:
 	$"UI/HeathBar".max_value = PlayerHeath
@@ -24,8 +25,12 @@ func _physics_process(_delta):
 		$"HurtBox/CollisionShape2D".disabled = false
 		$Area2D/CollisionShape2D.disabled = false
 
-	$"UI/HeathBar".value = PlayerHeath
+	if Globalvars.virusleft <= 0:
+		get_tree().quit()
 
+	$"UI/HeathBar".value = PlayerHeath
+	$UI/Label.text = "Viruses Left: %d" % Globalvars.virusleft
+	
 
 func hit():
 	if PlayerHeath <= 0:

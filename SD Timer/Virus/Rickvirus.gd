@@ -45,3 +45,8 @@ func _process(delta: float) -> void:
 func die():
 	emit_signal("dead")
 	queue_free()
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Robot"):
+		die()

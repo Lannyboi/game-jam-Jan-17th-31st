@@ -10,3 +10,4 @@ extends Node
 
 @export var virus = 0
 @export var viruscap = 10
+@export var virusleft = 50

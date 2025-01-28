@@ -8,7 +8,7 @@ signal dead
 @export var heathPer : float
 
 @export var hackTime = 5
-@export var isHackable = false
+@export var Hacked = false
 @export var inRobot = false
 @export var isPicked = false
 @export var cooldown = 0.5
@@ -49,13 +49,15 @@ func _on_bullet_timeout() -> void:
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if $"../Player".inEnemy == false and area.is_in_group("Player"):
+	if ($"../Player".inEnemy == false and area.is_in_group("Player")) and Hacked == false:
 		inRobot = true
 		$"../Player".inEnemy = true
 		$"../Player".position = position
 		$"ProgressBar".visible = true
 		$"ProgressBar".max_value = (hackTime - 1)
 		$Timer.start(heathPer * hackTime)
+	elif area.is_in_group("Vrius") and Hacked == false:
+		Hacked = true
 
 
 @warning_ignore("unused_parameter")
@@ -90,9 +92,12 @@ func _process(_delta: float) -> void:
 		position = $"../Player".position
 		$Area2D/CollisionShape2D.disabled = true
 
-	if inRobot == false:
+	if inRobot == false and Hacked == false:
 		# this is what we want when enemy virus hacks robot "look_at($"../Player".position)"
 		rotation += rotateSpeed
+	elif Hacked == true:
+		look_at($"../Player".position)
+
 
 	if heath <= 0:
 		queue_free()

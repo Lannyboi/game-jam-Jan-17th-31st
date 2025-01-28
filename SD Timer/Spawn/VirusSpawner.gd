@@ -20,6 +20,7 @@ func spawner():
 
 
 func _on_enemy_dead():
+	Globalvars.virusleft -= 1
 	Globalvars.virus -= 1
 	$Cooldown.start(Cooldown)
 

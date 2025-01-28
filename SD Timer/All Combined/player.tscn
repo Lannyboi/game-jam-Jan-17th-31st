@@ -37,6 +37,17 @@ grow_vertical = 2
 theme = ExtResource("3_elsih")
 show_percentage = false
 
+[node name="Label" type="Label" parent="UI"]
+offset_left = 64.0
+offset_top = 104.0
+offset_right = 211.0
+offset_bottom = 132.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 20
+text = "Viruses Left: 00"
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_u30iv")
 

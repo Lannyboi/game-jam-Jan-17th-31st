@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=4 uid="uid://d2r0xgcfyrulj"]
+[gd_scene load_steps=17 format=4 uid="uid://d2r0xgcfyrulj"]
 
 [ext_resource type="Texture2D" uid="uid://b32kwratljdii" path="res://All Combined/cloud-tilesheet.png" id="1_3ddn8"]
 [ext_resource type="Script" path="res://camera/camera_2d.gd" id="1_luij6"]
+[ext_resource type="Script" path="res://All Combined/main.gd" id="1_r4xkr"]
 [ext_resource type="PackedScene" uid="uid://cl57oklnlvktx" path="res://Spawn/RocketSpawner.tscn" id="5_dxgrm"]
 [ext_resource type="PackedScene" uid="uid://co5fidgmf2ycl" path="res://All Combined/player.tscn" id="5_hdupc"]
 [ext_resource type="Texture2D" uid="uid://4apvb8ecg33n" path="res://Lighting/yx9tqpap.png" id="5_n5a4m"]
@@ -45,6 +46,11 @@ size = Vector2(19.977, 20)
 
 [node name="Node2D" type="Node2D"]
 process_mode = 1
+script = ExtResource("1_r4xkr")
+
+[node name="Wave" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -2
@@ -79,8 +85,8 @@ texture = ExtResource("5_n5a4m")
 texture_scale = 2.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 131
+collision_mask = 131
 
 [node name="Area2D" type="Area2D" parent="StaticBody2D"]
 collision_layer = 24
@@ -185,3 +191,29 @@ position = Vector2(1215, 123)
 
 [node name="RickSpawner3" parent="." instance=ExtResource("8_v6l7v")]
 position = Vector2(-286, 200)
+
+[node name="RickSpawner5" parent="." instance=ExtResource("8_v6l7v")]
+position = Vector2(-906, -399)
+
+[node name="RickSpawner4" parent="." instance=ExtResource("8_v6l7v")]
+position = Vector2(-894, 489)
+
+[node name="RickSpawner6" parent="." instance=ExtResource("8_v6l7v")]
+position = Vector2(-1150, -107)
+
+[node name="RickSpawner7" parent="." instance=ExtResource("8_v6l7v")]
+position = Vector2(278, -783)
+
+[node name="RickSpawner8" parent="." instance=ExtResource("8_v6l7v")]
+position = Vector2(886, -539)
+
+[node name="RickSpawner9" parent="." instance=ExtResource("8_v6l7v")]
+position = Vector2(558, 545)
+
+[node name="RickSpawner10" parent="." instance=ExtResource("8_v6l7v")]
+position = Vector2(-26, 621)
+
+[node name="RickSpawner11" parent="." instance=ExtResource("8_v6l7v")]
+position = Vector2(-910, -19)
+
+[connection signal="timeout" from="Wave" to="." method="_on_wave_timeout"]
