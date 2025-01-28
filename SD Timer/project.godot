@@ -19,7 +19,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Globalvars="*res://All Combined/Globalvars.gd"
-GlobarSign="*res://All Combined/GlobarSign.gd"
+GlobalSign="*res://All Combined/GlobalSign.gd"
 
 [display]
 

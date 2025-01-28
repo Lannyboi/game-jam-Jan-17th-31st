@@ -4,7 +4,7 @@ extends Area2D
 @export var pierce = 0
 
 func _ready() -> void:
-	GlobarSign.MainMenu.connect(Callable(self, "_on_MainMenu"))
+	GlobalSign.MainMenu.connect(Callable(self, "_on_MainMenu"))
 
 func _physics_process(delta):
 	position += transform.x * speed * delta
