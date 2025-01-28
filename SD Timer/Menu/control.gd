@@ -1,5 +1,11 @@
 extends Control
 
+
+
+
+func _ready() -> void:
+	GlobalSign.MainMenu.connect(Callable(self, "_on_MainMenu"))
+
 func resume():
 	visible = false
 	$CanvasLayer.visible = false
@@ -20,16 +26,16 @@ func _on_resume_pressed():
 	resume()
 
 func _on_restart_pressed():
-	reset()
+	GlobalSign.MainMenu.emit()
 	get_tree().paused = false
 	get_tree().reload_current_scene()
 
 func _on_settings_pressed():
-	reset()
+	GlobalSign.MainMenu.emit()
 	get_tree().change_scene_to_file("res://Menu/main_menu_settings.tscn")
 
 func _on_main_menu_pressed():
-	reset()
+	GlobalSign.MainMenu.emit()
 	get_tree().change_scene_to_file("res://Menu/menu.tscn")
 
 func _on_quit_pressed():
@@ -39,11 +45,10 @@ func _process(delta: float):
 	testEsc()
 
 
-func reset():
+func _on_MainMenu():
 	Globalvars.enemys = 0
 	Globalvars.virus = 0
 	Globalvars.enemycap = 8
 	Globalvars.viruscap = 10
 	Globalvars.RobotsHackedCap = 5
 	Globalvars.virusleft = 100
-	GlobalSign.MainMenu.emit()

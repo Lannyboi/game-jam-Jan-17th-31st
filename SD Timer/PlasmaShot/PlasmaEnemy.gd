@@ -73,7 +73,7 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 		elif area.is_in_group("Rocket"):
 			heath -= Globalvars.RocketDmg
 		elif area.is_in_group("Explode"):
-			heath -= Globalvars.ExploadeDmg
+			heath = 0
 
 
 func _process(_delta: float) -> void:
