@@ -1,0 +1,65 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1lo848513wq6"]
+
+[ext_resource type="Script" path="res://Menu/main_menu_settings.gd" id="1_xsqgq"]
+
+[node name="Main Menu Settings" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xsqgq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.0
+offset_top = -43.5
+offset_right = 66.0
+offset_bottom = 43.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Back" type="Button" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Back"
+
+[node name="MarginContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+text = "Vsync:"
+
+[node name="Vsync" type="CheckButton" parent="VBoxContainer/MarginContainer2"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+text = "Fullscreen:"
+
+[node name="Fullscreen" type="CheckButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[connection signal="pressed" from="VBoxContainer/MarginContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="toggled" from="VBoxContainer/MarginContainer2/Vsync" to="." method="_on_vsync_toggled"]
+[connection signal="toggled" from="VBoxContainer/HBoxContainer/Fullscreen" to="." method="_on_fullscreen_toggled"]

@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dxubvfwj1wtgk" path="res://Tank/Tank.tscn" id="2_iy8ij"]
 
 [node name="TankSpawner" type="Node2D"]
+process_mode = 1
 script = ExtResource("1_ybol7")
 spawn = ExtResource("2_iy8ij")
 

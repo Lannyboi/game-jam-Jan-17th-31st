@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b0xkgs8hc58c2" path="res://Rocket/Rocketenemy.tscn" id="2_056rd"]
 
 [node name="RocketSpawner" type="Node2D"]
+process_mode = 1
 script = ExtResource("1_h78tg")
 spawn = ExtResource("2_056rd")
 
