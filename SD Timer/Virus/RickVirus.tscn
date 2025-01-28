@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=3 uid="uid://h1sdd2itd6lx"]
+
+[ext_resource type="Script" path="res://Virus/Rickvirus.gd" id="1_ygwms"]
+[ext_resource type="Texture2D" uid="uid://der6q678asju5" path="res://Virus/picklerickroll.png" id="2_agi6d"]
+[ext_resource type="Theme" uid="uid://ce0sleknwgwcy" path="res://SDTimer/enemy.tres" id="4_ne4dt"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5188p"]
+radius = 8.0
+height = 40.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_unccl"]
+radius = 7.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_03era"]
+radius = 4.0
+
+[node name="RickVirus" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 2
+gravity_scale = 0.0
+lock_rotation = true
+script = ExtResource("1_ygwms")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2, 2)
+shape = SubResource("CapsuleShape2D_5188p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 2.14577e-06)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_agi6d")
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+scale = Vector2(2, 2)
+collision_layer = 4
+collision_mask = 4
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_unccl")
+
+[node name="HurtBox" type="Area2D" parent="."]
+scale = Vector2(2, 2)
+collision_layer = 24
+collision_mask = 24
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("CapsuleShape2D_03era")
+
+[node name="HeathBar" type="ProgressBar" parent="."]
+top_level = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -984.0
+offset_top = -588.0
+offset_right = -886.0
+offset_bottom = -576.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+theme = ExtResource("4_ne4dt")
+show_percentage = false
+
+[node name="Move" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Move" to="." method="_on_move_timeout"]

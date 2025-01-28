@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cb7cavgrmlf3j"]
+
+[ext_resource type="Script" path="res://Spawn/VirusSpawner.gd" id="1_civqo"]
+[ext_resource type="PackedScene" uid="uid://h1sdd2itd6lx" path="res://Virus/RickVirus.tscn" id="2_j1dy3"]
+
+[node name="RickSpawner" type="Node2D"]
+script = ExtResource("1_civqo")
+spawn = ExtResource("2_j1dy3")
+Cooldown = 0.5
+
+[node name="Cooldown" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]

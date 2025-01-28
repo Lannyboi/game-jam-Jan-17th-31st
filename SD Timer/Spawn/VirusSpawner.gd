@@ -8,18 +8,19 @@ func _ready() -> void:
 	$Cooldown.start(randf_range(0.1, 1.0))
 
 func spawner():
-	if Globalvars.enemys < Globalvars.enemycap:
+	if Globalvars.virus < Globalvars.viruscap:
 		var b = spawn.instantiate()
 		b.position = self.position
 		get_parent().call_deferred("add_child", b)
 		b.connect("dead", Callable(self, "_on_enemy_dead"))
-		Globalvars.enemys += 1
+		Globalvars.virus += 1
+		$Cooldown.start(1)
 	else:
 		$Cooldown.start(Cooldown)
 
 
 func _on_enemy_dead():
-	Globalvars.enemys -= 1
+	Globalvars.virus -= 1
 	$Cooldown.start(Cooldown)
 
 

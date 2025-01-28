@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://d2r0xgcfyrulj"]
+[gd_scene load_steps=16 format=4 uid="uid://d2r0xgcfyrulj"]
 
 [ext_resource type="Texture2D" uid="uid://b32kwratljdii" path="res://All Combined/cloud-tilesheet.png" id="1_3ddn8"]
 [ext_resource type="Script" path="res://camera/camera_2d.gd" id="1_luij6"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://4apvb8ecg33n" path="res://Lighting/yx9tqpap.png" id="5_n5a4m"]
 [ext_resource type="PackedScene" uid="uid://qtw35dmq8s0r" path="res://Spawn/TankSpawner.tscn" id="5_sksbv"]
 [ext_resource type="PackedScene" uid="uid://cj5t8hv1jkffe" path="res://Spawn/PlasmaSpawner.tscn" id="6_6qcdx"]
+[ext_resource type="PackedScene" uid="uid://cb7cavgrmlf3j" path="res://Spawn/RickVirusSpawner.tscn" id="8_v6l7v"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_yc66h"]
 tile_data = PackedInt32Array(0, 0, 0, 65536, 65536, 1610612736, 131072, 196608, 1610612736, 196608, 131072, 1610612736, 262144, 65536, 1610612736, 327680, 262144, 805306368, 1, 65536, 0, 65537, 589824, 0, 131073, 524288, 0, 196609, 458752, 0, 262145, 589824, 0, 327681, 65536, 805306368, 2, 131072, 0, 65538, 393216, 0, 131074, 327680, 0, 196610, 327680, 0, 262146, 524288, 0, 327682, 196608, 805306368, 3, 196608, 0, 65539, 458752, 0, 131075, 589824, 0, 196611, 393216, 0, 262147, 589824, 0, 327683, 131072, 805306368, 4, 65536, 0, 65540, 589824, 0, 131076, 393216, 0, 196612, 327680, 0, 262148, 393216, 0, 327684, 65536, 805306368, 5, 262144, 0, 65541, 65536, 1342177280, 131077, 131072, 1342177280, 196613, 196608, 1342177280, 262149, 65536, 1342177280, 327685, 262144, 1342177280)
@@ -175,3 +176,12 @@ position = Vector2(779, -318)
 
 [node name="TankSpawner3" parent="." instance=ExtResource("5_sksbv")]
 position = Vector2(-810, 252)
+
+[node name="RickSpawner" parent="." instance=ExtResource("8_v6l7v")]
+position = Vector2(-196, 716)
+
+[node name="RickSpawner2" parent="." instance=ExtResource("8_v6l7v")]
+position = Vector2(1215, 123)
+
+[node name="RickSpawner3" parent="." instance=ExtResource("8_v6l7v")]
+position = Vector2(-286, 200)

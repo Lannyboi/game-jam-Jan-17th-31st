@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://der6q678asju5"
-path="res://.godot/imported/picklerickroll.png-ecf2231937528257b97b0cecc287065a.ctex"
+path="res://.godot/imported/picklerickroll.png-98812f73648aba836ae797d53e779c91.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://All Combined/picklerickroll.png"
-dest_files=["res://.godot/imported/picklerickroll.png-ecf2231937528257b97b0cecc287065a.ctex"]
+source_file="res://Virus/picklerickroll.png"
+dest_files=["res://.godot/imported/picklerickroll.png-98812f73648aba836ae797d53e779c91.ctex"]
 
 [params]
 

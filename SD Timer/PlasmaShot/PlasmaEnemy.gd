@@ -1,5 +1,6 @@
 extends RigidBody2D
 
+@warning_ignore("unused_signal")
 signal dead
 
 @export var rotateSpeed = 1.0
@@ -101,6 +102,7 @@ func _process(_delta: float) -> void:
 	$HeathBar.value = heath
 	$HeathBar.position = (position + Vector2(-48, -71))
 	heathPer = ($HeathBar.value / $HeathBar.max_value)
+
 
 func _on_timer_timeout() -> void:
 	$"../Player".inEnemy = false
