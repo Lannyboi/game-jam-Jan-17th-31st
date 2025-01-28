@@ -14,7 +14,6 @@ signal dead
 @export var cooldown = 0.5
 
 @export var bullet : PackedScene
-@export var bulletRotation : float
 
 func _ready() -> void:
 	$HeathBar.position = (position + Vector2(-48, -71))
@@ -56,8 +55,9 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		$"ProgressBar".visible = true
 		$"ProgressBar".max_value = (hackTime - 1)
 		$Timer.start(heathPer * hackTime)
-	elif area.is_in_group("Vrius") and Hacked == false:
+	elif (area.is_in_group("Vrius") and Hacked == false) and Globalvars.RobotsHacked <= Globalvars.RobotsHackedCap:
 		Hacked = true
+		$Turn.start(1)
 
 
 @warning_ignore("unused_parameter")
@@ -95,8 +95,8 @@ func _process(_delta: float) -> void:
 	if inRobot == false and Hacked == false:
 		# this is what we want when enemy virus hacks robot "look_at($"../Player".position)"
 		rotation += rotateSpeed
-	elif Hacked == true:
-		look_at($"../Player".position)
+#	elif Hacked == true:
+#		look_at($"../Player".position)
 
 
 	if heath <= 0:
@@ -120,5 +120,14 @@ func _on_timer_timeout() -> void:
 	die()
 
 func die():
-	emit_signal("dead")
-	queue_free()
+	if Hacked == false:
+		emit_signal("dead")
+		queue_free()
+	elif Hacked == true:
+		Globalvars.RobotsHacked -= 1
+		emit_signal("dead")
+		queue_free()
+
+
+func _on_turn_timeout() -> void:
+	look_at($"../Player".position)

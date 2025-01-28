@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dxubvfwj1wtgk"]
 
 [ext_resource type="Script" path="res://Tank/Tank.gd" id="1_uvxyu"]
-[ext_resource type="Texture2D" uid="uid://rob3wdkdnixk" path="res://Rocket/Rocket robot.png" id="3_nn7r1"]
+[ext_resource type="Texture2D" uid="uid://0o44u28ty6dw" path="res://Tank/Tank robot.png" id="2_5rnxa"]
 [ext_resource type="Theme" uid="uid://ce0sleknwgwcy" path="res://SDTimer/enemy.tres" id="4_5yhfp"]
 [ext_resource type="Script" path="res://SDTimer/progress_bar.gd" id="5_w4k0a"]
 
@@ -31,12 +31,9 @@ scale = Vector2(2, 2)
 shape = SubResource("CapsuleShape2D_5188p")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(7, -1)
 rotation = 1.5708
 scale = Vector2(2, 2)
-texture = ExtResource("3_nn7r1")
-hframes = 2
-frame = 1
+texture = ExtResource("2_5rnxa")
 
 [node name="Area2D" type="Area2D" parent="."]
 scale = Vector2(2, 2)

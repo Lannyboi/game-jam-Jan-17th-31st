@@ -2,6 +2,8 @@ extends RigidBody2D
 
 @warning_ignore("unused_signal")
 signal dead
+@warning_ignore("unused_signal")
+signal enterR
 
 @export var heath = 10
 
@@ -49,4 +51,5 @@ func die():
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Robot"):
-		die()
+		emit_signal("enterR")
+		queue_free()

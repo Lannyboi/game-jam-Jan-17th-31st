@@ -49,7 +49,7 @@ process_mode = 1
 script = ExtResource("1_r4xkr")
 
 [node name="Wave" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 15.0
 autostart = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -215,5 +215,23 @@ position = Vector2(-26, 621)
 
 [node name="RickSpawner11" parent="." instance=ExtResource("8_v6l7v")]
 position = Vector2(-910, -19)
+
+[node name="RickSpawner12" parent="." instance=ExtResource("8_v6l7v")]
+position = Vector2(1199, 706)
+
+[node name="RickSpawner13" parent="." instance=ExtResource("8_v6l7v")]
+position = Vector2(-1427, -428)
+
+[node name="RickSpawner14" parent="." instance=ExtResource("8_v6l7v")]
+position = Vector2(-298, -640)
+
+[node name="RickSpawner15" parent="." instance=ExtResource("8_v6l7v")]
+position = Vector2(-1200, 514)
+
+[node name="RickSpawner16" parent="." instance=ExtResource("8_v6l7v")]
+position = Vector2(554, -347)
+
+[node name="RickSpawner17" parent="." instance=ExtResource("8_v6l7v")]
+position = Vector2(1385, -640)
 
 [connection signal="timeout" from="Wave" to="." method="_on_wave_timeout"]

@@ -98,6 +98,8 @@ autostart = true
 wait_time = 0.25
 one_shot = true
 
+[node name="Turn" type="Timer" parent="."]
+
 [node name="Shot" type="Marker2D" parent="."]
 position = Vector2(30, -20)
 scale = Vector2(2, 2)
@@ -109,3 +111,4 @@ script = ExtResource("7_spdne")
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="RocketSprite" to="." method="_on_rocket_sprite_timeout"]
 [connection signal="timeout" from="Bullet" to="." method="_on_bullet_timeout"]
+[connection signal="timeout" from="Turn" to="." method="_on_turn_timeout"]

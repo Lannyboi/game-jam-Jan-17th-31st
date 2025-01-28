@@ -90,6 +90,8 @@ one_shot = true
 wait_time = 0.25
 autostart = true
 
+[node name="Turn" type="Timer" parent="."]
+
 [node name="Shot" type="Marker2D" parent="."]
 position = Vector2(30, -20)
 scale = Vector2(2, 2)
@@ -100,3 +102,4 @@ script = ExtResource("6_ua1yg")
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="PlasmaShot" to="." method="_on_plasma_shot_timeout"]
+[connection signal="timeout" from="Turn" to="." method="_on_turn_timeout"]

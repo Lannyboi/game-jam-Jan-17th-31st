@@ -13,6 +13,7 @@ func spawner():
 		b.position = self.position
 		get_parent().call_deferred("add_child", b)
 		b.connect("dead", Callable(self, "_on_enemy_dead"))
+		b.connect("enterR", Callable(self, "_on_enterR"))
 		Globalvars.virus += 1
 		$Cooldown.start(1)
 	else:
@@ -21,6 +22,12 @@ func spawner():
 
 func _on_enemy_dead():
 	Globalvars.virusleft -= 1
+	Globalvars.virus -= 1
+	$Cooldown.start(Cooldown)
+
+
+func _on_enterR():
+	Globalvars.RobotsHacked += 1
 	Globalvars.virus -= 1
 	$Cooldown.start(Cooldown)
 

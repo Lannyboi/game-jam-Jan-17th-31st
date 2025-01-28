@@ -66,7 +66,7 @@ func _process(_delta: float) -> void:
 
 	if inRobot == false:
 		# this is what we want when enemy virus hacks robot "look_at($"../Player".position)"
-		rotation += rotateSpeed
+		look_at($"../Player".position)
 
 	if heath <= 0:
 		queue_free()
