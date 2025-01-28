@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 res://Tank/Tank.tscn
 res://SDTimer/enemy.tres
 res://All Combined/All_Combined.tscn
@@ -14,3 +15,7 @@ res://All Combined/main.gd
 res://Rocket/Rocket.gd
 res://Rocket/Rocket.tscn
 res://Tank/Tank.gd
+=======
+res://All Combined/All_Combined.tscn
+res://SDTimer/enemy.tres
+>>>>>>> 75393220a4fc6f451a16c2167252248bd45c1a80
