@@ -1,0 +1,59 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1737755043
+icon.svg::CompressedTexture2D::4708438236320116334::1737754333::1737755044::1::::<><>::
+::res://All Combined/::1737755025
+All_Combined.tscn::PackedScene::9091014567693818487::1737755025::0::1::::<><>::uid://b32kwratljdii::::res://All Combined/cloud-tilesheet.png<>res://camera/camera_2d.gd<>uid://cl57oklnlvktx::::res://Spawn/RocketSpawner.tscn<>uid://co5fidgmf2ycl::::res://All Combined/player.tscn<>uid://4apvb8ecg33n::::res://Lighting/yx9tqpap.png<>uid://cj5t8hv1jkffe::::res://Spawn/PlasmaSpawner.tscn
+circuit-virus-2.png::CompressedTexture2D::8034903120165877102::1737754333::1737755044::1::::<><>::
+cloud-tilesheet.png::CompressedTexture2D::4408093856086476796::1737754333::1737755044::1::::<><>::
+enemy.gd::GDScript::-1::1737754333::0::1::::<>RigidBody2D<>::
+enemy.tscn::PackedScene::5964971896838689412::1737754333::0::1::::<><>::res://All Combined/enemy.gd<>uid://k50q0g3v0n7g::::res://Bullet/bullet.tscn<>uid://b6qd6ki4cl4oo::::res://All Combined/Enemypicked.png<>uid://dd8qm3oxx4ame::::res://Bullet/playerbullet.tscn<>res://SDTimer/progress_bar.gd<>uid://ce0sleknwgwcy::::res://SDTimer/enemy.tres<>res://All Combined/shot.gd
+Enemypicked.png::CompressedTexture2D::4595542930039115638::1737754333::1737755044::1::::<><>::
+Globalvars.gd::GDScript::-1::1737754333::0::1::::<>Node<>::
+heath_bar.gd::GDScript::-1::1737754333::0::1::::<>ProgressBar<>::
+Horse Sprite.png::CompressedTexture2D::5926906653342584094::1737754333::1737755044::1::::<><>::
+picklerickroll.png::CompressedTexture2D::7477024326086370970::1737754333::1737755044::1::::<><>::
+player.tscn::PackedScene::5817734549647392983::1737754333::0::1::::<><>::res://SDTimer/player.gd<>uid://dmqfxevnmpd7k::::res://All Combined/circuit-virus-2.png<>uid://ce0sleknwgwcy::::res://SDTimer/enemy.tres
+shot.gd::GDScript::-1::1737754333::0::1::::<>Marker2D<>::
+::res://Bullet/::1737755025
+bullet.gd::GDScript::-1::1737754333::0::1::::<>Area2D<>::
+Bullet.png::CompressedTexture2D::2608307866486604931::1737754333::1737755044::1::::<><>::
+bullet.tscn::PackedScene::765367590177590802::1737754333::0::1::::<><>::res://Bullet/bullet.gd<>uid://bdfqpjupvld8n::::res://Bullet/Bullet.png<>uid://bf5x5i15waujb::::res://Bullet/plasma-spritesheet.png
+plasma-spritesheet.png::CompressedTexture2D::2800746760900033315::1737754333::1737755044::1::::<><>::
+PlayerBullet.png::CompressedTexture2D::6877938240362705756::1737754333::1737755044::1::::<><>::
+playerbullet.tscn::PackedScene::7438947442646451668::1737754333::0::1::::<><>::res://Bullet/bullet.gd<>uid://c48yvxptocmeu::::res://Bullet/PlayerBullet.png
+::res://camera/::1737755025
+BG1.png::CompressedTexture2D::7619343001098588599::1737754333::1737755044::1::::<><>::
+BG2.png::CompressedTexture2D::1615284367085522684::1737754333::1737755044::1::::<><>::
+camera.tscn::PackedScene::4810865678691915632::1737754333::0::1::::<><>::res://camera/camera_2d.gd<>res://SDTimer/player.gd<>uid://caqaephv4uvqk::::res://SDTimer/player.png<>uid://dgs4p3y1gtp7d::::res://camera/BG1.png<>uid://xapq6e6d6egy::::res://camera/BG2.png
+camera_2d.gd::GDScript::-1::1737754333::0::1::::<>Camera2D<>::
+::res://Lighting/::1737755025
+lighting.tscn::PackedScene::2785762501952238518::1737754333::0::1::::<><>::uid://dgs4p3y1gtp7d::::res://camera/BG1.png<>uid://xapq6e6d6egy::::res://camera/BG2.png<>uid://cq8qhlj2xu0k3::::res://All Combined/enemy.tscn<>res://camera/camera_2d.gd<>res://SDTimer/player.gd<>uid://caqaephv4uvqk::::res://SDTimer/player.png
+yx9tqpap.png::CompressedTexture2D::2036424825753018309::1737754333::1737755044::1::::<><>::
+::res://PlasmaShot/::1737755025
+plasma-robot-sprite.png::CompressedTexture2D::5952188274175296936::1737754333::1737755044::1::::<><>::
+plasma-spritesheet.png::CompressedTexture2D::9016092196692488362::1737754333::1737755044::1::::<><>::
+PlasmaEnemy.gd::GDScript::-1::1737754333::0::1::::<>RigidBody2D<>::
+PlasmaEnemy.tscn::PackedScene::4065381240720188035::1737754333::0::1::::<><>::res://PlasmaShot/PlasmaEnemy.gd<>uid://bacut82uitrqv::::res://PlasmaShot/PlasmaShot.tscn<>uid://cq2jw272v4cai::::res://PlasmaShot/plasma-robot-sprite.png<>uid://ce0sleknwgwcy::::res://SDTimer/enemy.tres<>res://SDTimer/progress_bar.gd<>res://All Combined/shot.gd
+PlasmaShot.gd::GDScript::-1::1737754333::0::1::::<>Area2D<>::
+PlasmaShot.tscn::PackedScene::2391799485041183057::1737754333::0::1::::<><>::res://PlasmaShot/PlasmaShot.gd<>uid://4apvb8ecg33n::::res://Lighting/yx9tqpap.png<>uid://bf5x5i15waujb::::res://Bullet/plasma-spritesheet.png
+::res://Rocket/::1737755025
+PlayerBullet.png::CompressedTexture2D::3475505118249497274::1737754333::1737755044::1::::<><>::
+playerbullet.tscn::PackedScene::1283605614330892272::1737754333::0::1::::<><>::res://Bullet/bullet.gd<>uid://c48yvxptocmeu::::res://Bullet/PlayerBullet.png
+Rocket robot.png::CompressedTexture2D::1222223510232491600::1737754333::1737755044::1::::<><>::
+Rocket.gd::GDScript::-1::1737754333::0::1::::<>Area2D<>::
+rocket.png::CompressedTexture2D::3286594218030302088::1737754333::1737755044::1::::<><>::
+Rocket.tscn::PackedScene::5432434283851038676::1737754333::0::1::::<><>::res://Rocket/Rocket.gd<>uid://bm3byx7bdkttw::::res://Rocket/rocket.png<>uid://4apvb8ecg33n::::res://Lighting/yx9tqpap.png
+Rocketenemy.gd::GDScript::-1::1737754333::0::1::::<>RigidBody2D<>::
+Rocketenemy.tscn::PackedScene::4189241344399165843::1737754333::0::1::::<><>::res://Rocket/Rocketenemy.gd<>uid://cjnrntg8htv0g::::res://Rocket/Rocket.tscn<>uid://rob3wdkdnixk::::res://Rocket/Rocket robot.png<>uid://ce0sleknwgwcy::::res://SDTimer/enemy.tres<>res://SDTimer/progress_bar.gd<>res://All Combined/shot.gd
+::res://SDTimer/::1737755025
+Enemy.png::CompressedTexture2D::4661828637738221940::1737754333::1737755044::1::::<><>::
+enemy.tres::Theme::5106318961554342244::1737755025::0::1::::<><>::
+enemyOld.gd::GDScript::-1::1737754333::0::1::::<>RigidBody2D<>::
+player.gd::GDScript::-1::1737754333::0::1::::<>CharacterBody2D<>::
+player.png::CompressedTexture2D::4805879354284369742::1737754333::1737755044::1::::<><>::
+progress_bar.gd::GDScript::-1::1737754333::0::1::::<>ProgressBar<>::
+SDTimer.tscn::PackedScene::6468960570504355041::1737754333::0::1::::<><>::res://SDTimer/enemyOld.gd<>res://SDTimer/progress_bar.gd<>res://SDTimer/player.gd<>uid://caqaephv4uvqk::::res://SDTimer/player.png
+::res://Spawn/::1737754333
+PlasmaSpawner.tscn::PackedScene::5467685248109802018::1737754333::0::1::::<><>::res://Spawn/spawner.gd<>uid://bx6kh80nhuu3l::::res://PlasmaShot/PlasmaEnemy.tscn
+RocketSpawner.tscn::PackedScene::5608818467742094845::1737754333::0::1::::<><>::res://Spawn/spawner.gd<>uid://b0xkgs8hc58c2::::res://Rocket/Rocketenemy.tscn
+spawner.gd::GDScript::-1::1737754333::0::1::::<>Node2D<>::
