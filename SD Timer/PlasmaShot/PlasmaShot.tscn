@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bacut82uitrqv"]
+[gd_scene load_steps=14 format=3 uid="uid://d1v14shxve5a8"]
 
 [ext_resource type="Script" path="res://PlasmaShot/PlasmaShot.gd" id="1_6fpyb"]
 [ext_resource type="Texture2D" uid="uid://4apvb8ecg33n" path="res://Lighting/yx9tqpap.png" id="3_vqe68"]

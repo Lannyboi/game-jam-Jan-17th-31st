@@ -5,6 +5,7 @@ extends Control
 
 func _ready() -> void:
 	GlobalSign.MainMenu.connect(Callable(self, "_on_MainMenu"))
+	
 
 func resume():
 	visible = false
@@ -48,6 +49,6 @@ func _process(delta: float):
 func _on_MainMenu():
 	Globalvars.enemys = 0
 	Globalvars.virus = 0
-	Globalvars.enemycap = 8
-	Globalvars.viruscap = 10
+	Globalvars.enemycap = 1
+	Globalvars.viruscap = 2
 	Globalvars.virusleft = 100

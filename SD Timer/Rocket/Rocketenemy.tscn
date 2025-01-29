@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://dcghycekl7g2h"]
 
 [ext_resource type="Script" path="res://Rocket/Rocketenemy.gd" id="1_is6q8"]
-[ext_resource type="PackedScene" path="res://Rocket/Rocket.tscn" id="2_1ky62"]
+[ext_resource type="PackedScene" uid="uid://5dott3xuiu3d" path="res://Rocket/Rocket.tscn" id="2_1ky62"]
 [ext_resource type="Texture2D" uid="uid://rob3wdkdnixk" path="res://Rocket/Rocket robot.png" id="4_v5xlr"]
 [ext_resource type="Theme" uid="uid://bkok1ypds7n7x" path="res://SDTimer/enemy.tres" id="5_3xco8"]
 [ext_resource type="Script" path="res://SDTimer/progress_bar.gd" id="6_ri8me"]

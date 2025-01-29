@@ -1,0 +1,109 @@
+[gd_scene load_steps=4 format=3 uid="uid://bio3bj8xow7qw"]
+
+[ext_resource type="Script" path="res://Menu/death.gd" id="1_tjlbf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kf685"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_48wja"]
+
+[node name="Death" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tjlbf")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -187.0
+offset_top = -87.0
+offset_right = 187.0
+offset_bottom = 87.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="You Died" type="Label" parent="VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+text = "You Died"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_kf685")
+
+[node name="Left" type="Label" parent="VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 51
+text = "Viruses Left: 00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_kf685")
+
+[node name="HSeparator3" type="HSeparator" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_kf685")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="VSeparator4" type="VSeparator" parent="VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_48wja")
+
+[node name="Retry" type="Button" parent="VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Retry"
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_48wja")
+
+[node name="MainMenu" type="Button" parent="VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "MainMenu"
+
+[node name="VSeparator2" type="VSeparator" parent="VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_48wja")
+
+[node name="Quit" type="Button" parent="VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Quit
+"
+
+[node name="VSeparator3" type="VSeparator" parent="VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_48wja")
+
+[connection signal="pressed" from="VBoxContainer2/HBoxContainer/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="VBoxContainer2/HBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="VBoxContainer2/HBoxContainer/Quit" to="." method="_on_quit_pressed"]

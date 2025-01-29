@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://jvubv78ij658"]
 
 [ext_resource type="Script" path="res://PlasmaShot/PlasmaEnemy.gd" id="1_g47hu"]
-[ext_resource type="PackedScene" path="res://PlasmaShot/PlasmaShot.tscn" id="2_eihiv"]
+[ext_resource type="PackedScene" uid="uid://d1v14shxve5a8" path="res://PlasmaShot/PlasmaShot.tscn" id="2_eihiv"]
 [ext_resource type="Texture2D" uid="uid://cq2jw272v4cai" path="res://PlasmaShot/plasma-robot-sprite.png" id="3_3my56"]
 [ext_resource type="Theme" uid="uid://bkok1ypds7n7x" path="res://SDTimer/enemy.tres" id="4_x0mt8"]
 [ext_resource type="Script" path="res://SDTimer/progress_bar.gd" id="5_pkkya"]
