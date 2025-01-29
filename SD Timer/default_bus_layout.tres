@@ -1,7 +1,4 @@
-[gd_resource type="AudioBusLayout" load_steps=4 format=3 uid="uid://cbt4a6d2q52fk"]
-
-[sub_resource type="AudioEffectLimiter" id="AudioEffectLimiter_if0od"]
-resource_name = "Limiter"
+[gd_resource type="AudioBusLayout" load_steps=3 format=3 uid="uid://cbt4a6d2q52fk"]
 
 [sub_resource type="AudioEffectReverb" id="AudioEffectReverb_w4fdx"]
 resource_name = "Reverb"
@@ -22,14 +19,12 @@ bus/2/mute = false
 bus/2/bypass_fx = false
 bus/2/volume_db = 0.0
 bus/2/send = &"Master"
-bus/2/effect/0/effect = SubResource("AudioEffectLimiter_if0od")
-bus/2/effect/0/enabled = true
 bus/3/name = &"Robots"
 bus/3/solo = false
 bus/3/mute = false
 bus/3/bypass_fx = false
 bus/3/volume_db = 0.0
-bus/3/send = &"Master"
+bus/3/send = &"sfx"
 bus/3/effect/0/effect = SubResource("AudioEffectReverb_w4fdx")
 bus/3/effect/0/enabled = true
 bus/4/name = &"Shots"
@@ -37,6 +32,6 @@ bus/4/solo = false
 bus/4/mute = false
 bus/4/bypass_fx = false
 bus/4/volume_db = 0.0
-bus/4/send = &"Master"
+bus/4/send = &"sfx"
 bus/4/effect/0/effect = SubResource("AudioEffectReverb_16s8p")
 bus/4/effect/0/enabled = true

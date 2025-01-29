@@ -8,6 +8,3 @@ func _on_wave_timeout() -> void:
 
 	if Globalvars.viruscap < 20:
 		Globalvars.viruscap += 2
-
-	if Globalvars.RobotsHackedCap <= 10:
-		Globalvars.RobotsHackedCap += 1

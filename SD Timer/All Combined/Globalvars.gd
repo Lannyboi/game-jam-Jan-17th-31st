@@ -6,10 +6,9 @@ extends Node
 @export var ExploadeDmg = 5
 
 @export var enemys = 0
-@export var enemycap = 8
+@export var enemycap = 1
 @export var RobotsHacked = 0
-@export var RobotsHackedCap = 5
 
 @export var virus = 0
-@export var viruscap = 10
+@export var viruscap = 2
 @export var virusleft = 100

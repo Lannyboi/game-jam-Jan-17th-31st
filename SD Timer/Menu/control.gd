@@ -50,5 +50,4 @@ func _on_MainMenu():
 	Globalvars.virus = 0
 	Globalvars.enemycap = 8
 	Globalvars.viruscap = 10
-	Globalvars.RobotsHackedCap = 5
 	Globalvars.virusleft = 100

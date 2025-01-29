@@ -49,7 +49,7 @@ script = ExtResource("1_r4xkr")
 
 [node name="Wave" type="Timer" parent="."]
 process_mode = 1
-wait_time = 15.0
+wait_time = 5.0
 autostart = true
 
 [node name="Pause Menu" type="Control" parent="."]

@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://h1sdd2itd6lx"]
+[gd_scene load_steps=7 format=3 uid="uid://co5xmcrpo17yj"]
 
 [ext_resource type="Script" path="res://Virus/Rickvirus.gd" id="1_ygwms"]
 [ext_resource type="Texture2D" uid="uid://der6q678asju5" path="res://Virus/picklerickroll.png" id="2_agi6d"]
-[ext_resource type="Theme" uid="uid://ce0sleknwgwcy" path="res://SDTimer/enemy.tres" id="4_ne4dt"]
+[ext_resource type="Theme" uid="uid://bkok1ypds7n7x" path="res://SDTimer/enemy.tres" id="4_ne4dt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5188p"]
 radius = 8.0

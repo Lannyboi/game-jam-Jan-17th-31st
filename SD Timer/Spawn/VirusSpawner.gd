@@ -27,7 +27,6 @@ func _on_enemy_dead():
 
 
 func _on_enterR():
-	Globalvars.RobotsHacked += 1
 	Globalvars.virus -= 1
 	$Cooldown.start(Cooldown)
 
