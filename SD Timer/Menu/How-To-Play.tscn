@@ -64,8 +64,10 @@ theme_override_constants/separation = 100
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(150, 225)
+custom_minimum_size = Vector2(272, 232)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 texture = ExtResource("1_bbgdh")
 flip_v = true
 
@@ -82,8 +84,10 @@ horizontal_alignment = 1
 layout_mode = 2
 
 [node name="TextureRect2" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
-custom_minimum_size = Vector2(0, 225)
+custom_minimum_size = Vector2(232, 240)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 texture = ExtResource("2_kglxe")
 flip_v = true
 
@@ -100,9 +104,10 @@ horizontal_alignment = 1
 layout_mode = 2
 
 [node name="TextureRect3" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer3"]
-custom_minimum_size = Vector2(0, 158)
+custom_minimum_size = Vector2(208, 168)
 layout_mode = 2
-size_flags_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 texture = ExtResource("3_jyars")
 flip_v = true
 

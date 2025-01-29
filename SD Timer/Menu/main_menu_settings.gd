@@ -5,10 +5,10 @@ func _on_back_pressed():
 
 func _ready():
 	if DisplayServer.window_get_mode() == 3:
-		$VBoxContainer/HSplitContainer/VBoxContainer/Fullscreen/Fullscreen.button_pressed = true
+		$VBoxContainer/MarginContainer/HSplitContainer/VBoxContainer/Fullscreen/Fullscreen.button_pressed = true
 	
 	if DisplayServer.window_get_vsync_mode() == 1:
-		$VBoxContainer/HSplitContainer/VBoxContainer/Vsync/Vsync.button_pressed = true
+		$VBoxContainer/MarginContainer/HSplitContainer/VBoxContainer/Vsync/Vsync.button_pressed = true
 
 func _on_vsync_toggled(toggled_on: bool):
 	if toggled_on == true:
