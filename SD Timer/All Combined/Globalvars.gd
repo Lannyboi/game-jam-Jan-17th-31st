@@ -13,7 +13,7 @@ extends Node
 @export_category("Virus")
 @export var virus = 0
 @export var viruscap = 2
-@export var virusleft = 100
+@export var virusleft = 10
 
 
 @export_category("Settings")

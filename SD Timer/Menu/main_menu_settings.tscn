@@ -1,11 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://e2w1qyxeq78u"]
+[gd_scene load_steps=5 format=3 uid="uid://e2w1qyxeq78u"]
 
 [ext_resource type="Script" path="res://Menu/main_menu_settings.gd" id="1_xsqgq"]
 [ext_resource type="Script" path="res://Menu/master.gd" id="2_ebawc"]
 [ext_resource type="Script" path="res://Menu/music.gd" id="3_pnxb8"]
 [ext_resource type="Script" path="res://Menu/sound_fx.gd" id="4_utwe5"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_84mhx"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 follow_viewport_scale = 2.0
@@ -43,96 +41,94 @@ offset_bottom = 130.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HSplitContainer" type="HSplitContainer" parent="Main Menu Settings/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Main Menu Settings/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 20
+
+[node name="HSplitContainer" type="HSplitContainer" parent="Main Menu Settings/VBoxContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Main Menu Settings/VBoxContainer/HSplitContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Main Menu Settings/VBoxContainer/MarginContainer/HSplitContainer"]
 custom_minimum_size = Vector2(270, 0)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Main Menu Settings/VBoxContainer/HSplitContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="Main Menu Settings/VBoxContainer/MarginContainer/HSplitContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Video"
-horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Fullscreen" type="HBoxContainer" parent="Main Menu Settings/VBoxContainer/HSplitContainer/VBoxContainer"]
+[node name="Fullscreen" type="HBoxContainer" parent="Main Menu Settings/VBoxContainer/MarginContainer/HSplitContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="Main Menu Settings/VBoxContainer/HSplitContainer/VBoxContainer/Fullscreen"]
+[node name="Label2" type="Label" parent="Main Menu Settings/VBoxContainer/MarginContainer/HSplitContainer/VBoxContainer/Fullscreen"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 30
 text = "Fullscreen:"
 
-[node name="Fullscreen" type="CheckButton" parent="Main Menu Settings/VBoxContainer/HSplitContainer/VBoxContainer/Fullscreen"]
+[node name="Fullscreen" type="CheckButton" parent="Main Menu Settings/VBoxContainer/MarginContainer/HSplitContainer/VBoxContainer/Fullscreen"]
 layout_mode = 2
 
-[node name="Vsync" type="HBoxContainer" parent="Main Menu Settings/VBoxContainer/HSplitContainer/VBoxContainer"]
+[node name="Vsync" type="HBoxContainer" parent="Main Menu Settings/VBoxContainer/MarginContainer/HSplitContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 0
 
-[node name="Label" type="Label" parent="Main Menu Settings/VBoxContainer/HSplitContainer/VBoxContainer/Vsync"]
+[node name="Label" type="Label" parent="Main Menu Settings/VBoxContainer/MarginContainer/HSplitContainer/VBoxContainer/Vsync"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 30
 text = "Vsync:"
 
-[node name="Vsync" type="CheckButton" parent="Main Menu Settings/VBoxContainer/HSplitContainer/VBoxContainer/Vsync"]
+[node name="Vsync" type="CheckButton" parent="Main Menu Settings/VBoxContainer/MarginContainer/HSplitContainer/VBoxContainer/Vsync"]
 layout_mode = 2
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="Main Menu Settings/VBoxContainer/HSplitContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="Main Menu Settings/VBoxContainer/MarginContainer/HSplitContainer"]
 custom_minimum_size = Vector2(270, 0)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Main Menu Settings/VBoxContainer/HSplitContainer/VBoxContainer2"]
+[node name="Label" type="Label" parent="Main Menu Settings/VBoxContainer/MarginContainer/HSplitContainer/VBoxContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Audio"
-horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="Main Menu Settings/VBoxContainer/HSplitContainer/VBoxContainer2"]
+[node name="Label2" type="Label" parent="Main Menu Settings/VBoxContainer/MarginContainer/HSplitContainer/VBoxContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 27
 text = "Master"
 vertical_alignment = 2
 
-[node name="Master" type="HSlider" parent="Main Menu Settings/VBoxContainer/HSplitContainer/VBoxContainer2"]
+[node name="Master" type="HSlider" parent="Main Menu Settings/VBoxContainer/MarginContainer/HSplitContainer/VBoxContainer2"]
 layout_mode = 2
 min_value = -30.0
 max_value = 0.0
 script = ExtResource("2_ebawc")
 
-[node name="Label3" type="Label" parent="Main Menu Settings/VBoxContainer/HSplitContainer/VBoxContainer2"]
+[node name="Label3" type="Label" parent="Main Menu Settings/VBoxContainer/MarginContainer/HSplitContainer/VBoxContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 27
 text = "Music"
 vertical_alignment = 2
 
-[node name="Music" type="HSlider" parent="Main Menu Settings/VBoxContainer/HSplitContainer/VBoxContainer2"]
+[node name="Music" type="HSlider" parent="Main Menu Settings/VBoxContainer/MarginContainer/HSplitContainer/VBoxContainer2"]
 layout_mode = 2
 min_value = -30.0
 max_value = 0.0
 script = ExtResource("3_pnxb8")
 
-[node name="Label4" type="Label" parent="Main Menu Settings/VBoxContainer/HSplitContainer/VBoxContainer2"]
+[node name="Label4" type="Label" parent="Main Menu Settings/VBoxContainer/MarginContainer/HSplitContainer/VBoxContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 27
 text = "Sound FX
 "
 vertical_alignment = 2
 
-[node name="SoundFX" type="HSlider" parent="Main Menu Settings/VBoxContainer/HSplitContainer/VBoxContainer2"]
+[node name="SoundFX" type="HSlider" parent="Main Menu Settings/VBoxContainer/MarginContainer/HSplitContainer/VBoxContainer2"]
 layout_mode = 2
 min_value = -30.0
 max_value = 0.0
 script = ExtResource("4_utwe5")
-
-[node name="HSeparator" type="HSeparator" parent="Main Menu Settings/VBoxContainer"]
-layout_mode = 2
-theme_override_styles/separator = SubResource("StyleBoxEmpty_84mhx")
 
 [node name="Back" type="Button" parent="Main Menu Settings/VBoxContainer"]
 clip_contents = true
@@ -143,6 +139,6 @@ size_flags_vertical = 4
 theme_override_font_sizes/font_size = 40
 text = "Back"
 
-[connection signal="toggled" from="Main Menu Settings/VBoxContainer/HSplitContainer/VBoxContainer/Fullscreen/Fullscreen" to="Main Menu Settings" method="_on_fullscreen_toggled"]
-[connection signal="toggled" from="Main Menu Settings/VBoxContainer/HSplitContainer/VBoxContainer/Vsync/Vsync" to="Main Menu Settings" method="_on_vsync_toggled"]
+[connection signal="toggled" from="Main Menu Settings/VBoxContainer/MarginContainer/HSplitContainer/VBoxContainer/Fullscreen/Fullscreen" to="Main Menu Settings" method="_on_fullscreen_toggled"]
+[connection signal="toggled" from="Main Menu Settings/VBoxContainer/MarginContainer/HSplitContainer/VBoxContainer/Vsync/Vsync" to="Main Menu Settings" method="_on_vsync_toggled"]
 [connection signal="pressed" from="Main Menu Settings/VBoxContainer/Back" to="Main Menu Settings" method="_on_back_pressed"]
