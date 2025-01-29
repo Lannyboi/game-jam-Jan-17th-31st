@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://co5fidgmf2ycl"]
+[gd_scene load_steps=9 format=3 uid="uid://co5fidgmf2ycl"]
 
 [ext_resource type="Script" path="res://SDTimer/player.gd" id="1_m0ceh"]
 [ext_resource type="Texture2D" uid="uid://dmqfxevnmpd7k" path="res://All Combined/circuit-virus-2.png" id="2_kfpsa"]
+[ext_resource type="Script" path="res://camera/camera_2d.gd" id="3_8o72f"]
 [ext_resource type="Theme" uid="uid://ce0sleknwgwcy" path="res://SDTimer/enemy.tres" id="3_elsih"]
+[ext_resource type="Texture2D" uid="uid://4apvb8ecg33n" path="res://Lighting/yx9tqpap.png" id="4_cxrc3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u30iv"]
 size = Vector2(64, 64)
@@ -47,6 +49,24 @@ theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 3
 theme_override_font_sizes/font_size = 20
 text = "Viruses Left: 00"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+process_mode = 1
+position = Vector2(0, 8)
+zoom = Vector2(1.4, 1.4)
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.1
+drag_top_margin = 0.1
+drag_right_margin = 0.1
+drag_bottom_margin = 0.1
+script = ExtResource("3_8o72f")
+
+[node name="PointLight2D" type="PointLight2D" parent="Camera2D"]
+position = Vector2(0, -8)
+energy = 0.25
+texture = ExtResource("4_cxrc3")
+texture_scale = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_u30iv")
