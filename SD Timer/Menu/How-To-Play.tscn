@@ -1,0 +1,161 @@
+[gd_scene load_steps=6 format=3 uid="uid://bxyfvjnedso75"]
+
+[ext_resource type="Texture2D" uid="uid://bw2cw7teviqp6" path="res://Rocket/Rocket robotMenu.png" id="1_bbgdh"]
+[ext_resource type="Script" path="res://Menu/how_to_play.gd" id="1_xb7yn"]
+[ext_resource type="Texture2D" uid="uid://dm8shsrabc1m2" path="res://PlasmaShot/plasma-robot-sprite-Menu.png" id="2_kglxe"]
+[ext_resource type="Texture2D" uid="uid://0o44u28ty6dw" path="res://Tank/Tank robot.png" id="3_jyars"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_icrul"]
+
+[node name="How-To-Play" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xb7yn")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.572549)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.5
+offset_top = -124.5
+offset_right = 225.5
+offset_bottom = 124.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "How to Play
+
+Defeat The Viruses (Pickles) to Win
+
+WASD To Move,00 Aim With Mouse
+Run into enemys to Hack Them
+"
+horizontal_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_icrul")
+
+[node name="VSeparator2" type="VSeparator" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_icrul")
+
+[node name="VSeparator3" type="VSeparator" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_icrul")
+
+[node name="VSeparator4" type="VSeparator" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_icrul")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(150, 225)
+layout_mode = 2
+texture = ExtResource("1_bbgdh")
+flip_v = true
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Rocket Enemy's
+Dmg: Mid
+Fire Rate: Low
+HP: Mid"
+horizontal_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_icrul")
+
+[node name="VSeparator2" type="VSeparator" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_icrul")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 225)
+layout_mode = 2
+texture = ExtResource("2_kglxe")
+flip_v = true
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Plasma Enemy's
+Dmg: Low
+Fire Rate: Hign
+HP: Low"
+horizontal_alignment = 1
+
+[node name="VSeparator3" type="VSeparator" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_icrul")
+
+[node name="VSeparator4" type="VSeparator" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_icrul")
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer3"]
+custom_minimum_size = Vector2(0, 158)
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("3_jyars")
+flip_v = true
+
+[node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer3"]
+custom_minimum_size = Vector2(0, 274)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 35
+text = "Tank Enemy's
+Dmg: Hign
+Fire on Death
+HP: Hign"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(274, 0)
+layout_mode = 0
+offset_left = 1584.0
+offset_top = 928.0
+offset_right = 1858.0
+offset_bottom = 1019.0
+theme_override_font_sizes/font_size = 60
+text = "Back"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

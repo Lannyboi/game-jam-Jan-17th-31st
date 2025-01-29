@@ -106,7 +106,25 @@ text = "Ctrl Alt Defeat"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Button" type="Button" parent="Menu"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -312.0
+offset_top = -112.0
+offset_right = -12.0
+offset_bottom = -12.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 40
+text = "How to Play"
+
 [connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/Play" to="Menu" method="_on_play_pressed"]
 [connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/PvP" to="Menu" method="_on_pv_p_pressed"]
 [connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/Settings" to="Menu" method="_on_settings_pressed"]
 [connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/Quit" to="Menu" method="_on_quit_pressed"]
+[connection signal="pressed" from="Menu/Button" to="Menu" method="_on_button_pressed"]
