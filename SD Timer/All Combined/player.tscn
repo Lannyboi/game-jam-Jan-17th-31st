@@ -1,10 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://co5fidgmf2ycl"]
+[gd_scene load_steps=8 format=3 uid="uid://co5fidgmf2ycl"]
 
 [ext_resource type="Script" path="res://SDTimer/player.gd" id="1_m0ceh"]
 [ext_resource type="Texture2D" uid="uid://dmqfxevnmpd7k" path="res://All Combined/circuit-virus-2.png" id="2_kfpsa"]
-[ext_resource type="Script" path="res://camera/camera_2d.gd" id="3_8o72f"]
 [ext_resource type="Theme" uid="uid://ce0sleknwgwcy" path="res://SDTimer/enemy.tres" id="3_elsih"]
-[ext_resource type="Texture2D" uid="uid://4apvb8ecg33n" path="res://Lighting/yx9tqpap.png" id="4_cxrc3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u30iv"]
 size = Vector2(64, 64)
@@ -14,6 +12,17 @@ size = Vector2(64, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2fdum"]
 size = Vector2(48, 48)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_iwkmj"]
+properties/0/path = NodePath(".:visible")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:position")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath(".:rotation")
+properties/2/spawn = true
+properties/2/replication_mode = 1
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 position = Vector2(576, 320)
@@ -51,22 +60,7 @@ theme_override_font_sizes/font_size = 20
 text = "Viruses Left: 00"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-process_mode = 1
-position = Vector2(0, 8)
-zoom = Vector2(1.4, 1.4)
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-drag_left_margin = 0.1
-drag_top_margin = 0.1
-drag_right_margin = 0.1
-drag_bottom_margin = 0.1
-script = ExtResource("3_8o72f")
-
-[node name="PointLight2D" type="PointLight2D" parent="Camera2D"]
-position = Vector2(0, -8)
-energy = 0.25
-texture = ExtResource("4_cxrc3")
-texture_scale = 2.0
+enabled = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_u30iv")
@@ -88,5 +82,8 @@ collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 shape = SubResource("RectangleShape2D_2fdum")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_iwkmj")
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxocjgkdrp4hy"]
+[gd_scene load_steps=6 format=3 uid="uid://dxocjgkdrp4hy"]
 
 [ext_resource type="Script" path="res://Menu/menu.gd" id="1_crdk8"]
 [ext_resource type="PackedScene" uid="uid://d2r0xgcfyrulj" path="res://All Combined/All_Combined.tscn" id="2_xyd6a"]
+[ext_resource type="PackedScene" uid="uid://t5boy2cc4h14" path="res://Multiplayer/Multiplayer.tscn" id="3_kni8m"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wuaf8"]
 
@@ -19,6 +20,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_crdk8")
 Game = ExtResource("2_xyd6a")
+
+[node name="Control" parent="Menu" instance=ExtResource("3_kni8m")]
 
 [node name="MarginContainer" type="MarginContainer" parent="Menu"]
 layout_mode = 1

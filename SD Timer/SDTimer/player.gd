@@ -6,12 +6,17 @@ extends CharacterBody2D
 @export var PlayerHeath = 12
 
 
+func _enter_tree() -> void:
+	set_multiplayer_authority(name.to_int())
+
+
 func _ready() -> void:
 	$"UI/HeathBar".max_value = PlayerHeath
 
 func get_input():
-	var input_direction = Input.get_vector("left", "right", "up", "down")
-	velocity = input_direction * speed
+	if is_multiplayer_authority():
+		var input_direction = Input.get_vector("left", "right", "up", "down")
+		velocity = input_direction * speed
 
 
 func _physics_process(_delta):
@@ -24,6 +29,9 @@ func _physics_process(_delta):
 	elif inEnemy == false:
 		$"HurtBox/CollisionShape2D".disabled = false
 		$Area2D/CollisionShape2D.disabled = false
+
+	if is_multiplayer_authority():
+		$Camera2D.enabled = true
 
 	if Globalvars.virusleft <= 0:
 		get_tree().quit()
