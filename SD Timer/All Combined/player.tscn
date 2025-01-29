@@ -64,9 +64,9 @@ script = ExtResource("3_8o72f")
 
 [node name="PointLight2D" type="PointLight2D" parent="Camera2D"]
 position = Vector2(0, -8)
-energy = 0.25
+energy = 0.1
 texture = ExtResource("4_cxrc3")
-texture_scale = 2.0
+texture_scale = 0.75
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_u30iv")

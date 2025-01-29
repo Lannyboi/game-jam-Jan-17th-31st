@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://b0xkgs8hc58c2"]
+[gd_scene load_steps=11 format=3 uid="uid://b0xkgs8hc58c2"]
 
 [ext_resource type="Script" path="res://Rocket/Rocketenemy.gd" id="1_is6q8"]
 [ext_resource type="PackedScene" uid="uid://cjnrntg8htv0g" path="res://Rocket/Rocket.tscn" id="2_1ky62"]
 [ext_resource type="Texture2D" uid="uid://rob3wdkdnixk" path="res://Rocket/Rocket robot.png" id="4_v5xlr"]
 [ext_resource type="Theme" uid="uid://ce0sleknwgwcy" path="res://SDTimer/enemy.tres" id="5_3xco8"]
 [ext_resource type="Script" path="res://SDTimer/progress_bar.gd" id="6_ri8me"]
+[ext_resource type="Texture2D" uid="uid://4apvb8ecg33n" path="res://Lighting/yx9tqpap.png" id="7_5feqc"]
 [ext_resource type="Script" path="res://All Combined/shot.gd" id="7_spdne"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5188p"]
@@ -38,6 +39,15 @@ scale = Vector2(2, 2)
 texture = ExtResource("4_v5xlr")
 hframes = 2
 frame = 1
+
+[node name="PointLight2D" type="PointLight2D" parent="Sprite2D"]
+position = Vector2(0.500013, 3.5)
+rotation = -1.5708
+scale = Vector2(0.5, 0.5)
+color = Color(1, 0, 0, 1)
+energy = 0.13
+texture = ExtResource("7_5feqc")
+texture_scale = 0.75
 
 [node name="Area2D" type="Area2D" parent="." groups=["Robot"]]
 scale = Vector2(2, 2)

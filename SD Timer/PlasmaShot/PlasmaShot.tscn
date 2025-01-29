@@ -89,7 +89,7 @@ animation = &"Main"
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 color = Color(5.82382e-06, 0.836591, 0.313928, 1)
-energy = 0.5
+energy = 0.1
 texture = ExtResource("3_vqe68")
 texture_scale = 0.3
 
