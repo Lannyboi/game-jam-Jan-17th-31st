@@ -35,7 +35,7 @@ func _physics_process(_delta):
 func hit():
 	if PlayerHeath <= 0:
 		GlobalSign.death.emit()
-		get_tree().change_scene_to_file("res://Menu/death.tscn")
+		get_tree().change_scene_to_file.bind("res://Menu/death.tscn").call_deferred()
 
 
 func _on_hurt_box_area_entered(area: Area2D) -> void:

@@ -1,14 +1,15 @@
 extends Control
 
 func _on_back_pressed():
-	get_tree().change_scene_to_file("res://Menu/menu.tscn")
+	$"../../CanvasLayer".visible = true
+	$"..".visible = false
 
 func _ready():
 	if DisplayServer.window_get_mode() == 3:
-		$VBoxContainer/HSplitContainer/VBoxContainer/Fullscreen/Fullscreen.button_pressed = true
+		$VBoxContainer/HSplitContainer/VBoxContainer/HBoxContainer/Fullscreen.button_pressed = true
 	
 	if DisplayServer.window_get_vsync_mode() == 1:
-		$VBoxContainer/HSplitContainer/VBoxContainer/Vsync/Vsync.button_pressed = true
+		$VBoxContainer/HSplitContainer/VBoxContainer/MarginContainer2/Vsync.button_pressed = true
 
 func _on_vsync_toggled(toggled_on: bool):
 	if toggled_on == true:

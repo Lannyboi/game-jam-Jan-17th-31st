@@ -1,13 +1,19 @@
-[gd_scene load_steps=16 format=4 uid="uid://cmroiywksa33h"]
+[gd_scene load_steps=21 format=4 uid="uid://cmroiywksa33h"]
 
 [ext_resource type="Texture2D" uid="uid://b32kwratljdii" path="res://All Combined/cloud-tilesheet.png" id="1_3ddn8"]
 [ext_resource type="Script" path="res://All Combined/main.gd" id="1_r4xkr"]
 [ext_resource type="Script" path="res://Menu/control.gd" id="2_hfgrq"]
+[ext_resource type="Script" path="res://Menu/pause_menu_settings.gd" id="3_c0jg0"]
+[ext_resource type="Script" path="res://Menu/master.gd" id="4_7e21n"]
 [ext_resource type="PackedScene" path="res://Spawn/RocketSpawner.tscn" id="5_dxgrm"]
 [ext_resource type="PackedScene" uid="uid://bx5ubluln3yf6" path="res://All Combined/player.tscn" id="5_hdupc"]
+[ext_resource type="Script" path="res://Menu/music.gd" id="5_qmgcq"]
 [ext_resource type="PackedScene" path="res://Spawn/TankSpawner.tscn" id="5_sksbv"]
 [ext_resource type="PackedScene" path="res://Spawn/PlasmaSpawner.tscn" id="6_6qcdx"]
+[ext_resource type="Script" path="res://Menu/sound_fx.gd" id="6_exkl5"]
 [ext_resource type="PackedScene" path="res://Spawn/RickVirusSpawner.tscn" id="8_v6l7v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_htrkb"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_yc66h"]
 tile_data = PackedInt32Array(0, 0, 0, 65536, 65536, 1610612736, 131072, 196608, 1610612736, 196608, 131072, 1610612736, 262144, 65536, 1610612736, 327680, 262144, 805306368, 1, 65536, 0, 65537, 589824, 0, 131073, 524288, 0, 196609, 458752, 0, 262145, 589824, 0, 327681, 65536, 805306368, 2, 131072, 0, 65538, 393216, 0, 131074, 327680, 0, 196610, 327680, 0, 262146, 524288, 0, 327682, 196608, 805306368, 3, 196608, 0, 65539, 458752, 0, 131075, 589824, 0, 196611, 393216, 0, 262147, 589824, 0, 327683, 131072, 805306368, 4, 65536, 0, 65540, 589824, 0, 131076, 393216, 0, 196612, 327680, 0, 262148, 393216, 0, 327684, 65536, 805306368, 5, 262144, 0, 65541, 65536, 1342177280, 131077, 131072, 1342177280, 196613, 196608, 1342177280, 262149, 65536, 1342177280, 327685, 262144, 1342177280)
@@ -130,6 +136,134 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Quit"
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="Pause Menu"]
+visible = false
+
+[node name="Main Menu Settings" type="Control" parent="Pause Menu/CanvasLayer2"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_c0jg0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Pause Menu/CanvasLayer2/Main Menu Settings"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -276.0
+offset_top = -130.0
+offset_right = 276.0
+offset_bottom = 130.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="Pause Menu/CanvasLayer2/Main Menu Settings/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Pause Menu/CanvasLayer2/Main Menu Settings/VBoxContainer/HSplitContainer"]
+custom_minimum_size = Vector2(270, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Pause Menu/CanvasLayer2/Main Menu Settings/VBoxContainer/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Video"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Pause Menu/CanvasLayer2/Main Menu Settings/VBoxContainer/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="Pause Menu/CanvasLayer2/Main Menu Settings/VBoxContainer/HSplitContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+text = "Fullscreen:"
+
+[node name="Fullscreen" type="CheckButton" parent="Pause Menu/CanvasLayer2/Main Menu Settings/VBoxContainer/HSplitContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="HBoxContainer" parent="Pause Menu/CanvasLayer2/Main Menu Settings/VBoxContainer/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="Pause Menu/CanvasLayer2/Main Menu Settings/VBoxContainer/HSplitContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+text = "Vsync:"
+
+[node name="Vsync" type="CheckButton" parent="Pause Menu/CanvasLayer2/Main Menu Settings/VBoxContainer/HSplitContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Pause Menu/CanvasLayer2/Main Menu Settings/VBoxContainer/HSplitContainer"]
+custom_minimum_size = Vector2(270, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Pause Menu/CanvasLayer2/Main Menu Settings/VBoxContainer/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Audio"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Pause Menu/CanvasLayer2/Main Menu Settings/VBoxContainer/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "Master"
+vertical_alignment = 2
+
+[node name="Master" type="HSlider" parent="Pause Menu/CanvasLayer2/Main Menu Settings/VBoxContainer/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+min_value = -30.0
+max_value = 0.0
+script = ExtResource("4_7e21n")
+
+[node name="Label3" type="Label" parent="Pause Menu/CanvasLayer2/Main Menu Settings/VBoxContainer/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "Music"
+vertical_alignment = 2
+
+[node name="Music" type="HSlider" parent="Pause Menu/CanvasLayer2/Main Menu Settings/VBoxContainer/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+min_value = -30.0
+max_value = 0.0
+script = ExtResource("5_qmgcq")
+
+[node name="Label4" type="Label" parent="Pause Menu/CanvasLayer2/Main Menu Settings/VBoxContainer/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "Sound FX
+"
+vertical_alignment = 2
+
+[node name="SoundFX" type="HSlider" parent="Pause Menu/CanvasLayer2/Main Menu Settings/VBoxContainer/HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+min_value = -30.0
+max_value = 0.0
+script = ExtResource("6_exkl5")
+
+[node name="HSeparator" type="HSeparator" parent="Pause Menu/CanvasLayer2/Main Menu Settings/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_htrkb")
+
+[node name="Back" type="Button" parent="Pause Menu/CanvasLayer2/Main Menu Settings/VBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 40
+text = "Back"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -2
@@ -304,3 +438,6 @@ position = Vector2(1385, -640)
 [connection signal="pressed" from="Pause Menu/CanvasLayer/PanelContainer/VBoxContainer/Settings" to="Pause Menu" method="_on_settings_pressed"]
 [connection signal="pressed" from="Pause Menu/CanvasLayer/PanelContainer/VBoxContainer/Main Menu" to="Pause Menu" method="_on_main_menu_pressed"]
 [connection signal="pressed" from="Pause Menu/CanvasLayer/PanelContainer/VBoxContainer/Quit" to="Pause Menu" method="_on_quit_pressed"]
+[connection signal="toggled" from="Pause Menu/CanvasLayer2/Main Menu Settings/VBoxContainer/HSplitContainer/VBoxContainer/HBoxContainer/Fullscreen" to="Pause Menu/CanvasLayer2/Main Menu Settings" method="_on_fullscreen_toggled"]
+[connection signal="toggled" from="Pause Menu/CanvasLayer2/Main Menu Settings/VBoxContainer/HSplitContainer/VBoxContainer/MarginContainer2/Vsync" to="Pause Menu/CanvasLayer2/Main Menu Settings" method="_on_vsync_toggled"]
+[connection signal="pressed" from="Pause Menu/CanvasLayer2/Main Menu Settings/VBoxContainer/Back" to="Pause Menu/CanvasLayer2/Main Menu Settings" method="_on_back_pressed"]

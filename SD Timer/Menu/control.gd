@@ -32,8 +32,8 @@ func _on_restart_pressed():
 	get_tree().reload_current_scene()
 
 func _on_settings_pressed():
-	GlobalSign.MainMenu.emit()
-	get_tree().change_scene_to_file("res://Menu/main_menu_settings.tscn")
+	$CanvasLayer.visible = false
+	$CanvasLayer2.visible = true
 
 func _on_main_menu_pressed():
 	GlobalSign.MainMenu.emit()
@@ -42,7 +42,7 @@ func _on_main_menu_pressed():
 func _on_quit_pressed():
 	get_tree().quit()
 
-func _process(delta: float):
+func _process(_delta: float):
 	testEsc()
 
 

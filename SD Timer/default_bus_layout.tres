@@ -7,6 +7,7 @@ resource_name = "Reverb"
 resource_name = "Reverb"
 
 [resource]
+bus/0/volume_db = -0.330477
 bus/1/name = &"sfx"
 bus/1/solo = false
 bus/1/mute = false
