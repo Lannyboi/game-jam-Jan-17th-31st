@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dv1pfy38ong1h"
+path="res://.godot/imported/Skibbidi level music - Instrumental.mp3-4c38be7423cf6e090266d37f79fe1396.mp3str"
+
+[deps]
+
+source_file="res://Music/Skibbidi level music - Instrumental.mp3"
+dest_files=["res://.godot/imported/Skibbidi level music - Instrumental.mp3-4c38be7423cf6e090266d37f79fe1396.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

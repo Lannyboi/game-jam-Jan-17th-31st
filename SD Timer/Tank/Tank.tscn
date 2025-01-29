@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://dxubvfwj1wtgk"]
+[gd_scene load_steps=11 format=3 uid="uid://csgjwqpl2vdxs"]
 
 [ext_resource type="Script" path="res://Tank/Tank.gd" id="1_uvxyu"]
 [ext_resource type="Texture2D" uid="uid://0o44u28ty6dw" path="res://Tank/Tank robot.png" id="2_5rnxa"]
-[ext_resource type="Theme" uid="uid://ce0sleknwgwcy" path="res://SDTimer/enemy.tres" id="4_5yhfp"]
+[ext_resource type="Theme" uid="uid://bkok1ypds7n7x" path="res://SDTimer/enemy.tres" id="4_5yhfp"]
 [ext_resource type="Texture2D" uid="uid://4apvb8ecg33n" path="res://Lighting/yx9tqpap.png" id="5_ocvd1"]
 [ext_resource type="Script" path="res://SDTimer/progress_bar.gd" id="5_w4k0a"]
+[ext_resource type="AudioStream" uid="uid://bd65mrxkdwogq" path="res://Sound/robotstart.wav" id="6_gpsuh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5188p"]
 radius = 11.0
@@ -103,6 +104,12 @@ color = Color(0.965936, 0.953473, 0, 1)
 energy = 0.13
 texture = ExtResource("5_ocvd1")
 texture_scale = 0.75
+
+[node name="RobotStartup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_gpsuh")
+volume_db = -10.0
+pitch_scale = 2.0
+bus = &"Robots"
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]

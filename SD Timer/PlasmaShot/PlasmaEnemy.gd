@@ -23,6 +23,7 @@ func _ready() -> void:
 
 
 func _on_plasma_shot_timeout() -> void:
+	$ShotSound.play()
 	var b = bullet.instantiate()
 	get_tree().root.add_child(b)
 	b.transform = $Shot.global_transform
@@ -44,6 +45,7 @@ func _on_plasma_shot_timeout() -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if ($"../Player".inEnemy == false and area.is_in_group("Player")) and Hacked == false:
 		inRobot = true
+		$RobotStartup.play()
 		$"../Player".inEnemy = true
 		$"../Player".position = position
 		$"ProgressBar".visible = true
@@ -118,6 +120,7 @@ func _on_timer_timeout() -> void:
 
 
 func die():
+	$"../Player/RobotDeath".play()
 	if Hacked == false:
 		emit_signal("dead")
 		queue_free()

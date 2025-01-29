@@ -1,12 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://b0xkgs8hc58c2"]
+[gd_scene load_steps=13 format=3 uid="uid://dcghycekl7g2h"]
 
 [ext_resource type="Script" path="res://Rocket/Rocketenemy.gd" id="1_is6q8"]
-[ext_resource type="PackedScene" uid="uid://cjnrntg8htv0g" path="res://Rocket/Rocket.tscn" id="2_1ky62"]
+[ext_resource type="PackedScene" path="res://Rocket/Rocket.tscn" id="2_1ky62"]
 [ext_resource type="Texture2D" uid="uid://rob3wdkdnixk" path="res://Rocket/Rocket robot.png" id="4_v5xlr"]
-[ext_resource type="Theme" uid="uid://ce0sleknwgwcy" path="res://SDTimer/enemy.tres" id="5_3xco8"]
+[ext_resource type="Theme" uid="uid://bkok1ypds7n7x" path="res://SDTimer/enemy.tres" id="5_3xco8"]
 [ext_resource type="Script" path="res://SDTimer/progress_bar.gd" id="6_ri8me"]
 [ext_resource type="Texture2D" uid="uid://4apvb8ecg33n" path="res://Lighting/yx9tqpap.png" id="7_5feqc"]
 [ext_resource type="Script" path="res://All Combined/shot.gd" id="7_spdne"]
+[ext_resource type="AudioStream" uid="uid://bd65mrxkdwogq" path="res://Sound/robotstart.wav" id="8_g5sue"]
+[ext_resource type="AudioStream" uid="uid://c2kslsgc6kesu" path="res://Sound/Rocket.wav" id="9_qstkt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5188p"]
 radius = 11.0
@@ -115,6 +117,19 @@ position = Vector2(30, -20)
 scale = Vector2(2, 2)
 gizmo_extents = 100.0
 script = ExtResource("7_spdne")
+
+[node name="RobotStartup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_g5sue")
+volume_db = -10.0
+pitch_scale = 2.0
+bus = &"Robots"
+
+[node name="ShotSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_qstkt")
+volume_db = -15.0
+pitch_scale = 0.3
+attenuation = 7.0
+bus = &"Shots"
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]

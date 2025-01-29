@@ -24,6 +24,7 @@ func _ready() -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if $"../Player".inEnemy == false and area.is_in_group("Player"):
 		inRobot = true
+		$RobotStartup.play()
 		$"../Player".inEnemy = true
 		$"../Player".position = position
 		$"ProgressBar".visible = true
@@ -83,11 +84,13 @@ func _on_timer_timeout() -> void:
 	die()
 
 func die():
+	$"../Player/RobotDeath".play()
 	$Explode/CollisionShape2D.disabled = false
 	$Die.start(0.1)
 
 
 func _on_die_timeout() -> void:
+	$"../Player/RobotDeath".play()
 	$"../Player".inEnemy = false
 	$"../Player".visible = true
 	$"../Player/Area2D/CollisionShape2D".disabled = false

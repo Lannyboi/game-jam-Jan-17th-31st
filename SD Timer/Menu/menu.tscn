@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxocjgkdrp4hy"]
+[gd_scene load_steps=5 format=3 uid="uid://36fkdiy7etra"]
 
 [ext_resource type="Script" path="res://Menu/menu.gd" id="1_crdk8"]
-[ext_resource type="PackedScene" uid="uid://d2r0xgcfyrulj" path="res://All Combined/All_Combined.tscn" id="2_xyd6a"]
+[ext_resource type="PackedScene" uid="uid://cmroiywksa33h" path="res://All Combined/All_Combined.tscn" id="2_xyd6a"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wuaf8"]
 

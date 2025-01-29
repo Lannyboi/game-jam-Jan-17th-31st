@@ -1,10 +1,18 @@
-[gd_scene load_steps=9 format=3 uid="uid://co5fidgmf2ycl"]
+[gd_scene load_steps=18 format=3 uid="uid://bx5ubluln3yf6"]
 
 [ext_resource type="Script" path="res://SDTimer/player.gd" id="1_m0ceh"]
 [ext_resource type="Texture2D" uid="uid://dmqfxevnmpd7k" path="res://All Combined/circuit-virus-2.png" id="2_kfpsa"]
 [ext_resource type="Script" path="res://camera/camera_2d.gd" id="3_8o72f"]
-[ext_resource type="Theme" uid="uid://ce0sleknwgwcy" path="res://SDTimer/enemy.tres" id="3_elsih"]
+[ext_resource type="Theme" uid="uid://bkok1ypds7n7x" path="res://SDTimer/enemy.tres" id="3_elsih"]
 [ext_resource type="Texture2D" uid="uid://4apvb8ecg33n" path="res://Lighting/yx9tqpap.png" id="4_cxrc3"]
+[ext_resource type="AudioStream" uid="uid://c42s53od36b1u" path="res://Sound/robotexit.wav" id="6_65aci"]
+[ext_resource type="AudioStream" uid="uid://dv1pfy38ong1h" path="res://Music/Skibbidi level music - Instrumental.mp3" id="7_08juk"]
+[ext_resource type="AudioStream" uid="uid://5cjawdbvfpqv" path="res://Music/Skibbidi level music 2 - Instrumental.mp3" id="8_uh2a1"]
+[ext_resource type="AudioStream" uid="uid://feifa8xhjv27" path="res://Music/Brainrot v2 - Instrumental.mp3" id="9_7tevh"]
+[ext_resource type="AudioStream" uid="uid://qtw4a1cldyre" path="res://Music/Brainrot v3 - Instrumental.mp3" id="10_ttmly"]
+[ext_resource type="AudioStream" uid="uid://dtiwxen8lmiys" path="res://Music/Swift Level music! v3 - Instrumental.mp3" id="11_df1cf"]
+[ext_resource type="AudioStream" uid="uid://d1a3ihgf7g67b" path="res://Music/Swift Level music! v4 - Instrumental.mp3" id="12_h7itl"]
+[ext_resource type="AudioStream" uid="uid://dx3mmyiwipl5j" path="res://Music/Swift Level music! v7 - Instrumental (1).mp3" id="13_4o0wv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u30iv"]
 size = Vector2(64, 64)
@@ -15,10 +23,24 @@ size = Vector2(64, 64)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2fdum"]
 size = Vector2(48, 48)
 
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_g3jhy"]
+shuffle = true
+stream_count = 7
+stream_0 = ExtResource("7_08juk")
+stream_1 = ExtResource("8_uh2a1")
+stream_2 = ExtResource("9_7tevh")
+stream_3 = ExtResource("10_ttmly")
+stream_4 = ExtResource("11_df1cf")
+stream_5 = ExtResource("12_h7itl")
+stream_6 = ExtResource("13_4o0wv")
+
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 position = Vector2(576, 320)
 script = ExtResource("1_m0ceh")
 speed = 350.0
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+current = true
 
 [node name="UI" type="CanvasLayer" parent="."]
 layer = 2
@@ -88,5 +110,18 @@ collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 shape = SubResource("RectangleShape2D_2fdum")
+
+[node name="RobotDeath" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_65aci")
+volume_db = -13.0
+pitch_scale = 1.7
+bus = &"Robots"
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamPlaylist_g3jhy")
+volume_db = -9.0
+pitch_scale = 1.2
+autoplay = true
+bus = &"Music"
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
