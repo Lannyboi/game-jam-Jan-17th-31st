@@ -20,6 +20,15 @@ grow_vertical = 2
 script = ExtResource("1_crdk8")
 Game = ExtResource("2_xyd6a")
 
+[node name="ColorRect" type="ColorRect" parent="Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.572549)
+
 [node name="MarginContainer" type="MarginContainer" parent="Menu"]
 layout_mode = 1
 anchors_preset = 8
@@ -40,7 +49,7 @@ layout_mode = 2
 
 [node name="Play" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 70
+theme_override_font_sizes/font_size = 60
 text = "Play"
 
 [node name="HSeparator2" type="HSeparator" parent="Menu/MarginContainer/VBoxContainer"]
@@ -53,7 +62,7 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_2pjak")
 
 [node name="PvP" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 70
+theme_override_font_sizes/font_size = 60
 text = "PvP"
 
 [node name="HSeparator5" type="HSeparator" parent="Menu/MarginContainer/VBoxContainer"]
@@ -66,7 +75,7 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_2pjak")
 
 [node name="Settings" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 70
+theme_override_font_sizes/font_size = 60
 text = "Settings"
 
 [node name="HSeparator" type="HSeparator" parent="Menu/MarginContainer/VBoxContainer"]
@@ -79,8 +88,23 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_2pjak")
 
 [node name="Quit" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 70
+theme_override_font_sizes/font_size = 60
 text = "Quit"
+
+[node name="Label" type="Label" parent="Menu"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -238.5
+offset_right = 238.5
+offset_bottom = 96.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 70
+text = "Ctrl Alt Defeat"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/Play" to="Menu" method="_on_play_pressed"]
 [connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/PvP" to="Menu" method="_on_pv_p_pressed"]
