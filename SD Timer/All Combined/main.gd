@@ -3,7 +3,7 @@ extends Node2D
 
 func _process(_float):
 	if Globalvars.virusleft <= 15:
-		Globalvars.enemycap = Globalvars.virusleft
+		Globalvars.enemycap = (Globalvars.virusleft + 1)
 
 
 func _on_wave_timeout() -> void:
