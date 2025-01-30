@@ -67,7 +67,7 @@ theme_override_font_sizes/font_size = 48
 text = "Defeat The Viruses \"Pickle-Rick-Rolls\" to Win
 
 WASD To Move, Aim With Mouse
-Run into the Microshock defenders to Hack Them"
+Run into the Microshock Defenders to Hack Them"
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HowToPlay1/VBoxContainer"]

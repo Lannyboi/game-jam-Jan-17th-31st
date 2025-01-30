@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://qtw35dmq8s0r"]
+[gd_scene load_steps=3 format=3 uid="uid://cpfx8mt0t2cfe"]
 
 [ext_resource type="Script" path="res://Spawn/spawner.gd" id="1_ybol7"]
-[ext_resource type="PackedScene" uid="uid://dxubvfwj1wtgk" path="res://Tank/Tank.tscn" id="2_iy8ij"]
+[ext_resource type="PackedScene" uid="uid://csgjwqpl2vdxs" path="res://Tank/Tank.tscn" id="2_iy8ij"]
 
 [node name="TankSpawner" type="Node2D"]
 process_mode = 1
