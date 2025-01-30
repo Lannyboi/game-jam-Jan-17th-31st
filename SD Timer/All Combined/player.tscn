@@ -36,7 +36,6 @@ stream_5 = ExtResource("12_h7itl")
 position = Vector2(576, 320)
 script = ExtResource("1_m0ceh")
 speed = 350.0
-PlayerHeath = 10000
 
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 current = true
