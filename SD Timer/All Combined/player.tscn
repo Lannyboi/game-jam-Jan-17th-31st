@@ -130,7 +130,6 @@ bus = &"Robots"
 stream = SubResource("AudioStreamPlaylist_g3jhy")
 volume_db = -9.0
 pitch_scale = 1.2
-autoplay = true
 bus = &"Music"
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
