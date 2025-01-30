@@ -104,9 +104,6 @@ func _process(_delta: float) -> void:
 		$"../Player/Area2D/CollisionShape2D".disabled = false
 		die()
 
-
-
-
 	$HeathBar.value = heath
 	$HeathBar.position = (position + Vector2(-48, -71))
 	heathPer = ($HeathBar.value / $HeathBar.max_value)
@@ -126,6 +123,8 @@ func die():
 		queue_free()
 	elif Hacked == true:
 		Globalvars.RobotsHacked -= 1
+		Globalvars.virusleft -= 1
+		Globalvars.virus -= 1
 		emit_signal("dead")
 		queue_free()
 

@@ -84,7 +84,6 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 			heath = 0
 
 func _process(_delta: float) -> void:
-
 	if inRobot == true:
 		$HeathBar.visible = false
 		look_at(get_global_mouse_position())
@@ -128,6 +127,8 @@ func die():
 		queue_free()
 	elif Hacked == true:
 		Globalvars.RobotsHacked -= 1
+		Globalvars.virusleft -= 1
+		Globalvars.virus -= 1
 		emit_signal("dead")
 		queue_free()
 

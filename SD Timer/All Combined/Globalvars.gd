@@ -11,10 +11,10 @@ extends Node
 @export var RobotsHacked = 0
 
 @export_category("Virus")
+@export var virusesAtStart = 10
 @export var virus = 0
 @export var viruscap = 2
-@export var virusleft = 10
-
+@export var virusleft = 0
 
 @export_category("Settings")
 @export var MasterValue = 0

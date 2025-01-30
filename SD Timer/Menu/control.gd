@@ -1,8 +1,6 @@
 extends Control
 
 
-
-
 func _ready() -> void:
 	GlobalSign.MainMenu.connect(Callable(self, "_on_MainMenu"))
 	
@@ -51,4 +49,4 @@ func _on_MainMenu():
 	Globalvars.virus = 0
 	Globalvars.enemycap = 1
 	Globalvars.viruscap = 2
-	Globalvars.virusleft = 100
+	Globalvars.virusleft = Globalvars.virusesAtStart

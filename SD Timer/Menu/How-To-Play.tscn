@@ -63,7 +63,11 @@ theme_override_constants/separation = 100
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer"]
 custom_minimum_size = Vector2(272, 232)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -102,8 +106,13 @@ horizontal_alignment = 1
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 70
 
-[node name="TextureRect3" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer3"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+
+[node name="TextureRect3" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer3/MarginContainer"]
 custom_minimum_size = Vector2(208, 168)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -112,9 +121,9 @@ texture = ExtResource("3_jyars")
 flip_v = true
 
 [node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer3"]
-custom_minimum_size = Vector2(0, 274)
 layout_mode = 2
-size_flags_vertical = 8
+size_flags_horizontal = 4
+size_flags_vertical = 1
 theme_override_font_sizes/font_size = 35
 text = "Tank Enemies
 Dmg: High
@@ -123,7 +132,7 @@ HP: High"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="Button" type="Button" parent="."]
+[node name="Back" type="Button" parent="."]
 custom_minimum_size = Vector2(274, 0)
 layout_mode = 0
 offset_left = 1584.0
@@ -133,4 +142,4 @@ offset_bottom = 1019.0
 theme_override_font_sizes/font_size = 60
 text = "Back"
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_button_pressed"]

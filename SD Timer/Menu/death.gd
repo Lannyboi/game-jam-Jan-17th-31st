@@ -8,7 +8,7 @@ func _ready() -> void:
 	Globalvars.virus = 0
 	Globalvars.enemycap = 1
 	Globalvars.viruscap = 2
-	Globalvars.virusleft = 100
+	Globalvars.virusleft = Globalvars.virusesAtStart
 
 
 func _on_retry_pressed() -> void:

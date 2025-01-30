@@ -26,7 +26,7 @@ func _physics_process(_delta):
 		$Area2D/CollisionShape2D.disabled = false
 
 	if Globalvars.virusleft <= 0:
-		get_tree().quit()
+		print("gay")#get_tree().quit()
 
 	$"UI/HeathBar".value = PlayerHeath
 	$UI/Label.text = "Viruses Left: %d" % Globalvars.virusleft
