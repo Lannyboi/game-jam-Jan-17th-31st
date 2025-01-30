@@ -5,13 +5,13 @@
 [ext_resource type="Script" path="res://Menu/control.gd" id="2_hfgrq"]
 [ext_resource type="Script" path="res://Menu/pause_menu_settings.gd" id="3_c0jg0"]
 [ext_resource type="Script" path="res://Menu/master.gd" id="4_7e21n"]
-[ext_resource type="PackedScene" uid="uid://cl57oklnlvktx" path="res://Spawn/RocketSpawner.tscn" id="5_dxgrm"]
+[ext_resource type="PackedScene" path="res://Spawn/RocketSpawner.tscn" id="5_dxgrm"]
 [ext_resource type="PackedScene" uid="uid://bx5ubluln3yf6" path="res://All Combined/player.tscn" id="5_hdupc"]
 [ext_resource type="Script" path="res://Menu/music.gd" id="5_qmgcq"]
-[ext_resource type="PackedScene" uid="uid://qtw35dmq8s0r" path="res://Spawn/TankSpawner.tscn" id="5_sksbv"]
-[ext_resource type="PackedScene" uid="uid://cj5t8hv1jkffe" path="res://Spawn/PlasmaSpawner.tscn" id="6_6qcdx"]
+[ext_resource type="PackedScene" path="res://Spawn/TankSpawner.tscn" id="5_sksbv"]
+[ext_resource type="PackedScene" path="res://Spawn/PlasmaSpawner.tscn" id="6_6qcdx"]
 [ext_resource type="Script" path="res://Menu/sound_fx.gd" id="6_exkl5"]
-[ext_resource type="PackedScene" uid="uid://cb7cavgrmlf3j" path="res://Spawn/RickVirusSpawner.tscn" id="8_v6l7v"]
+[ext_resource type="PackedScene" path="res://Spawn/RickVirusSpawner.tscn" id="8_v6l7v"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_htrkb"]
 
@@ -335,7 +335,6 @@ scale = Vector2(104.24, 1)
 shape = SubResource("RectangleShape2D_yagjs")
 
 [node name="Player" parent="." instance=ExtResource("5_hdupc")]
-PlayerHeath = 10000
 
 [node name="PlasmaSpawner" parent="." instance=ExtResource("6_6qcdx")]
 position = Vector2(-1268, 714)

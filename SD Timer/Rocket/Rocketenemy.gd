@@ -102,15 +102,15 @@ func _process(_delta: float) -> void:
 #		look_at($"../Player".position)
 
 
-	if heath <= 0:
-		queue_free()
-
-	if heath <= 0 and inRobot == true:
+	if heath <= 0 and Hacked == true:
+		die()
+	elif heath <= 0 and inRobot == true:
 		$"../Player".inEnemy = false
 		$"../Player".visible = true
 		$"../Player/Area2D/CollisionShape2D".disabled = false
 		die()
-
+	elif heath <= 0:
+		queue_free()
 
 	$HeathBar.value = heath
 	$HeathBar.position = (position + Vector2(-48, -71))
