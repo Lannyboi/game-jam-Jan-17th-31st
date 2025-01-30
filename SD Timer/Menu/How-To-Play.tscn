@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Menu/how_to_play.gd" id="1_xb7yn"]
 [ext_resource type="Texture2D" uid="uid://dm8shsrabc1m2" path="res://PlasmaShot/plasma-robot-sprite-Menu.png" id="2_kglxe"]
 [ext_resource type="Texture2D" uid="uid://0o44u28ty6dw" path="res://Tank/Tank robot.png" id="3_jyars"]
-[ext_resource type="Theme" uid="uid://b5q06jr8qvyd" path="res://button.tres" id="5_6eyir"]
+[ext_resource type="Theme" uid="uid://vpdd4co73nc7" path="res://button.tres" id="5_6eyir"]
 [ext_resource type="Texture2D" uid="uid://der6q678asju5" path="res://Virus/picklerickroll.png" id="5_b37dw"]
 
 [node name="How-To-Play" type="Control"]
