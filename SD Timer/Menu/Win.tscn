@@ -51,7 +51,7 @@ text = "You Win"
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 48
-text = "Nobody Exists on purpose"
+text = "No Exploit Exists on Purpose"
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer2"]
 layout_mode = 2
@@ -71,10 +71,10 @@ theme_override_constants/margin_left = 10
 theme_override_constants/margin_right = 10
 
 [node name="Play Again" type="Button" parent="VBoxContainer2/MarginContainer/HBoxContainer/MarginContainer"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(300, 85)
 layout_mode = 2
 theme = ExtResource("2_uexl7")
-theme_override_font_sizes/font_size = 35
+theme_override_font_sizes/font_size = 48
 text = "Play Again"
 
 [node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer2/MarginContainer/HBoxContainer"]
@@ -83,10 +83,10 @@ theme_override_constants/margin_left = 10
 theme_override_constants/margin_right = 10
 
 [node name="MainMenu" type="Button" parent="VBoxContainer2/MarginContainer/HBoxContainer/MarginContainer2"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(300, 85)
 layout_mode = 2
 theme = ExtResource("2_uexl7")
-theme_override_font_sizes/font_size = 35
+theme_override_font_sizes/font_size = 48
 text = "MainMenu"
 
 [node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer2/MarginContainer/HBoxContainer"]
@@ -95,10 +95,10 @@ theme_override_constants/margin_left = 10
 theme_override_constants/margin_right = 10
 
 [node name="Quit" type="Button" parent="VBoxContainer2/MarginContainer/HBoxContainer/MarginContainer3"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(300, 85)
 layout_mode = 2
 theme = ExtResource("2_uexl7")
-theme_override_font_sizes/font_size = 35
+theme_override_font_sizes/font_size = 48
 text = "Quit
 "
 
