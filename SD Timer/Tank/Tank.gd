@@ -96,4 +96,4 @@ func _on_die_timeout() -> void:
 	$"../Player".visible = true
 	$"../Player/Area2D/CollisionShape2D".disabled = false
 	emit_signal("dead")
-	queue_free()
+	call_deferred("queue_free")

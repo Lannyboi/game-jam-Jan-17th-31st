@@ -52,6 +52,8 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		$"ProgressBar".max_value = (hackTime - 1)
 		$Timer.start(heathPer * hackTime)
 	elif (area.is_in_group("Vrius") and Hacked == false):
+		area.get_parent().emit_signal("enterR")
+		area.get_parent().queue_free()
 		Hacked = true
 		$Turn.start(1)
 

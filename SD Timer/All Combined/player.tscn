@@ -36,6 +36,7 @@ stream_5 = ExtResource("12_h7itl")
 position = Vector2(576, 320)
 script = ExtResource("1_m0ceh")
 speed = 350.0
+PlayerHeath = 10000
 
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 current = true
@@ -45,29 +46,30 @@ layer = 2
 
 [node name="HeathBar" type="ProgressBar" parent="UI"]
 z_index = 5
+custom_minimum_size = Vector2(191, 26)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -896.0
-offset_top = -476.0
-offset_right = -749.0
-offset_bottom = -458.0
+offset_left = -928.0
+offset_top = -492.0
+offset_right = -737.0
+offset_bottom = -466.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_elsih")
 show_percentage = false
 
 [node name="Label" type="Label" parent="UI"]
-offset_left = 64.0
-offset_top = 104.0
-offset_right = 211.0
-offset_bottom = 132.0
+offset_left = 32.0
+offset_top = 96.0
+offset_right = 252.0
+offset_bottom = 138.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 3
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 30
 text = "Viruses Left: 00"
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -87,6 +89,14 @@ position = Vector2(0, -8)
 energy = 0.1
 texture = ExtResource("4_cxrc3")
 texture_scale = 0.75
+
+[node name="PointLight2D2" type="PointLight2D" parent="Camera2D"]
+visible = false
+position = Vector2(0, -8)
+color = Color(0.940355, 6.87307e-05, 3.50392e-05, 1)
+energy = 3.0
+texture = ExtResource("4_cxrc3")
+texture_scale = 8.86
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_u30iv")
@@ -109,6 +119,8 @@ collision_mask = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 shape = SubResource("RectangleShape2D_2fdum")
 
+[node name="Timer" type="Timer" parent="."]
+
 [node name="RobotDeath" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_65aci")
 volume_db = -13.0
@@ -123,3 +135,4 @@ autoplay = true
 bus = &"Music"
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
