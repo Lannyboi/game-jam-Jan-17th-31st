@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://jvubv78ij658"]
+[gd_scene load_steps=14 format=3 uid="uid://jvubv78ij658"]
 
 [ext_resource type="Script" path="res://PlasmaShot/PlasmaEnemy.gd" id="1_g47hu"]
 [ext_resource type="PackedScene" uid="uid://d1v14shxve5a8" path="res://PlasmaShot/PlasmaShot.tscn" id="2_eihiv"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://4apvb8ecg33n" path="res://Lighting/yx9tqpap.png" id="7_ypvg8"]
 [ext_resource type="AudioStream" uid="uid://bd65mrxkdwogq" path="res://Sound/robotstart.wav" id="8_mq6lw"]
 [ext_resource type="AudioStream" uid="uid://dji37tpovks5k" path="res://Sound/slimeball.wav" id="9_bas3l"]
+[ext_resource type="Texture2D" uid="uid://dmko0xd2iddlo" path="res://Virus/Hair.png" id="10_eqbmo"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5188p"]
 radius = 11.0
@@ -119,6 +120,13 @@ volume_db = -15.0
 pitch_scale = 2.0
 attenuation = 7.0
 bus = &"Shots"
+
+[node name="Hair" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-6, 4)
+rotation = -1.5708
+scale = Vector2(2.548, 3)
+texture = ExtResource("10_eqbmo")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]

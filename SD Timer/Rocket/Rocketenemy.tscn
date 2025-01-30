@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dcghycekl7g2h"]
+[gd_scene load_steps=14 format=3 uid="uid://dcghycekl7g2h"]
 
 [ext_resource type="Script" path="res://Rocket/Rocketenemy.gd" id="1_is6q8"]
 [ext_resource type="PackedScene" uid="uid://5dott3xuiu3d" path="res://Rocket/Rocket.tscn" id="2_1ky62"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://All Combined/shot.gd" id="7_spdne"]
 [ext_resource type="AudioStream" uid="uid://bd65mrxkdwogq" path="res://Sound/robotstart.wav" id="8_g5sue"]
 [ext_resource type="AudioStream" uid="uid://c2kslsgc6kesu" path="res://Sound/Rocket.wav" id="9_qstkt"]
+[ext_resource type="Texture2D" uid="uid://dmko0xd2iddlo" path="res://Virus/Hair.png" id="10_6xk83"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5188p"]
 radius = 11.0
@@ -130,6 +131,13 @@ volume_db = -15.0
 pitch_scale = 0.3
 attenuation = 7.0
 bus = &"Shots"
+
+[node name="Hair" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-6, 9)
+rotation = -1.5708
+scale = Vector2(2.548, 3)
+texture = ExtResource("10_6xk83")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
