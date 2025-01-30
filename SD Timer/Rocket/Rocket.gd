@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var speed = 250
+@export var speed = 300
 @export var pierce = 0
 
 func _ready() -> void:
@@ -27,3 +27,7 @@ func _on_MainMenu():
 
 func _on_Death():
 	queue_free()
+
+
+func _on_timer_timeout() -> void:
+	speed = 200

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bx5ubluln3yf6"]
+[gd_scene load_steps=15 format=3 uid="uid://bx5ubluln3yf6"]
 
 [ext_resource type="Script" path="res://SDTimer/player.gd" id="1_m0ceh"]
 [ext_resource type="Texture2D" uid="uid://dmqfxevnmpd7k" path="res://All Combined/circuit-virus-2.png" id="2_kfpsa"]
@@ -6,6 +6,7 @@
 [ext_resource type="Theme" uid="uid://bkok1ypds7n7x" path="res://SDTimer/enemy.tres" id="3_elsih"]
 [ext_resource type="Texture2D" uid="uid://4apvb8ecg33n" path="res://Lighting/yx9tqpap.png" id="4_cxrc3"]
 [ext_resource type="AudioStream" uid="uid://c42s53od36b1u" path="res://Sound/robotexit.wav" id="6_65aci"]
+[ext_resource type="AudioStream" uid="uid://dndlt18o6drxd" path="res://Sound/rumble.mp3" id="7_ndffb"]
 [ext_resource type="AudioStream" uid="uid://b778lew457e7o" path="res://Music/80s-video-game-battle-chiptune-216255.mp3" id="7_nhup5"]
 [ext_resource type="AudioStream" uid="uid://c1l60v0ytpruo" path="res://Music/chiptune-dubstep-fusion-instrumental-265078.mp3" id="8_j7v8b"]
 [ext_resource type="AudioStream" uid="uid://e84pjjyrucn7" path="res://Music/zt-byte-blast-163367.mp3" id="9_31wo0"]
@@ -120,6 +121,9 @@ stream = ExtResource("6_65aci")
 volume_db = -13.0
 pitch_scale = 1.7
 bus = &"Robots"
+
+[node name="TankDeath" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_ndffb")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamPlaylist_fwm5w")

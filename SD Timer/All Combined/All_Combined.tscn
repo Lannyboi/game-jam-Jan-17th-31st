@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" path="res://Spawn/RocketSpawner.tscn" id="5_dxgrm"]
 [ext_resource type="PackedScene" uid="uid://bx5ubluln3yf6" path="res://All Combined/player.tscn" id="5_hdupc"]
 [ext_resource type="Script" path="res://Menu/music.gd" id="5_qmgcq"]
-[ext_resource type="PackedScene" path="res://Spawn/TankSpawner.tscn" id="5_sksbv"]
+[ext_resource type="PackedScene" uid="uid://cpfx8mt0t2cfe" path="res://Spawn/TankSpawner.tscn" id="5_sksbv"]
 [ext_resource type="PackedScene" path="res://Spawn/PlasmaSpawner.tscn" id="6_6qcdx"]
 [ext_resource type="Script" path="res://Menu/sound_fx.gd" id="6_exkl5"]
 [ext_resource type="PackedScene" path="res://Spawn/RickVirusSpawner.tscn" id="8_v6l7v"]

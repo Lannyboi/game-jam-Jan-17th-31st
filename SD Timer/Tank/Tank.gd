@@ -54,6 +54,11 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 			heath -= Globalvars.ExploadeDmg
 
 
+func _input(event: InputEvent) -> void:
+	if inRobot == true and Input.is_action_just_pressed("Expode"):
+		die()
+
+
 func _process(_delta: float) -> void:
 
 	if inRobot == true:
@@ -85,13 +90,13 @@ func _on_timer_timeout() -> void:
 	die()
 
 func die():
-	$"../Player/RobotDeath".play()
+	$"../Player/TankDeath".play()
 	$Explode/CollisionShape2D.disabled = false
 	$Die.start(0.1)
 
 
 func _on_die_timeout() -> void:
-	$"../Player/RobotDeath".play()
+	$"../Player/TankDeath".play()
 	$"../Player".inEnemy = false
 	$"../Player".visible = true
 	$"../Player/Area2D/CollisionShape2D".disabled = false
