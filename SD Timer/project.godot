@@ -39,10 +39,6 @@ Explode=""
 Robot=""
 Vrius=""
 
-[gui]
-
-theme/custom="res://button.tres"
-
 [input]
 
 ui_left={
