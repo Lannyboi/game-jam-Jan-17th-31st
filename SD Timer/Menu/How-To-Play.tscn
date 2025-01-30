@@ -67,7 +67,7 @@ theme_override_font_sizes/font_size = 48
 text = "Defeat The Viruses \"Pickle-Rick-Rolls\" to Win
 
 WASD To Move, Aim With Mouse
-Run into Enemies to Hack Them"
+Run into the Microshock defenders to Hack Them"
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HowToPlay1/VBoxContainer"]
@@ -94,7 +94,7 @@ flip_v = true
 [node name="Label" type="Label" parent="HowToPlay1/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
-text = "Rocket Enemies
+text = "Rocket Defenders
 Dmg: Mid
 Fire Rate: Low
 HP: Mid"
@@ -114,7 +114,7 @@ flip_v = true
 [node name="Label2" type="Label" parent="HowToPlay1/VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
-text = "Plasma Enemies
+text = "Plasma Defenders
 Dmg: Low
 Fire Rate: High
 HP: Low"
@@ -141,7 +141,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 35
-text = "Tank Enemies
+text = "Tank Defenders
 Dmg: High
 Fire on Death
 HP: High"

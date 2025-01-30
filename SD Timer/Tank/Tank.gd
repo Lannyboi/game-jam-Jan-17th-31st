@@ -7,7 +7,7 @@ signal dead
 @export var heath = 20
 @export var heathPer : float
 
-@export var hackTime = 5
+@export var hackTime = 10
 @export var isHackable = false
 @export var inRobot = false
 @export var isPicked = false
@@ -42,8 +42,8 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 				$Timer.start(0.1)
 		elif area.is_in_group("Rocket"):
 			if $Timer.time_left > 1.0:
-				$Timer.start($Timer.time_left - 1)
-			elif $Timer.time_left <= 1:
+				$Timer.start($Timer.time_left - 0.5)
+			elif $Timer.time_left <= 0.6:
 				$Timer.start(0.1)
 	elif inRobot == false:
 		if area.is_in_group("Plasma"):
