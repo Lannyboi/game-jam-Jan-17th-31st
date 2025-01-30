@@ -361,6 +361,15 @@ position = Vector2(779, -318)
 [node name="TankSpawner3" parent="." instance=ExtResource("5_sksbv")]
 position = Vector2(-810, 252)
 
+[node name="TankSpawner4" parent="." instance=ExtResource("5_sksbv")]
+position = Vector2(-882, -919)
+
+[node name="TankSpawner5" parent="." instance=ExtResource("5_sksbv")]
+position = Vector2(602, -898)
+
+[node name="TankSpawner6" parent="." instance=ExtResource("5_sksbv")]
+position = Vector2(852, 216)
+
 [node name="RickSpawner" parent="." instance=ExtResource("8_v6l7v")]
 position = Vector2(-196, 716)
 
@@ -411,15 +420,6 @@ position = Vector2(554, -347)
 
 [node name="RickSpawner17" parent="." instance=ExtResource("8_v6l7v")]
 position = Vector2(1385, -640)
-
-[node name="TankSpawner4" parent="." instance=ExtResource("5_sksbv")]
-position = Vector2(-882, -919)
-
-[node name="TankSpawner5" parent="." instance=ExtResource("5_sksbv")]
-position = Vector2(602, -898)
-
-[node name="TankSpawner6" parent="." instance=ExtResource("5_sksbv")]
-position = Vector2(852, 216)
 
 [connection signal="pressed" from="Pause Menu/CanvasLayer/VBoxContainer/Resume" to="Pause Menu" method="_on_resume_pressed"]
 [connection signal="pressed" from="Pause Menu/CanvasLayer/VBoxContainer/Restart" to="Pause Menu" method="_on_restart_pressed"]

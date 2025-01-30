@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://b5q06jr8qvyd"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://b5q06jr8qvyd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8o7wu"]
 bg_color = Color(0.188235, 0.72549, 0.470588, 1)
@@ -24,7 +24,13 @@ expand_margin_bottom = 5.0
 shadow_color = Color(0.188, 0.725, 0.471, 0.4)
 shadow_size = 4
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6yp83"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gb826"]
+
 [resource]
 Button/font_sizes/font_size = 60
 Button/styles/hover = SubResource("StyleBoxFlat_8o7wu")
 Button/styles/normal = SubResource("StyleBoxFlat_w5vrv")
+CheckButton/styles/hover = SubResource("StyleBoxEmpty_6yp83")
+CheckButton/styles/normal = SubResource("StyleBoxEmpty_gb826")

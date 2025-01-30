@@ -17,7 +17,6 @@ var nextWave = 100
 #20, 20, 15
 #15, 15, 17
 #10, 10, 12
-#...
 
 func _process(_float):
 	if Globalvars.virusleft <= 15:
