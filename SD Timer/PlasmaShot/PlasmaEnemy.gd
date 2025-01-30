@@ -76,7 +76,7 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 		if area.is_in_group("Plasma"):
 			heath -= Globalvars.PlasmaDmg
 		elif area.is_in_group("Rocket"):
-			heath -= Globalvars.RocketDmg
+			heath -= (Globalvars.RocketDmg * 2)
 		elif area.is_in_group("Explode"):
 			heath = 0
 

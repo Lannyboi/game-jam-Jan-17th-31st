@@ -80,7 +80,7 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 				$Timer.start(0.1)
 	elif inRobot == false:
 		if area.is_in_group("Plasma"):
-			heath -= Globalvars.PlasmaDmg
+			heath -= (Globalvars.PlasmaDmg * 2)
 		elif area.is_in_group("Rocket"):
 			heath -= Globalvars.RocketDmg
 		elif area.is_in_group("Explode"):

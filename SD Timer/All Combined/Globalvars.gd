@@ -7,11 +7,11 @@ extends Node
 
 @export_category("Robots")
 @export var enemys = 0
-@export var enemycap = 1
+@export var enemycap = 3
 @export var RobotsHacked = 0
 
 @export_category("Virus")
-@export var virusesAtStart = 100
+@export var virusesAtStart = 20
 @export var virus = 0
 @export var viruscap = 2
 @export var virusleft = 0

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bio3bj8xow7qw"]
 
 [ext_resource type="Script" path="res://Menu/death.gd" id="1_tjlbf"]
-[ext_resource type="Theme" uid="uid://vpdd4co73nc7" path="res://button.tres" id="2_r80cf"]
+[ext_resource type="Theme" uid="uid://b5q06jr8qvyd" path="res://button.tres" id="2_r80cf"]
 
 [node name="Death" type="Control"]
 layout_mode = 3
