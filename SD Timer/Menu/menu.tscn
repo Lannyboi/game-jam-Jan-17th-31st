@@ -1,11 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://36fkdiy7etra"]
+[gd_scene load_steps=4 format=3 uid="uid://36fkdiy7etra"]
 
 [ext_resource type="Script" path="res://Menu/menu.gd" id="1_crdk8"]
 [ext_resource type="PackedScene" uid="uid://cmroiywksa33h" path="res://All Combined/All_Combined.tscn" id="2_xyd6a"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wuaf8"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2pjak"]
+[ext_resource type="Theme" uid="uid://vpdd4co73nc7" path="res://button.tres" id="3_lk0q7"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
@@ -31,100 +28,85 @@ color = Color(0, 0, 0, 0.572549)
 
 [node name="MarginContainer" type="MarginContainer" parent="Menu"]
 layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -245.0
+offset_right = 245.0
+offset_bottom = 99.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 40
+
+[node name="Label" type="Label" parent="Menu/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "Ctrl Alt Defeat"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -35.0
-offset_top = -50.5
-offset_right = 35.0
-offset_bottom = 50.5
+offset_left = -150.0
+offset_top = -246.0
+offset_right = 150.0
+offset_bottom = 246.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 40
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Menu/MarginContainer"]
-custom_minimum_size = Vector2(500, 0)
+[node name="Play" type="Button" parent="Menu/VBoxContainer"]
 layout_mode = 2
-
-[node name="Play" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
-layout_mode = 2
+theme = ExtResource("3_lk0q7")
 theme_override_font_sizes/font_size = 60
 text = "Play"
 
-[node name="HSeparator2" type="HSeparator" parent="Menu/MarginContainer/VBoxContainer"]
+[node name="PvP" type="Button" parent="Menu/VBoxContainer"]
 layout_mode = 2
-theme_override_styles/separator = SubResource("StyleBoxEmpty_wuaf8")
-
-[node name="HSeparator3" type="HSeparator" parent="Menu/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_styles/separator = SubResource("StyleBoxEmpty_2pjak")
-
-[node name="PvP" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
-layout_mode = 2
+theme = ExtResource("3_lk0q7")
 theme_override_font_sizes/font_size = 60
 text = "PvP"
 
-[node name="HSeparator5" type="HSeparator" parent="Menu/MarginContainer/VBoxContainer"]
+[node name="Settings" type="Button" parent="Menu/VBoxContainer"]
 layout_mode = 2
-theme_override_styles/separator = SubResource("StyleBoxEmpty_2pjak")
-
-[node name="HSeparator6" type="HSeparator" parent="Menu/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_styles/separator = SubResource("StyleBoxEmpty_2pjak")
-
-[node name="Settings" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
-layout_mode = 2
+theme = ExtResource("3_lk0q7")
 theme_override_font_sizes/font_size = 60
 text = "Settings"
 
-[node name="HSeparator" type="HSeparator" parent="Menu/MarginContainer/VBoxContainer"]
+[node name="Quit" type="Button" parent="Menu/VBoxContainer"]
 layout_mode = 2
-theme_override_styles/separator = SubResource("StyleBoxEmpty_2pjak")
-
-[node name="HSeparator4" type="HSeparator" parent="Menu/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_styles/separator = SubResource("StyleBoxEmpty_2pjak")
-
-[node name="Quit" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
-layout_mode = 2
+theme = ExtResource("3_lk0q7")
 theme_override_font_sizes/font_size = 60
 text = "Quit"
 
-[node name="Label" type="Label" parent="Menu"]
-custom_minimum_size = Vector2(0, 150)
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -238.5
-offset_right = 238.5
-offset_bottom = 96.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 70
-text = "Ctrl Alt Defeat"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Button" type="Button" parent="Menu"]
-custom_minimum_size = Vector2(300, 100)
+[node name="MarginContainer2" type="MarginContainer" parent="Menu"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -312.0
-offset_top = -112.0
-offset_right = -12.0
-offset_bottom = -12.0
+offset_left = -300.0
+offset_top = -100.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_font_sizes/font_size = 40
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="Button" type="Button" parent="Menu/MarginContainer2"]
+custom_minimum_size = Vector2(400, 120)
+layout_mode = 2
+theme = ExtResource("3_lk0q7")
+theme_override_font_sizes/font_size = 60
 text = "How to Play"
 
-[connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/Play" to="Menu" method="_on_play_pressed"]
-[connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/PvP" to="Menu" method="_on_pv_p_pressed"]
-[connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/Settings" to="Menu" method="_on_settings_pressed"]
-[connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/Quit" to="Menu" method="_on_quit_pressed"]
-[connection signal="pressed" from="Menu/Button" to="Menu" method="_on_button_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/Play" to="Menu" method="_on_play_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/PvP" to="Menu" method="_on_pv_p_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/Settings" to="Menu" method="_on_settings_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/Quit" to="Menu" method="_on_quit_pressed"]
+[connection signal="pressed" from="Menu/MarginContainer2/Button" to="Menu" method="_on_button_pressed"]

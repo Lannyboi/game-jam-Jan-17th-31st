@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bxyfvjnedso75"]
+[gd_scene load_steps=7 format=3 uid="uid://bxyfvjnedso75"]
 
 [ext_resource type="Texture2D" uid="uid://bw2cw7teviqp6" path="res://Rocket/Rocket robotMenu.png" id="1_bbgdh"]
 [ext_resource type="Script" path="res://Menu/how_to_play.gd" id="1_xb7yn"]
 [ext_resource type="Texture2D" uid="uid://dm8shsrabc1m2" path="res://PlasmaShot/plasma-robot-sprite-Menu.png" id="2_kglxe"]
 [ext_resource type="Texture2D" uid="uid://0o44u28ty6dw" path="res://Tank/Tank robot.png" id="3_jyars"]
+[ext_resource type="Theme" uid="uid://vpdd4co73nc7" path="res://button.tres" id="5_6eyir"]
+[ext_resource type="Texture2D" uid="uid://der6q678asju5" path="res://Virus/picklerickroll.png" id="5_b37dw"]
 
 [node name="How-To-Play" type="Control"]
 layout_mode = 3
@@ -23,8 +25,9 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.572549)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
+[node name="HowToPlay1" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HowToPlay1"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -37,37 +40,50 @@ offset_bottom = 537.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="HowToPlay1/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_bottom = 20
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_bottom = 40
 
-[node name="Label" type="Label" parent="VBoxContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HowToPlay1/VBoxContainer/MarginContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 60
+
+[node name="MarginContainer" type="MarginContainer" parent="HowToPlay1/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="Label" type="Label" parent="HowToPlay1/VBoxContainer/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
 text = "How to Play
-
-Defeat The Viruses (pickle-rick-rolls) to Win
-
-WASD To Move, Aim With Mouse
-Run into enemys to Hack Them
 "
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="Label2" type="Label" parent="HowToPlay1/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Defeat The Viruses (pickle-rick-rolls) to Win
+
+WASD To Move, Aim With Mouse
+Run into enemys to Hack Them"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HowToPlay1/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 100
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HowToPlay1/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="HowToPlay1/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_top = 10
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="HowToPlay1/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer"]
 custom_minimum_size = Vector2(272, 232)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -75,7 +91,7 @@ size_flags_vertical = 4
 texture = ExtResource("1_bbgdh")
 flip_v = true
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="HowToPlay1/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "Rocket Enemies
@@ -84,10 +100,10 @@ Fire Rate: Low
 HP: Mid"
 horizontal_alignment = 1
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="HowToPlay1/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="TextureRect2" type="TextureRect" parent="HowToPlay1/VBoxContainer/HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(232, 240)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -95,7 +111,7 @@ size_flags_vertical = 4
 texture = ExtResource("2_kglxe")
 flip_v = true
 
-[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="Label2" type="Label" parent="HowToPlay1/VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "Plasma Enemies
@@ -104,15 +120,15 @@ Fire Rate: High
 HP: Low"
 horizontal_alignment = 1
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer3" type="VBoxContainer" parent="HowToPlay1/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 70
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer3"]
+[node name="MarginContainer" type="MarginContainer" parent="HowToPlay1/VBoxContainer/HBoxContainer/VBoxContainer3"]
 layout_mode = 2
 theme_override_constants/margin_top = 10
 
-[node name="TextureRect3" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer3/MarginContainer"]
+[node name="TextureRect3" type="TextureRect" parent="HowToPlay1/VBoxContainer/HBoxContainer/VBoxContainer3/MarginContainer"]
 custom_minimum_size = Vector2(208, 168)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -120,7 +136,7 @@ size_flags_vertical = 4
 texture = ExtResource("3_jyars")
 flip_v = true
 
-[node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer3"]
+[node name="Label3" type="Label" parent="HowToPlay1/VBoxContainer/HBoxContainer/VBoxContainer3"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 1
@@ -132,14 +148,110 @@ HP: High"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="Back" type="Button" parent="."]
-custom_minimum_size = Vector2(274, 0)
-layout_mode = 0
-offset_left = 1584.0
-offset_top = 928.0
-offset_right = 1858.0
-offset_bottom = 1019.0
+[node name="MarginContainer" type="MarginContainer" parent="HowToPlay1"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -141.0
+offset_right = 324.0
+grow_vertical = 0
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="Back" type="Button" parent="HowToPlay1/MarginContainer"]
+custom_minimum_size = Vector2(275, 120)
+layout_mode = 2
+theme = ExtResource("5_6eyir")
 theme_override_font_sizes/font_size = 60
 text = "Back"
 
-[connection signal="pressed" from="Back" to="." method="_on_button_pressed"]
+[node name="MarginContainer2" type="MarginContainer" parent="HowToPlay1"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -324.0
+offset_top = -141.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="Next" type="Button" parent="HowToPlay1/MarginContainer2"]
+custom_minimum_size = Vector2(275, 120)
+layout_mode = 2
+theme = ExtResource("5_6eyir")
+theme_override_font_sizes/font_size = 60
+text = "Next
+"
+
+[node name="HowToPlay2" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HowToPlay2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -619.0
+offset_top = -537.0
+offset_right = 620.0
+offset_bottom = 537.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HowToPlay2/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_bottom = 120
+
+[node name="Label" type="Label" parent="HowToPlay2/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "Pickle-rick-rolls.exe"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HowToPlay2/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="TextureRect" type="TextureRect" parent="HowToPlay2/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 450)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("5_b37dw")
+
+[node name="Label" type="Label" parent="HowToPlay2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 48
+text = "Wubba lubba dub dub
+look at me I'm Mr pickle-rick-roll.
+I'm never gonna give up or go down.
+Someone must have helped develop an app...
+
+I hack robots and make them aim at you with style.
+AND THAT'S THE WAAAAAAAY IT GOES!"
+
+[node name="MarginContainer" type="MarginContainer" parent="HowToPlay2"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -141.0
+offset_right = 324.0
+grow_vertical = 0
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="Previous" type="Button" parent="HowToPlay2/MarginContainer"]
+custom_minimum_size = Vector2(300, 120)
+layout_mode = 2
+theme = ExtResource("5_6eyir")
+text = "Previous"
+
+[connection signal="pressed" from="HowToPlay1/MarginContainer/Back" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="HowToPlay1/MarginContainer2/Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="HowToPlay2/MarginContainer/Previous" to="." method="_on_previous_pressed"]
