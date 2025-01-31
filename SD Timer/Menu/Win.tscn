@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://djdjv3ediwdxi"]
+[gd_scene load_steps=4 format=3 uid="uid://djdjv3ediwdxi"]
 
 [ext_resource type="Script" path="res://Menu/win.gd" id="1_05spe"]
+[ext_resource type="Texture2D" uid="uid://cqpbj0mo6diqw" path="res://All Combined/Horse Sprite.png" id="2_0chhx"]
 [ext_resource type="Theme" uid="uid://b5q06jr8qvyd" path="res://button.tres" id="2_uexl7"]
 
 [node name="Death" type="Control"]
@@ -45,13 +46,21 @@ theme_override_constants/separation = 40
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 72
-text = "You Win"
+text = "You Win for now..."
 
 [node name="Label" type="Label" parent="VBoxContainer2/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 48
-text = "No Exploit Exists on Purpose"
+text = "No Exploit Exists on Purpose
+The pickles offer you a Trojan horse "
+
+[node name="HorseSprite" type="Sprite2D" parent="VBoxContainer2/VBoxContainer"]
+position = Vector2(938, 183.5)
+scale = Vector2(5, 5)
+texture = ExtResource("2_0chhx")
+hframes = 2
+frame = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer2"]
 layout_mode = 2
@@ -75,7 +84,7 @@ custom_minimum_size = Vector2(300, 85)
 layout_mode = 2
 theme = ExtResource("2_uexl7")
 theme_override_font_sizes/font_size = 48
-text = "Play Again"
+text = "Accept"
 
 [node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer2/MarginContainer/HBoxContainer"]
 layout_mode = 2
