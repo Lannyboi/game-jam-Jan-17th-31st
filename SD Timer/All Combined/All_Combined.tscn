@@ -331,6 +331,18 @@ position = Vector2(1152, 507)
 [node name="PlasmaSpawner5" parent="." instance=ExtResource("6_6qcdx")]
 position = Vector2(-1147, 220)
 
+[node name="PlasmaSpawner6" parent="." instance=ExtResource("6_6qcdx")]
+position = Vector2(-268, 515)
+
+[node name="PlasmaSpawner7" parent="." instance=ExtResource("6_6qcdx")]
+position = Vector2(297, 531)
+
+[node name="PlasmaSpawner8" parent="." instance=ExtResource("6_6qcdx")]
+position = Vector2(1138, -371)
+
+[node name="PlasmaSpawner9" parent="." instance=ExtResource("6_6qcdx")]
+position = Vector2(890, -917)
+
 [node name="RocketSpawner" parent="." instance=ExtResource("5_dxgrm")]
 position = Vector2(-1147, -633)
 
@@ -352,8 +364,14 @@ position = Vector2(-339, -337)
 [node name="RocketSpawner7" parent="." instance=ExtResource("5_dxgrm")]
 position = Vector2(1121, -49)
 
+[node name="RocketSpawner8" parent="." instance=ExtResource("5_dxgrm")]
+position = Vector2(-587, 208)
+
+[node name="RocketSpawner9" parent="." instance=ExtResource("5_dxgrm")]
+position = Vector2(-577, 510)
+
 [node name="TankSpawner" parent="." instance=ExtResource("5_sksbv")]
-position = Vector2(-26, 395)
+position = Vector2(64, 198)
 
 [node name="TankSpawner2" parent="." instance=ExtResource("5_sksbv")]
 position = Vector2(779, -318)
@@ -368,7 +386,10 @@ position = Vector2(-882, -919)
 position = Vector2(602, -898)
 
 [node name="TankSpawner6" parent="." instance=ExtResource("5_sksbv")]
-position = Vector2(852, 216)
+position = Vector2(-4, -489)
+
+[node name="TankSpawner7" parent="." instance=ExtResource("5_sksbv")]
+position = Vector2(862, 838)
 
 [node name="RickSpawner" parent="." instance=ExtResource("8_v6l7v")]
 position = Vector2(-196, 716)

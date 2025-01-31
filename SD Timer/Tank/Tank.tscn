@@ -1,9 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://csgjwqpl2vdxs"]
+[gd_scene load_steps=19 format=3 uid="uid://csgjwqpl2vdxs"]
 
 [ext_resource type="Script" path="res://Tank/Tank.gd" id="1_uvxyu"]
 [ext_resource type="Texture2D" uid="uid://0o44u28ty6dw" path="res://Tank/Tank robot.png" id="2_5rnxa"]
 [ext_resource type="Texture2D" uid="uid://qwlkbqahbo8x" path="res://Tank/Circle.png" id="3_8jiwc"]
 [ext_resource type="Theme" uid="uid://bkok1ypds7n7x" path="res://SDTimer/enemy.tres" id="4_5yhfp"]
+[ext_resource type="Texture2D" uid="uid://dyclk4w27weoi" path="res://Tank/CircleFullO.png" id="4_o261v"]
+[ext_resource type="Texture2D" uid="uid://c3d8iu5yh3pbh" path="res://Tank/CircleFull.png" id="4_wl14j"]
+[ext_resource type="Texture2D" uid="uid://vj11cjiruipk" path="res://Tank/CircleFullY.png" id="5_2gqiq"]
+[ext_resource type="Texture2D" uid="uid://cx4g6pjh4yoqq" path="res://Tank/CircleFullB.png" id="5_5nqw6"]
 [ext_resource type="Texture2D" uid="uid://4apvb8ecg33n" path="res://Lighting/yx9tqpap.png" id="5_ocvd1"]
 [ext_resource type="Script" path="res://SDTimer/progress_bar.gd" id="5_w4k0a"]
 [ext_resource type="AudioStream" uid="uid://bd65mrxkdwogq" path="res://Sound/robotstart.wav" id="6_gpsuh"]
@@ -21,6 +25,211 @@ radius = 7.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_0yelv"]
 radius = 128.0
 
+[sub_resource type="Animation" id="Animation_pthqq"]
+resource_name = "Ex"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D3:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.166667, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D4:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D5:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.133333, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D6:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.133333, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite2D7:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.166667, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sprite2D8:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.0666667, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sprite2D10:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_lcb1k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D3:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D4:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D5:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D6:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite2D7:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sprite2D8:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sprite2D10:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ny3t3"]
+_data = {
+"Ex": SubResource("Animation_pthqq"),
+"RESET": SubResource("Animation_lcb1k")
+}
+
 [node name="Tank" type="RigidBody2D" groups=["Robot"]]
 collision_layer = 2
 collision_mask = 2
@@ -34,6 +243,11 @@ scale = Vector2(2, 2)
 shape = SubResource("CapsuleShape2D_5188p")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(2, 2)
+texture = ExtResource("2_5rnxa")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
 rotation = 1.5708
 scale = Vector2(2, 2)
 texture = ExtResource("2_5rnxa")
@@ -67,6 +281,62 @@ disabled = true
 [node name="Sprite2D" type="Sprite2D" parent="Explode"]
 visible = false
 texture = ExtResource("3_8jiwc")
+
+[node name="Sprite2D9" type="Sprite2D" parent="Explode"]
+visible = false
+texture = ExtResource("4_wl14j")
+
+[node name="Sprite2D10" type="Sprite2D" parent="Explode"]
+visible = false
+texture = ExtResource("5_5nqw6")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Explode"]
+visible = false
+position = Vector2(-32, -48)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_o261v")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Explode"]
+visible = false
+position = Vector2(-56, 32)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_o261v")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Explode"]
+visible = false
+position = Vector2(48, -48)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_2gqiq")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Explode"]
+visible = false
+position = Vector2(48, 40)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_wl14j")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Explode"]
+visible = false
+position = Vector2(-8, 64)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_o261v")
+
+[node name="Sprite2D8" type="Sprite2D" parent="Explode"]
+visible = false
+position = Vector2(64, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_2gqiq")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Explode"]
+visible = false
+position = Vector2(16, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_wl14j")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Explode"]
+active = false
+libraries = {
+"": SubResource("AnimationLibrary_ny3t3")
+}
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 visible = false

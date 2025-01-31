@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcdoqgm0ijatu"
-path="res://.godot/imported/Game-jame-splash-art.png-cf30aa9fb9bdee2f9cda1f2bdf9de407.ctex"
+uid="uid://vj11cjiruipk"
+path="res://.godot/imported/CircleFullY.png-f93870968f91cd41e74bbc1f841a4f73.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game-jame-splash-art.png"
-dest_files=["res://.godot/imported/Game-jame-splash-art.png-cf30aa9fb9bdee2f9cda1f2bdf9de407.ctex"]
+source_file="res://Tank/CircleFullY.png"
+dest_files=["res://.godot/imported/CircleFullY.png-f93870968f91cd41e74bbc1f841a4f73.ctex"]
 
 [params]
 

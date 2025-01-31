@@ -31,9 +31,10 @@ func _physics_process(_delta):
 
 	$"UI/HeathBar".value = PlayerHeath
 	$UI/Label.text = "Viruses Left: %d" % Globalvars.virusleft
-	
+
 
 func hit():
+	$Hit.play()
 	if PlayerHeath <= 0:
 		GlobalSign.death.emit()
 		get_tree().change_scene_to_file.bind("res://Menu/death.tscn").call_deferred()

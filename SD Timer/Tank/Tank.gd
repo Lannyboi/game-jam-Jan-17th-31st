@@ -50,8 +50,8 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 			heath -= Globalvars.PlasmaDmg
 		elif area.is_in_group("Rocket"):
 			heath -= Globalvars.RocketDmg
-		elif area.is_in_group("Expload"):
-			heath -= Globalvars.ExploadeDmg
+		elif area.is_in_group("Explode"):
+			heath -= 20
 
 
 func _input(event: InputEvent) -> void:
@@ -76,6 +76,7 @@ func _process(_delta: float) -> void:
 		look_at($"../Player".position)
 
 	if heath <= 0:
+		emit_signal("dead")
 		queue_free()
 
 	if heath <= 0 and inRobot == true:
@@ -90,13 +91,16 @@ func _on_timer_timeout() -> void:
 	die()
 
 func die():
-	$"../Player/TankDeath".play()
 	$Explode/CollisionShape2D.disabled = false
-	$Die.start(0.1)
+	$Explode/Sprite2D.visible = false
+	$Explode/Sprite2D9.visible = true
+	$Explode/AnimationPlayer.active = true
+	$Explode/AnimationPlayer.play("Ex")
+	$"../Player/TankDeath".play()
+	$Die.start(0.25)
 
 
 func _on_die_timeout() -> void:
-	$"../Player/TankDeath".play()
 	$"../Player".inEnemy = false
 	$"../Player".visible = true
 	$"../Player/Area2D/CollisionShape2D".disabled = false

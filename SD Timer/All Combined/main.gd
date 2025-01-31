@@ -2,21 +2,6 @@ extends Node2D
 
 var nextWave = 100
 
-#Virus, VirusLeft, RobotsLeft
-
-#100, 2, 3
-#95, 3, 4
-#90, 4, 5
-#85, 6, 7
-#80, 8, 9
-#70, 10, 10
-#60, 12, 11
-#50, 14, 12
-#40, 16, 13
-#30, 18, 14
-#20, 20, 15
-#15, 15, 17
-#10, 10, 12
 
 func _process(_float):
 	if Globalvars.virusleft <= 15:

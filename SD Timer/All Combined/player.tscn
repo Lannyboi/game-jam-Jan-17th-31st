@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bx5ubluln3yf6"]
+[gd_scene load_steps=16 format=3 uid="uid://bx5ubluln3yf6"]
 
 [ext_resource type="Script" path="res://SDTimer/player.gd" id="1_m0ceh"]
 [ext_resource type="Texture2D" uid="uid://dmqfxevnmpd7k" path="res://All Combined/circuit-virus-2.png" id="2_kfpsa"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://b778lew457e7o" path="res://Music/80s-video-game-battle-chiptune-216255.mp3" id="7_nhup5"]
 [ext_resource type="AudioStream" uid="uid://c1l60v0ytpruo" path="res://Music/chiptune-dubstep-fusion-instrumental-265078.mp3" id="8_j7v8b"]
 [ext_resource type="AudioStream" uid="uid://e84pjjyrucn7" path="res://Music/zt-byte-blast-163367.mp3" id="9_31wo0"]
+[ext_resource type="AudioStream" uid="uid://b254507u11bjh" path="res://Sound/Clic04.mp3" id="11_vhjtl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u30iv"]
 size = Vector2(64, 64)
@@ -70,7 +71,7 @@ text = "Viruses Left: 00"
 [node name="Camera2D" type="Camera2D" parent="."]
 process_mode = 1
 position = Vector2(0, 8)
-zoom = Vector2(1.4, 1.4)
+zoom = Vector2(1.3, 1.3)
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 drag_left_margin = 0.1
@@ -124,6 +125,8 @@ bus = &"Robots"
 
 [node name="TankDeath" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_ndffb")
+volume_db = -7.0
+bus = &"Robots"
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamPlaylist_fwm5w")
@@ -131,6 +134,11 @@ volume_db = -9.0
 pitch_scale = 1.2
 autoplay = true
 bus = &"Music"
+
+[node name="Hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_vhjtl")
+volume_db = -4.0
+bus = &"sfx"
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

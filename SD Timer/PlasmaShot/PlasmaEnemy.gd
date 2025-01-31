@@ -17,9 +17,19 @@ signal dead
 
 func _ready() -> void:
 	$HeathBar.position = (position + Vector2(-48, -71))
-	rotateSpeed = randf_range(-0.1, 0.1)
+	rotateSpeed = randomRotateSpeed()
 	$HeathBar.max_value = heath
 	$HeathBar.visible = true
+
+
+func randomRotateSpeed():
+	var randomNumber = randi_range(1, 2)
+	if (randomNumber == 1):
+		rotateSpeed = randf_range(-0.1, -0.01)
+	else:
+		rotateSpeed = randf_range(0.01, 0.1)
+	var rotate2 = randi_range(0.01, 0.1)
+	return rotateSpeed
 
 
 func _on_plasma_shot_timeout() -> void:
@@ -106,6 +116,7 @@ func _process(_delta: float) -> void:
 		$"../Player/Area2D/CollisionShape2D".disabled = false
 		die()
 	elif heath <= 0:
+		emit_signal("dead")
 		queue_free()
 
 	$HeathBar.value = heath
