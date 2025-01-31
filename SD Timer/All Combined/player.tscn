@@ -71,6 +71,7 @@ text = "Viruses Left: 00"
 [node name="Camera2D" type="Camera2D" parent="."]
 process_mode = 1
 position = Vector2(0, 8)
+enabled = false
 zoom = Vector2(1.3, 1.3)
 drag_horizontal_enabled = true
 drag_vertical_enabled = true

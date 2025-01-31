@@ -6,7 +6,7 @@ func _ready() -> void:
 	$VBoxContainer2/VBoxContainer/Left.text = "Viruses Left: %d" % Globalvars.virusleft
 	Globalvars.enemys = 0
 	Globalvars.virus = 0
-	Globalvars.enemycap = 1
+	Globalvars.enemycap = 3
 	Globalvars.viruscap = 2
 	Globalvars.virusleft = Globalvars.virusesAtStart
 

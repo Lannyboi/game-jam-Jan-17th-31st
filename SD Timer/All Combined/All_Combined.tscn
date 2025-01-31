@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://cmroiywksa33h"]
+[gd_scene load_steps=25 format=4 uid="uid://cmroiywksa33h"]
 
 [ext_resource type="Texture2D" uid="uid://b32kwratljdii" path="res://All Combined/cloud-tilesheet.png" id="1_3ddn8"]
 [ext_resource type="Script" path="res://All Combined/main.gd" id="1_r4xkr"]
@@ -6,13 +6,17 @@
 [ext_resource type="Theme" uid="uid://b5q06jr8qvyd" path="res://button.tres" id="3_88gwr"]
 [ext_resource type="Script" path="res://Menu/pause_menu_settings.gd" id="3_c0jg0"]
 [ext_resource type="Script" path="res://Menu/master.gd" id="4_7e21n"]
-[ext_resource type="PackedScene" uid="uid://cl57oklnlvktx" path="res://Spawn/RocketSpawner.tscn" id="5_dxgrm"]
+[ext_resource type="PackedScene" path="res://Spawn/RocketSpawner.tscn" id="5_dxgrm"]
 [ext_resource type="PackedScene" uid="uid://bx5ubluln3yf6" path="res://All Combined/player.tscn" id="5_hdupc"]
 [ext_resource type="Script" path="res://Menu/music.gd" id="5_qmgcq"]
 [ext_resource type="PackedScene" uid="uid://cpfx8mt0t2cfe" path="res://Spawn/TankSpawner.tscn" id="5_sksbv"]
-[ext_resource type="PackedScene" uid="uid://cj5t8hv1jkffe" path="res://Spawn/PlasmaSpawner.tscn" id="6_6qcdx"]
+[ext_resource type="PackedScene" path="res://Spawn/PlasmaSpawner.tscn" id="6_6qcdx"]
 [ext_resource type="Script" path="res://Menu/sound_fx.gd" id="6_exkl5"]
-[ext_resource type="PackedScene" uid="uid://cb7cavgrmlf3j" path="res://Spawn/RickVirusSpawner.tscn" id="8_v6l7v"]
+[ext_resource type="PackedScene" path="res://Spawn/RickVirusSpawner.tscn" id="8_v6l7v"]
+[ext_resource type="Texture2D" uid="uid://rob3wdkdnixk" path="res://Rocket/Rocket robot.png" id="15_23pcj"]
+[ext_resource type="Texture2D" uid="uid://4apvb8ecg33n" path="res://Lighting/yx9tqpap.png" id="16_dxomt"]
+[ext_resource type="Texture2D" uid="uid://der6q678asju5" path="res://Virus/picklerickroll.png" id="17_5u7ca"]
+[ext_resource type="Texture2D" uid="uid://dmko0xd2iddlo" path="res://Virus/Hair.png" id="17_axxch"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_yc66h"]
 tile_data = PackedInt32Array(0, 0, 0, 65536, 65536, 1610612736, 131072, 196608, 1610612736, 196608, 131072, 1610612736, 262144, 65536, 1610612736, 327680, 262144, 805306368, 1, 65536, 0, 65537, 589824, 0, 131073, 524288, 0, 196609, 458752, 0, 262145, 589824, 0, 327681, 65536, 805306368, 2, 131072, 0, 65538, 393216, 0, 131074, 327680, 0, 196610, 327680, 0, 262146, 524288, 0, 327682, 196608, 805306368, 3, 196608, 0, 65539, 458752, 0, 131075, 589824, 0, 196611, 393216, 0, 262147, 589824, 0, 327683, 131072, 805306368, 4, 65536, 0, 65540, 589824, 0, 131076, 393216, 0, 196612, 327680, 0, 262148, 393216, 0, 327684, 65536, 805306368, 5, 262144, 0, 65541, 65536, 1342177280, 131077, 131072, 1342177280, 196613, 196608, 1342177280, 262149, 65536, 1342177280, 327685, 262144, 1342177280)
@@ -441,6 +445,51 @@ position = Vector2(554, -347)
 
 [node name="RickSpawner17" parent="." instance=ExtResource("8_v6l7v")]
 position = Vector2(1385, -640)
+
+[node name="Rocketenemy" type="RigidBody2D" parent="." groups=["Robot"]]
+position = Vector2(-569, -347)
+collision_layer = 2
+collision_mask = 2
+gravity_scale = 0.0
+lock_rotation = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Rocketenemy"]
+position = Vector2(7, -1)
+rotation = 1.5708
+scale = Vector2(2, 2)
+texture = ExtResource("15_23pcj")
+hframes = 2
+frame = 1
+
+[node name="PointLight2D" type="PointLight2D" parent="Rocketenemy/Sprite2D"]
+position = Vector2(0.500013, 3.5)
+rotation = -1.5708
+scale = Vector2(0.5, 0.5)
+color = Color(1, 0, 0, 1)
+energy = 0.13
+texture = ExtResource("16_dxomt")
+texture_scale = 0.75
+
+[node name="Hair" type="Sprite2D" parent="Rocketenemy"]
+position = Vector2(-6, 9)
+rotation = -1.5708
+scale = Vector2(2.548, 3)
+texture = ExtResource("17_axxch")
+
+[node name="Camera2D" type="Camera2D" parent="Rocketenemy"]
+zoom = Vector2(4, 4)
+
+[node name="RickVirus" type="RigidBody2D" parent="Rocketenemy" groups=["Vrius"]]
+position = Vector2(-39, -53)
+collision_layer = 128
+collision_mask = 128
+gravity_scale = 0.0
+lock_rotation = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Rocketenemy/RickVirus"]
+position = Vector2(0, 2.14577e-06)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("17_5u7ca")
 
 [connection signal="pressed" from="Pause Menu/CanvasLayer/VBoxContainer/Resume" to="Pause Menu" method="_on_resume_pressed"]
 [connection signal="pressed" from="Pause Menu/CanvasLayer/VBoxContainer/Restart" to="Pause Menu" method="_on_restart_pressed"]
