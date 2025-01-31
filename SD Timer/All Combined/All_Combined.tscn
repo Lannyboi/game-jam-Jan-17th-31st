@@ -6,13 +6,13 @@
 [ext_resource type="Theme" uid="uid://b5q06jr8qvyd" path="res://button.tres" id="3_88gwr"]
 [ext_resource type="Script" path="res://Menu/pause_menu_settings.gd" id="3_c0jg0"]
 [ext_resource type="Script" path="res://Menu/master.gd" id="4_7e21n"]
-[ext_resource type="PackedScene" path="res://Spawn/RocketSpawner.tscn" id="5_dxgrm"]
+[ext_resource type="PackedScene" uid="uid://cl57oklnlvktx" path="res://Spawn/RocketSpawner.tscn" id="5_dxgrm"]
 [ext_resource type="PackedScene" uid="uid://bx5ubluln3yf6" path="res://All Combined/player.tscn" id="5_hdupc"]
 [ext_resource type="Script" path="res://Menu/music.gd" id="5_qmgcq"]
 [ext_resource type="PackedScene" uid="uid://cpfx8mt0t2cfe" path="res://Spawn/TankSpawner.tscn" id="5_sksbv"]
-[ext_resource type="PackedScene" path="res://Spawn/PlasmaSpawner.tscn" id="6_6qcdx"]
+[ext_resource type="PackedScene" uid="uid://cj5t8hv1jkffe" path="res://Spawn/PlasmaSpawner.tscn" id="6_6qcdx"]
 [ext_resource type="Script" path="res://Menu/sound_fx.gd" id="6_exkl5"]
-[ext_resource type="PackedScene" path="res://Spawn/RickVirusSpawner.tscn" id="8_v6l7v"]
+[ext_resource type="PackedScene" uid="uid://cb7cavgrmlf3j" path="res://Spawn/RickVirusSpawner.tscn" id="8_v6l7v"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_yc66h"]
 tile_data = PackedInt32Array(0, 0, 0, 65536, 65536, 1610612736, 131072, 196608, 1610612736, 196608, 131072, 1610612736, 262144, 65536, 1610612736, 327680, 262144, 805306368, 1, 65536, 0, 65537, 589824, 0, 131073, 524288, 0, 196609, 458752, 0, 262145, 589824, 0, 327681, 65536, 805306368, 2, 131072, 0, 65538, 393216, 0, 131074, 327680, 0, 196610, 327680, 0, 262146, 524288, 0, 327682, 196608, 805306368, 3, 196608, 0, 65539, 458752, 0, 131075, 589824, 0, 196611, 393216, 0, 262147, 589824, 0, 327683, 131072, 805306368, 4, 65536, 0, 65540, 589824, 0, 131076, 393216, 0, 196612, 327680, 0, 262148, 393216, 0, 327684, 65536, 805306368, 5, 262144, 0, 65541, 65536, 1342177280, 131077, 131072, 1342177280, 196613, 196608, 1342177280, 262149, 65536, 1342177280, 327685, 262144, 1342177280)

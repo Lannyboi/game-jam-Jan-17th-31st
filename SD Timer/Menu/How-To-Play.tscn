@@ -63,12 +63,13 @@ horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="HowToPlay1/VBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 42
 text = "Defeat The Viruses \"Pickle-Rick-Rolls\" to Win
 
 WASD To Move, Aim With Mouse
 Run into the Microshock Defenders to Hack Them.
- Rocket and Plasma Deal Bonus Damage to One Another"
+ Rocket and Plasma Deal Bonus Damage to One Another.
+All Projectiles are Destroyed Upon Collision."
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HowToPlay1/VBoxContainer"]
@@ -85,7 +86,7 @@ layout_mode = 2
 theme_override_constants/margin_top = 10
 
 [node name="TextureRect" type="TextureRect" parent="HowToPlay1/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer"]
-custom_minimum_size = Vector2(272, 232)
+custom_minimum_size = Vector2(250, 210)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -105,7 +106,7 @@ horizontal_alignment = 1
 layout_mode = 2
 
 [node name="TextureRect2" type="TextureRect" parent="HowToPlay1/VBoxContainer/HBoxContainer/VBoxContainer2"]
-custom_minimum_size = Vector2(232, 240)
+custom_minimum_size = Vector2(210, 218)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -123,14 +124,14 @@ horizontal_alignment = 1
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="HowToPlay1/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 70
+theme_override_constants/separation = 65
 
 [node name="MarginContainer" type="MarginContainer" parent="HowToPlay1/VBoxContainer/HBoxContainer/VBoxContainer3"]
 layout_mode = 2
 theme_override_constants/margin_top = 10
 
 [node name="TextureRect3" type="TextureRect" parent="HowToPlay1/VBoxContainer/HBoxContainer/VBoxContainer3/MarginContainer"]
-custom_minimum_size = Vector2(208, 168)
+custom_minimum_size = Vector2(186, 146)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -144,7 +145,7 @@ size_flags_vertical = 1
 theme_override_font_sizes/font_size = 35
 text = "Tank Defenders
 Dmg: High
-Fire on Death or Alt
+Fire on Death & Alt
 HP: High"
 horizontal_alignment = 1
 vertical_alignment = 2
