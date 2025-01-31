@@ -47,6 +47,6 @@ func _process(_delta: float):
 func _on_MainMenu():
 	Globalvars.enemys = 0
 	Globalvars.virus = 0
-	Globalvars.enemycap = 1
+	Globalvars.enemycap = 3
 	Globalvars.viruscap = 2
 	Globalvars.virusleft = Globalvars.virusesAtStart
